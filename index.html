@@ -1,22 +1,144 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Liz Goldfish Portfolio</title>
-    <style>
-        body { font-family: Arial; margin: 40px; }
-        nav a { margin-right: 15px; }
-    </style>
+<meta charset="UTF-8">
+<title>Liz Goldfish Portfolio</title>
+
+<style>
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    background: #0f172a;
+    color: white;
+}
+
+/* NAV */
+nav {
+    position: fixed;
+    width: 100%;
+    background: #020617;
+    padding: 15px;
+    text-align: center;
+}
+nav a {
+    color: #38bdf8;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+/* HERO */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+}
+.hero h1 {
+    font-size: 60px;
+    margin: 0;
+}
+.hero p {
+    font-size: 20px;
+    color: #94a3b8;
+}
+
+/* SECTIONS */
+.section {
+    padding: 80px 60px;
+}
+
+/* CARDS */
+.card {
+    background: #020617;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+/* IMAGE */
+img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+</style>
+
 </head>
+
 <body>
 
-<h1>Liz Goldfish</h1>
-<p>Welcome to my portfolio website.</p>
-
 <nav>
-    <a href="about.html">About Me</a>
-    <a href="social-robot-design.html">Social Robot Design</a>
+    <a href="#about">About</a>
+    <a href="#robot">Social Robot Design</a>
 </nav>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Liz Goldfish</h1>
+    <p>Student | Designer | Interested in Social Robotics</p>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="section">
+    <h2>About Me</h2>
+
+    <p><strong>Studies</strong><br>
+    Describe your study program here.</p>
+
+    <p><strong>Hobbies</strong><br>
+    - Robotics<br>
+    - Design<br>
+    - Creative tech</p>
+</div>
+
+<!-- PROJECT -->
+<div id="robot" class="section">
+    <h2>Social Robot Design</h2>
+
+    <div class="card">
+        <h3>Case Description</h3>
+        <p>Explain the project context.</p>
+    </div>
+
+    <div class="card">
+        <h3>Design Tools</h3>
+        <p>Brainstorming, prototyping, etc.</p>
+    </div>
+
+    <div class="card">
+        <h3>Mindmap</h3>
+        <img src="images/mindmap.png">
+    </div>
+
+    <div class="card">
+        <h3>Building Blocks</h3>
+        <p>Describe system components.</p>
+    </div>
+
+    <div class="card">
+        <h3>Functional Breakdown</h3>
+        <p>Explain system structure.</p>
+    </div>
+
+    <div class="card">
+        <h3>Experimental Approach</h3>
+        <p>How you would test the design.</p>
+    </div>
+
+    <div class="card">
+        <h3>Pitch / Slides</h3>
+        <p>Add a link to slides.</p>
+    </div>
+
+    <div class="card">
+        <h3>Collaborators</h3>
+        <ul>
+            <li>Student Name</li>
+            <li>Student Name</li>
+        </ul>
+    </div>
+
+</div>
 
 </body>
 </html>

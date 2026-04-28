@@ -1,144 +1,1078 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Liz Goldfish Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liz van Ginderen — Social Robot Design Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 
-<style>
-body {
-    font-family: 'Segoe UI', sans-serif;
-    margin: 0;
-    background: #0f172a;
-    color: white;
-}
+  <style>
+    /* ── TOKENS ───────────────────────────────── */
+    :root {
+      --navy:        #192e52;
+      --navy-deep:   #111d36;
+      --blue:        #2b5ea7;
+      --blue-mid:    #3d74c7;
+      --blue-light:  #91b8e8;
+      --blue-pale:   #e8f0fb;
+      --amber:       #c28a3a;
+      --amber-pale:  #fdf2e2;
+      --bg:          #f0f4fb;
+      --surface:     #ffffff;
+      --text:        #131c2e;
+      --muted:       #4e6080;
+      --border:      #ccd8ef;
+      --radius-sm:   8px;
+      --radius:      16px;
+      --radius-lg:   24px;
+      --shadow:      0 2px 16px rgba(26,46,82,0.09);
+      --shadow-lg:   0 8px 40px rgba(26,46,82,0.16);
+    }
 
-/* NAV */
-nav {
-    position: fixed;
-    width: 100%;
-    background: #020617;
-    padding: 15px;
-    text-align: center;
-}
-nav a {
-    color: #38bdf8;
-    margin: 0 15px;
-    text-decoration: none;
-}
+    /* ── RESET ────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.78;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
 
-/* HERO */
-.hero {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 60px;
-}
-.hero h1 {
-    font-size: 60px;
-    margin: 0;
-}
-.hero p {
-    font-size: 20px;
-    color: #94a3b8;
-}
+    /* ── NAV ──────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: var(--navy-deep);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2.5rem;
+      height: 58px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.22);
+    }
+    .nav-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      letter-spacing: 0.04em;
+      color: white;
+      text-decoration: none;
+      font-weight: 300;
+    }
+    .nav-brand em { font-style: italic; color: var(--blue-light); }
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: white; }
+    .nav-hamburger { display: none; cursor: pointer; }
+    .nav-hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: white; margin: 4px 0; transition: 0.2s;
+    }
 
-/* SECTIONS */
-.section {
-    padding: 80px 60px;
-}
+    /* ── HERO ─────────────────────────────────── */
+    .hero {
+      background: linear-gradient(140deg, var(--navy-deep) 0%, #1f3a6e 55%, #1a3060 100%);
+      padding: 7rem 2.5rem 4.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 75% 40%, rgba(43,94,167,0.35) 0%, transparent 60%),
+        radial-gradient(ellipse at 15% 85%, rgba(194,138,58,0.12) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    /* Subtle dot-grid texture */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(194,138,58,0.18);
+      border: 1px solid rgba(194,138,58,0.42);
+      color: #e0af60;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.32rem 0.9rem;
+      border-radius: 100px;
+      margin-bottom: 1.4rem;
+      font-weight: 400;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #e0af60;
+      flex-shrink: 0;
+    }
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.2rem, 6vw, 5.8rem);
+      font-weight: 300;
+      line-height: 1.02;
+      color: white;
+      margin-bottom: 1.25rem;
+    }
+    .hero-name em {
+      font-style: italic;
+      color: var(--blue-light);
+    }
+    .hero-sub {
+      color: rgba(255,255,255,0.58);
+      font-size: 0.95rem;
+      max-width: 420px;
+      margin-bottom: 2.2rem;
+      line-height: 1.7;
+    }
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+    .hero-pills a {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 0.8rem;
+      padding: 0.42rem 1rem;
+      border-radius: 100px;
+      transition: all 0.2s;
+      letter-spacing: 0.02em;
+    }
+    .hero-pills a:hover {
+      background: rgba(255,255,255,0.18);
+      border-color: rgba(255,255,255,0.35);
+    }
 
-/* CARDS */
-.card {
-    background: #020617;
-    padding: 20px;
-    margin: 20px 0;
-    border-radius: 10px;
-}
+    /* Hero info card */
+    .hero-infocard {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      backdrop-filter: blur(10px);
+    }
+    .hero-infocard-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blue-light);
+      margin-bottom: 0.75rem;
+      font-weight: 400;
+    }
+    .hero-infocard p {
+      color: rgba(255,255,255,0.72);
+      font-size: 0.9rem;
+      line-height: 1.72;
+      margin-bottom: 1.4rem;
+    }
+    .hero-infocard-rq {
+      background: rgba(43,94,167,0.28);
+      border-left: 3px solid var(--blue-light);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 1rem 1.2rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.88);
+      font-size: 0.88rem;
+      line-height: 1.65;
+    }
 
-/* IMAGE */
-img {
-    max-width: 100%;
-    border-radius: 10px;
-}
-</style>
+    /* ── WAVE ─────────────────────────────────── */
+    .wave {
+      display: block;
+      background: var(--navy-deep);
+      line-height: 0;
+      margin-top: -1px;
+    }
+    .wave svg { display: block; }
 
+    /* ── LAYOUT HELPERS ──────────────────────── */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+    }
+    section { padding: 5.5rem 0; }
+    .section-divider { border: none; border-top: 1px solid var(--border); }
+    .section-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--blue);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600;
+      line-height: 1.12;
+      color: var(--navy);
+      margin-bottom: 2.5rem;
+    }
+    .section-title span { color: var(--blue); }
+    .section-intro {
+      color: var(--muted);
+      max-width: 580px;
+      margin-bottom: 2.5rem;
+      font-size: 0.96rem;
+    }
+
+    /* ── ABOUT ────────────────────────────────── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+    .about-text p { color: var(--muted); margin-bottom: 1rem; font-size: 0.95rem; }
+    .about-text strong { color: var(--text); font-weight: 500; }
+    .about-stack { display: flex; flex-direction: column; gap: 1rem; }
+    .about-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+    }
+    .about-card-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blue);
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+    .about-card p { color: var(--muted); font-size: 0.9rem; }
+
+    /* ── CASE ─────────────────────────────────── */
+    .case-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    .case-text p { color: var(--muted); margin-bottom: 1rem; font-size: 0.95rem; }
+    .case-text strong { color: var(--text); font-weight: 500; }
+    .case-rq-card {
+      background: var(--navy);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+    }
+    .case-rq-card .lbl {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blue-light);
+      font-weight: 400;
+      margin-bottom: 0.7rem;
+    }
+    .case-rq-card .rq {
+      font-style: italic;
+      color: rgba(255,255,255,0.88);
+      font-size: 1rem;
+      line-height: 1.68;
+      margin-bottom: 1.6rem;
+    }
+    .case-rq-card p { color: rgba(255,255,255,0.6); font-size: 0.88rem; }
+
+    /* ── TOOLS ────────────────────────────────── */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .tool-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+      transition: transform 0.22s, box-shadow 0.22s;
+      position: relative;
+      overflow: hidden;
+    }
+    .tool-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      border-radius: var(--radius) var(--radius) 0 0;
+    }
+    .tool-card:nth-child(1)::before { background: var(--blue); }
+    .tool-card:nth-child(2)::before { background: var(--amber); }
+    .tool-card:nth-child(3)::before { background: #3a8c6a; }
+    .tool-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+    .tool-emoji { font-size: 2rem; margin-bottom: 0.9rem; }
+    .tool-badge {
+      display: inline-block;
+      background: var(--blue-pale);
+      color: var(--blue);
+      font-size: 0.7rem;
+      padding: 0.2rem 0.65rem;
+      border-radius: 100px;
+      letter-spacing: 0.06em;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+    }
+    .tool-card:nth-child(2) .tool-badge { background: var(--amber-pale); color: #7a5520; }
+    .tool-card:nth-child(3) .tool-badge { background: #eaf5ef; color: #2a6645; }
+    .tool-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.6rem;
+    }
+    .tool-def {
+      color: var(--muted);
+      font-size: 0.86rem;
+      font-style: italic;
+      margin-bottom: 0.9rem;
+      padding-bottom: 0.9rem;
+      border-bottom: 1px solid var(--border);
+      line-height: 1.65;
+    }
+    .tool-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.72; }
+
+    /* ── MINDMAP ──────────────────────────────── */
+    .mindmap-outer {
+      background: #0e1524;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+    }
+    .mindmap-outer img { width: 100%; }
+    .mindmap-footer {
+      background: var(--navy-deep);
+      padding: 0.9rem 1.6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .mindmap-footer span { color: rgba(255,255,255,0.45); font-size: 0.8rem; }
+    .mindmap-footer a {
+      color: var(--blue-light);
+      text-decoration: none;
+      font-size: 0.8rem;
+      white-space: nowrap;
+      transition: color 0.2s;
+    }
+    .mindmap-footer a:hover { color: white; }
+
+    /* ── BUILDING BLOCKS ──────────────────────── */
+    .blocks-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .block-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+    .block-icon-wrap {
+      width: 46px; height: 46px;
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 1.25rem;
+    }
+    .block-icon-wrap.hw { background: var(--blue-pale); }
+    .block-icon-wrap.sw { background: var(--amber-pale); }
+    .block-icon-wrap.od { background: #eaf5ef; }
+    .block-title { font-weight: 500; font-size: 1rem; color: var(--navy); margin-bottom: 0.9rem; }
+    .block-card ul { list-style: none; }
+    .block-card ul li {
+      color: var(--muted);
+      font-size: 0.87rem;
+      padding: 0.38rem 0;
+      border-bottom: 1px solid var(--blue-pale);
+      display: flex; gap: 0.55rem; align-items: flex-start;
+    }
+    .block-card ul li:last-child { border-bottom: none; }
+    .block-card ul li::before {
+      content: '→';
+      color: var(--blue);
+      font-size: 0.78rem;
+      margin-top: 0.15rem;
+      flex-shrink: 0;
+    }
+
+    /* ── FUNCTIONAL BREAKDOWN ─────────────────── */
+    .functional-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    .func-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: var(--shadow);
+    }
+    .func-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.9rem;
+      display: flex; align-items: center; gap: 0.55rem;
+    }
+    .func-tags {
+      display: flex; flex-wrap: wrap; gap: 0.45rem;
+      margin-bottom: 1rem;
+    }
+    .func-tag {
+      background: var(--blue-pale);
+      color: var(--blue);
+      border: 1px solid var(--border);
+      font-size: 0.72rem;
+      padding: 0.2rem 0.65rem;
+      border-radius: 100px;
+    }
+    .func-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.72; }
+
+    /* ── EXPERIMENT ───────────────────────────── */
+    .experiment-stack { display: flex; flex-direction: column; gap: 1.1rem; }
+    .experiment-row {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.6rem 2rem;
+      box-shadow: var(--shadow);
+      display: flex;
+      align-items: flex-start;
+      gap: 1.8rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .experiment-row:hover {
+      border-color: var(--blue-light);
+      box-shadow: var(--shadow-lg);
+    }
+    .experiment-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 600;
+      color: var(--border);
+      line-height: 1;
+      min-width: 2.4rem;
+      user-select: none;
+    }
+    .experiment-body h4 {
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+      font-size: 1rem;
+    }
+    .experiment-body p { color: var(--muted); font-size: 0.9rem; }
+
+    /* ── PITCH ────────────────────────────────── */
+    .pitch-banner {
+      background: linear-gradient(130deg, var(--navy-deep), #243d72);
+      border-radius: var(--radius-lg);
+      padding: 3rem 3.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      box-shadow: var(--shadow-lg);
+    }
+    .pitch-banner h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.1rem;
+      font-weight: 300;
+      color: white;
+      margin-bottom: 0.4rem;
+    }
+    .pitch-banner p { color: rgba(255,255,255,0.5); font-size: 0.88rem; }
+    .btn-white {
+      display: inline-block;
+      background: white;
+      color: var(--navy);
+      text-decoration: none;
+      padding: 0.8rem 2rem;
+      border-radius: 100px;
+      font-weight: 500;
+      font-size: 0.88rem;
+      white-space: nowrap;
+      transition: all 0.22s;
+      flex-shrink: 0;
+    }
+    .btn-white:hover { background: var(--blue-light); color: var(--navy-deep); }
+
+    /* ── TEAM ─────────────────────────────────── */
+    .team-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      justify-content: center;
+    }
+    .team-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.6rem 1.4rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+      flex: 1 1 160px;
+      max-width: 200px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .team-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .team-card.me {
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px var(--blue-pale);
+    }
+    .team-avatar {
+      width: 54px; height: 54px;
+      border-radius: 50%;
+      background: var(--blue-pale);
+      color: var(--blue);
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 0.8rem;
+    }
+    .team-card.me .team-avatar { background: var(--blue); color: white; }
+    .team-name { font-weight: 500; font-size: 0.9rem; color: var(--navy); margin-bottom: 0.2rem; }
+    .team-id { font-size: 0.74rem; color: var(--muted); letter-spacing: 0.03em; }
+
+    /* ── FOOTER ───────────────────────────────── */
+    footer {
+      background: var(--navy-deep);
+      color: rgba(255,255,255,0.38);
+      text-align: center;
+      padding: 2.2rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+    }
+    footer a { color: rgba(255,255,255,0.55); text-decoration: none; }
+    footer a:hover { color: white; }
+
+    /* ── REVEAL ANIMATION ─────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .reveal.in { opacity: 1; transform: none; }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ── RESPONSIVE ───────────────────────────── */
+    @media (max-width: 860px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: block; }
+
+      .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-infocard { display: none; }
+
+      .about-grid,
+      .case-grid,
+      .functional-grid { grid-template-columns: 1fr; gap: 2rem; }
+
+      .tools-grid,
+      .blocks-grid { grid-template-columns: 1fr; }
+
+      .pitch-banner { flex-direction: column; padding: 2rem; }
+
+      nav { padding: 0 1.5rem; }
+      .container { padding: 0 1.5rem; }
+      section { padding: 3.5rem 0; }
+      .section-title { margin-bottom: 1.75rem; }
+    }
+
+    @media (max-width: 560px) {
+      .hero { padding: 4.5rem 1.5rem 3rem; }
+      .team-card { flex-basis: 140px; }
+    }
+  </style>
 </head>
-
 <body>
 
+<!-- ╔══════════════════════════════════╗ -->
+<!-- ║             NAV                  ║ -->
+<!-- ╚══════════════════════════════════╝ -->
 <nav>
-    <a href="#about">About</a>
-    <a href="#robot">Social Robot Design</a>
+  <a href="#top" class="nav-brand">Liz <em>van Ginderen</em></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#case">Case</a></li>
+    <li><a href="#tools">Design Tools</a></li>
+    <li><a href="#mindmap">Mindmap</a></li>
+    <li><a href="#blocks">Building Blocks</a></li>
+    <li><a href="#functional">Breakdown</a></li>
+    <li><a href="#experiment">Experiment</a></li>
+    <li><a href="#team">Team</a></li>
+  </ul>
+  <div class="nav-hamburger" onclick="toggleMenu(this)" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
 </nav>
 
-<!-- HERO -->
-<div class="hero">
-    <h1>Liz Goldfish</h1>
-    <p>Student | Designer | Interested in Social Robotics</p>
+<!-- ╔══════════════════════════════════╗ -->
+<!-- ║             HERO                 ║ -->
+<!-- ╚══════════════════════════════════╝ -->
+<div id="top" class="hero">
+  <div class="hero-inner">
+    <div>
+      <h1 class="hero-name">Liz<br>van Ginderen</h1>
+        <span class="hero-eyebrow">Social Robot Design · University of Twente · 2025</span>
+      <p class="hero-sub">Portfolio for the course Social Robot Design. Session 1 focuses on using design tools to understand how a social robot might support student wellbeing.</p>
+      <div class="hero-pills">
+        <a href="#about">About Me</a>
+        <a href="#case">Case Description</a>
+        <a href="#tools">Design Tools</a>
+        <a href="#mindmap">Mindmap</a>
+        <a href="#blocks">Building Blocks</a>
+        <a href="#functional">Functional Breakdown</a>
+        <a href="#experiment">Experiment</a>
+        <a href="#team">Team</a>
+      </div>
+    </div>
+    <div class="hero-infocard">
+      <div class="hero-infocard-label">Research Focus — Session 1</div>
+      <p>This portfolio documents our group's design process for the <strong style="color:white">MiRo robot</strong> — a biomimetic, animal-inspired social robot — and how it could be adapted to support student wellbeing for ages 18–24.</p>
+      <div class="hero-infocard-rq">
+        "How can the MiRo robot be expanded upon to help students (ages 18–24) with their overall well-being?"
+      </div>
+    </div>
+  </div>
 </div>
 
-<!-- ABOUT -->
-<div id="about" class="section">
-    <h2>About Me</h2>
-
-    <p><strong>Studies</strong><br>
-    Describe your study program here.</p>
-
-    <p><strong>Hobbies</strong><br>
-    - Robotics<br>
-    - Design<br>
-    - Creative tech</p>
+<!-- Wave transition -->
+<div class="wave">
+  <svg viewBox="0 0 1440 52" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" width="100%" height="52">
+    <path d="M0,0 C480,52 960,0 1440,0 L1440,52 L0,52 Z" fill="#f0f4fb"/>
+  </svg>
 </div>
 
-<!-- PROJECT -->
-<div id="robot" class="section">
-    <h2>Social Robot Design</h2>
 
-    <div class="card">
-        <h3>Case Description</h3>
-        <p>Explain the project context.</p>
+<!-- ╔══════════════════════════════════╗ -->
+<!-- ║           ABOUT                  ║ -->
+<!-- ╚══════════════════════════════════╝ -->
+<section id="about">
+  <div class="container">
+    <p class="section-eyebrow">Personal</p>
+    <h2 class="section-title">About <span>Me</span></h2>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p>Hi! I'm Liz van Ginderen, a student at the University of Twente with a growing interest in the intersection of technology and human experience. This portfolio documents my individual and group work for the course <strong>Social Robot Design</strong>.</p>
+        <p><em>Since humans are getting more and more intertwined with technology every day. I find it crucial to attempt to actively understand and design the role that these products embody in our everyday life, and in what ways this can be done more meaningfully and efficiently.</em></p>
+        <p>I'm fascinated by how robots can be designed to genuinely connect with people and support people in their daily life. Specifically, the domains of healthcare and education spark my interest greatly, which fits perfectly with this project about students and stress.</p>
+      </div>
+      <div class="about-stack reveal reveal-delay-1">
+        <div class="about-card">
+          <div class="about-card-label">Studies</div>
+          <p>I study MSC Interaction Technologies at the University of Twente, but have a great foundation in design through my BSc Industrial Design Engineering at TU Delft.</p>
+        </div>
+        <div class="about-card">
+          <div class="about-card-label">Relevant Hobbies</div>
+          <p> I take great interest in the mix of Engineering and Arts, both in my professional life as well as for my personal enjoyment. I enjoy dance, photography, painting, going to concerts and galleries, as well as video editing, Illustrator, Python, Solidworks and general 3D printing.</p>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
 
-    <div class="card">
-        <h3>Design Tools</h3>
-        <p>Brainstorming, prototyping, etc.</p>
+<hr class="section-divider">
+
+<!-- ╔══════════════════════════════════╗ -->
+<!-- ║        CASE DESCRIPTION          ║ -->
+<!-- ╚══════════════════════════════════╝ -->
+<section id="case">
+  <div class="container">
+    <p class="section-eyebrow">Group Work · Session 1</p>
+    <h2 class="section-title">Case <span>Description</span></h2>
+    <div class="case-grid">
+      <div class="case-text reveal">
+        <p>For this course, our group invented a design case around the question: <strong>how can we check on the wellbeing of students?</strong> After exploring multiple target groups — students aged 18–24, children aged 5–12, and the elderly — we chose to focus on <strong>university students (18–24)</strong> and their overall wellbeing.</p>
+        <p>The platform we're designing for is the <strong>MiRo robot</strong>, a biomimetic animal-inspired robot developed by Consequential Robotics. MiRo can communicate verbally through a built-in speaker and express itself physically through an actuated head, ears, tail, eyes, and locomotion system.</p>
+        <p>Our scenarios range from general wellbeing check-ins using a curated set of wellbeing questions, to guided breathing exercises, study session support, and nudging students to reconnect with friends or family. Each scenario is designed to feel natural, warm, and non-intrusive for a student context.</p>
+        <p>The wellbeing questions we drew on cover dimensions like hydration, sleep, physical activity, social connection, emotional state, and sense of effectiveness — prompting small, actionable self-care steps rather than overwhelming the student.</p>
+      </div>
+      <div class="reveal reveal-delay-1">
+        <div class="case-rq-card">
+          <div class="lbl">Research Question</div>
+          <p class="rq">"How can the MiRo robot be expanded upon to help students (ages 18–24) with their overall well-being?"</p>
+          <div class="lbl">Target Group</div>
+          <p>University students aged 18–24. A group facing unique pressures — academic load, social adjustment, irregular routines — and limited access to consistent wellbeing support.</p>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
 
-    <div class="card">
-        <h3>Mindmap</h3>
-        <img src="images/mindmap.png">
+<hr class="section-divider">
+
+<!-- ╔══════════════════════════════════╗ -->
+<!-- ║          DESIGN TOOLS            ║ -->
+<!-- ╚══════════════════════════════════╝ -->
+<section id="tools">
+  <div class="container">
+    <p class="section-eyebrow">From the User Innovation Toolkit · ugent.be</p>
+    <h2 class="section-title">Design <span>Tools</span></h2>
+    <p class="section-intro">We selected three complementary methods from the User Innovation Toolkit that together let us imagine, visualise, and evaluate how MiRo could interact with students.</p>
+    <div class="tools-grid reveal">
+
+      <div class="tool-card">
+        <div class="tool-emoji">🔭</div>
+        <div class="tool-badge">Future-oriented</div>
+        <div class="tool-name">Scenario Analysis</div>
+        <p class="tool-def">A process that enables you to envision a diversity of futures by distinguishing likely from less likely transitions and identifying the key determinants of each scenario.</p>
+        <p>For our case, scenario analysis lets us walk through concrete futures — a student sits down at their desk, MiRo initiates a check-in, questions are asked and answered. We can inhabit the student's perspective and reason through each moment. We also use it to analyse the situation <em>before</em> MiRo is introduced, making visible what problems actually exist in the student's daily routine.</p>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-emoji">🎬</div>
+        <div class="tool-badge">Narrative &amp; Visual</div>
+        <div class="tool-name">Storyboard</div>
+        <p class="tool-def">A sequence of images that visualises how a persona uses a product or service — grounding abstract ideas in concrete, observable moments.</p>
+        <p>A storyboard brings MiRo to life: a panel showing MiRo's tail wagging as a student answers a question, or the robot guiding a breathing exercise with timed head movements. Where scenario analysis plays through the logic, storyboarding captures the emotion — and communicates our design intent to stakeholders far more vividly than words alone.</p>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-emoji">🗺️</div>
+        <div class="tool-badge">User Experience</div>
+        <div class="tool-name">Experience Map</div>
+        <p class="tool-def">A visualisation of how a user moves through a product or service over time, mapping emotional highs and lows across different touchpoints.</p>
+        <p>Our most revealing application: creating two experience maps of the same scenario — one without MiRo, one with — and placing them side by side. This comparison shows exactly where MiRo adds emotional value and which moments in the student's day deserve the most thoughtful design attention.</p>
+      </div>
+
     </div>
+  </div>
+</section>
 
-    <div class="card">
-        <h3>Building Blocks</h3>
-        <p>Describe system components.</p>
+<hr class="section-divider">
+
+<!-- ╔══════════════════════════════════╗ -->
+<!-- ║            MINDMAP               ║ -->
+<!-- ╚══════════════════════════════════╝ -->
+<section id="mindmap">
+  <div class="container">
+    <p class="section-eyebrow">Problem Space</p>
+    <h2 class="section-title">Mind<span>map</span></h2>
+    <p class="section-intro reveal">A collaborative map of the problem space — covering the dimensions of wellbeing, how it might be detected, the scenarios MiRo can support, and the physical and verbal tools available to the robot.</p>
+    <div class="mindmap-outer reveal">
+      <img src="images/mindmap.png" alt="Mindmap of the MiRo student wellbeing problem space, showing wellbeing dimensions, detection methods, robot scenarios, and interaction channels" loading="lazy">
+      <div class="mindmap-footer">
+        <span>Created collaboratively in draw.io · Session 1</span>
+        <a href="https://app.diagrams.net/#G1eeFvSx3vHInnP5jiU4arC29f5TAV5k38#%7B%22pageId%22%3A%22TXSyG-_VcCZKsoqF0FE8%22%7D" target="_blank" rel="noopener">View interactive version →</a>
+      </div>
     </div>
+  </div>
+</section>
 
-    <div class="card">
-        <h3>Functional Breakdown</h3>
-        <p>Explain system structure.</p>
-    </div>
+<hr class="section-divider">
 
-    <div class="card">
-        <h3>Experimental Approach</h3>
-        <p>How you would test the design.</p>
-    </div>
+<!-- ╔══════════════════════════════════╗ -->
+<!-- ║        BUILDING BLOCKS           ║ -->
+<!-- ╚══════════════════════════════════╝ -->
+<section id="blocks">
+  <div class="container">
+    <p class="section-eyebrow">System Components</p>
+    <h2 class="section-title">Building <span>Blocks</span></h2>
+    <p class="section-intro reveal">MiRo's design is broken into three layers — what the robot <em>does physically</em>, how it <em>behaves in software</em>, and how it <em>looks and feels</em> to the student.</p>
+    <div class="blocks-grid reveal">
 
-    <div class="card">
-        <h3>Pitch / Slides</h3>
-        <p>Add a link to slides.</p>
-    </div>
-
-    <div class="card">
-        <h3>Collaborators</h3>
+      <div class="block-card">
+        <div class="block-icon-wrap hw">⚙️</div>
+        <div class="block-title">Hardware</div>
         <ul>
-            <li>Student Name</li>
-            <li>Student Name</li>
+          <li>Built-in actuated eyes and 3 DoF neck — sufficient for expressive physical communication</li>
+          <li>Additional rear speaker attachment for clearer audio during questions</li>
+          <li>Touch-activated heart rate / physiological sensors for tailored responses</li>
+          <li>Integrated timer module for structuring breathing exercises</li>
+          <li>Expanded actuators for a "dance mode" to lift student mood</li>
         </ul>
-    </div>
+      </div>
 
-</div>
+      <div class="block-card">
+        <div class="block-icon-wrap sw">💻</div>
+        <div class="block-title">Software</div>
+        <ul>
+          <li>Built-in speaker enables MiRo to ask questions and guide scenarios verbally</li>
+          <li>Wizard-of-Oz approach: a human operator can puppeteer speech and physical expressions in real time</li>
+          <li>In principle, all behaviour can be Wizard-of-Oz'd — lowering technical barriers for early-stage testing</li>
+          <li>Scripted dialogue trees for repeatable wellbeing check-in flows</li>
+        </ul>
+      </div>
+
+      <div class="block-card">
+        <div class="block-icon-wrap od">🎨</div>
+        <div class="block-title">Outer Design</div>
+        <ul>
+          <li>Custom accessories — different ears, collars, or clothes — to suit the scenario</li>
+          <li>Study-themed add-ons (e.g. a tiny graduation cap) to contextualise MiRo for university students</li>
+          <li>Playful extras (wings, themed costumes) to make the robot feel approachable, not clinical</li>
+          <li>Design philosophy: warm and expressive, never sterile or intimidating</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ╔══════════════════════════════════╗ -->
+<!-- ║      FUNCTIONAL BREAKDOWN        ║ -->
+<!-- ╚══════════════════════════════════╝ -->
+<section id="functional">
+  <div class="container">
+    <p class="section-eyebrow">System Structure</p>
+    <h2 class="section-title">Functional <span>Breakdown</span></h2>
+    <p class="section-intro reveal">MiRo's functions divide into two core channels — verbal and physical — both serving the overarching goal of detecting and responding to student wellbeing. These feed into a set of concrete scenarios.</p>
+    <div class="functional-grid reveal">
+
+      <div class="func-card">
+        <div class="func-card-title">🗣️ Verbal Communication</div>
+        <div class="func-tags">
+          <span class="func-tag">Asking questions</span>
+          <span class="func-tag">Replying to student</span>
+          <span class="func-tag">Guided exercises</span>
+        </div>
+        <p>MiRo uses its speaker to initiate check-ins, ask targeted wellbeing questions (covering hydration, sleep, activity, mood, and social connection), and guide students through structured scenarios like breathing exercises or study breaks. Dialogue can be Wizard-of-Oz'd or scripted.</p>
+      </div>
+
+      <div class="func-card">
+        <div class="func-card-title">🐾 Physical Expressions</div>
+        <div class="func-tags">
+          <span class="func-tag">Head nodding</span>
+          <span class="func-tag">Tail wagging</span>
+          <span class="func-tag">Ear turning</span>
+          <span class="func-tag">Eye blinking</span>
+          <span class="func-tag">Locomotion</span>
+        </div>
+        <p>MiRo's body language reinforces its verbal channel: nodding to acknowledge a student's response, wagging its tail to express warmth, turning its ears to signal attention, and moving towards the student to create physical presence and a sense of care.</p>
+      </div>
+
+      <div class="func-card">
+        <div class="func-card-title">🧩 Scenarios</div>
+        <div class="func-tags">
+          <span class="func-tag">Overall wellbeing</span>
+          <span class="func-tag">Breathing exercise</span>
+          <span class="func-tag">Study session</span>
+          <span class="func-tag">Call a friend</span>
+        </div>
+        <p>Each scenario defines a specific interaction mode: a general check-in using the wellbeing question list, a structured breathing exercise with timed guidance, a study session break reminder, or a social nudge encouraging the student to call a friend or family member.</p>
+      </div>
+
+      <div class="func-card">
+        <div class="func-card-title">🔍 Detecting Wellbeing</div>
+        <div class="func-tags">
+          <span class="func-tag">Self check-in</span>
+          <span class="func-tag">Health monitoring</span>
+          <span class="func-tag">Checking in on others</span>
+        </div>
+        <p>Wellbeing is detected primarily through conversation — the student self-reports. Optional physiological sensors (heart rate via touch) could add an objective layer. Over time, pattern tracking across check-ins would allow MiRo to surface trends rather than just respond to individual moments.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ╔══════════════════════════════════╗ -->
+<!-- ║      EXPERIMENTAL APPROACH       ║ -->
+<!-- ╚══════════════════════════════════╝ -->
+<section id="experiment">
+  <div class="container">
+    <p class="section-eyebrow">Potential Experimental Approach</p>
+    <h2 class="section-title">Experiment<span>al Design</span></h2>
+    <p class="section-intro reveal">We propose using <strong>theatre exercises</strong> — low-tech, human-enacted simulations — to rapidly test how students respond to MiRo interactions before committing to hardware or software development. A human plays the role of MiRo; students respond naturally.</p>
+    <div class="experiment-stack reveal">
+
+      <div class="experiment-row">
+        <div class="experiment-num">01</div>
+        <div class="experiment-body">
+          <h4>Response to Check-In</h4>
+          <p>A human plays MiRo initiating a basic wellbeing check-in. We observe: do students engage? Feel comfortable? Dismiss it? This establishes a baseline for whether the interaction feels welcome in a student context.</p>
+        </div>
+      </div>
+
+      <div class="experiment-row">
+        <div class="experiment-num">02</div>
+        <div class="experiment-body">
+          <h4>Types of Check-In</h4>
+          <p>Comparing different interaction styles — proactive vs. reactive, gentle vs. direct, routine vs. spontaneous — each enacted and observed. The goal is to find what tone and timing feels most natural and trustworthy for students.</p>
+        </div>
+      </div>
+
+      <div class="experiment-row">
+        <div class="experiment-num">03</div>
+        <div class="experiment-body">
+          <h4>Question Themes</h4>
+          <p>Testing different wellbeing question categories (hydration, sleep, social connection, physical activity, mood) to find which resonate most with students, and which feel irrelevant or too intrusive for a robot to ask.</p>
+        </div>
+      </div>
+
+      <div class="experiment-row">
+        <div class="experiment-num">04</div>
+        <div class="experiment-body">
+          <h4>Prompt Responses &amp; Facial Expression</h4>
+          <p>Recording both verbal answers and facial expressions in response to specific prompts. This gives qualitative emotional data that supplements self-reported responses — capturing reactions students may not consciously articulate.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ╔══════════════════════════════════╗ -->
+<!-- ║         PITCH / SLIDES           ║ -->
+<!-- ╚══════════════════════════════════╝ -->
+<section id="pitch">
+  <div class="container">
+    <p class="section-eyebrow">Presentation</p>
+    <h2 class="section-title">Pitch / <span>Slides</span></h2>
+    <div class="pitch-banner reveal">
+      <div>
+        <h3>Session 1 Pitch Deck</h3>
+        <!-- TODO: Update the description below if needed -->
+        <p>Our group presentation covering the full case, selected design tools, and proposed experimental approach — delivered as part of Session 1 of Social Robot Design.</p>
+      </div>
+      <!-- TODO: Replace # below with your actual slides URL (Google Slides, PDF, etc.) -->
+      <a href="#" class="btn-white">View Slides →</a>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- ╔══════════════════════════════════╗ -->
+<!-- ║             TEAM                 ║ -->
+<!-- ╚══════════════════════════════════╝ -->
+<section id="team">
+  <div class="container">
+    <p class="section-eyebrow">Group Work · Collaborators</p>
+    <h2 class="section-title">The <span>Team</span></h2>
+    <div class="team-grid reveal">
+      <div class="team-card">
+        <div class="team-avatar">A</div>
+        <div class="team-name">Anna Hornman</div>
+        <div class="team-id">s3056600</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">F</div>
+        <div class="team-name">Flim de Jong</div>
+        <div class="team-id">s2829096</div>
+      </div>
+      <div class="team-card me">
+        <div class="team-avatar">L</div>
+        <div class="team-name">Liz van Ginderen</div>
+        <div class="team-id">s27349745</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">O</div>
+        <div class="team-name">Oyindrila Sen Gupta</div>
+        <div class="team-id">s3697762</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">S</div>
+        <div class="team-name">Sarah Mans</div>
+        <div class="team-id">—</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════╗ -->
+<!-- ║            FOOTER                ║ -->
+<!-- ╚══════════════════════════════════╝ -->
+<footer>
+  <p>Liz van Ginderen &nbsp;·&nbsp; Social Robot Design &nbsp;·&nbsp; University of Twente &nbsp;·&nbsp; 2025</p>
+  <p style="margin-top:0.4rem">
+    MiRo robot by <a href="https://www.miro-e.com/welcome" target="_blank" rel="noopener">Consequential Robotics</a>
+    &nbsp;·&nbsp;
+    Design tools from <a href="https://userinnovationtoolkit.ugent.be/#/toolkit" target="_blank" rel="noopener">User Innovation Toolkit (UGent)</a>
+  </p>
+</footer>
+
+
+<script>
+  // ── Scroll reveal ──────────────────────────────
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // ── Mobile nav toggle ──────────────────────────
+  function toggleMenu(btn) {
+    const links = document.querySelector('.nav-links');
+    const open = links.style.display === 'flex';
+    links.style.display = open ? 'none' : 'flex';
+    links.style.flexDirection = 'column';
+    links.style.position = 'absolute';
+    links.style.top = '58px';
+    links.style.right = '0';
+    links.style.background = '#111d36';
+    links.style.padding = '1rem 2rem';
+    links.style.gap = '1rem';
+    links.style.boxShadow = '0 8px 24px rgba(0,0,0,0.3)';
+    if (open) links.removeAttribute('style');
+  }
+
+  // Close mobile nav on link click
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      const links = document.querySelector('.nav-links');
+      if (window.innerWidth <= 860) links.removeAttribute('style');
+    });
+  });
+</script>
 
 </body>
 </html>

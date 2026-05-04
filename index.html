@@ -1,457 +1,1291 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Liz Goldfish</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liz van Ginderen — Social Robot Design Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
+  <style>
+    /* ── TOKENS ───────────────────────────────── */
+    :root {
+      --navy:        #192e52;
+      --navy-deep:   #111d36;
+      --blue:        #2b5ea7;
+      --blue-mid:    #3d74c7;
+      --blue-light:  #91b8e8;
+      --blue-pale:   #e8f0fb;
+      --amber:       #c28a3a;
+      --amber-pale:  #fdf2e2;
+      --bg:          #f0f4fb;
+      --surface:     #ffffff;
+      --text:        #131c2e;
+      --muted:       #4e6080;
+      --border:      #ccd8ef;
+      --radius-sm:   8px;
+      --radius:      16px;
+      --radius-lg:   24px;
+      --shadow:      0 2px 16px rgba(26,46,82,0.09);
+      --shadow-lg:   0 8px 40px rgba(26,46,82,0.16);
+    }
 
-        nav {
-            background: #2c3e50;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+    /* ── RESET ────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Jost', sans-serif;
+      font-weight: 300;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.78;
+      overflow-x: hidden;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
+    /* ── NAV ──────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: var(--navy-deep);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 2.5rem;
+      height: 58px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.22);
+    }
+    .nav-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      letter-spacing: 0.04em;
+      color: white;
+      text-decoration: none;
+      font-weight: 300;
+    }
+    .nav-brand em { font-style: italic; color: var(--blue-light); }
+    .nav-links {
+      display: flex;
+      gap: 1.8rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 400;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: white; }
+    .nav-hamburger { display: none; cursor: pointer; }
+    .nav-hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: white; margin: 4px 0; transition: 0.2s;
+    }
 
-        nav ul li {
-            margin: 0 1.5rem;
-        }
+    /* ── HERO ─────────────────────────────────── */
+    .hero {
+      background: linear-gradient(140deg, var(--navy-deep) 0%, #1f3a6e 55%, #1a3060 100%);
+      padding: 7rem 2.5rem 4.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse at 75% 40%, rgba(43,94,167,0.35) 0%, transparent 60%),
+        radial-gradient(ellipse at 15% 85%, rgba(194,138,58,0.12) 0%, transparent 50%);
+      pointer-events: none;
+    }
+    /* Subtle dot-grid texture */
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(194,138,58,0.18);
+      border: 1px solid rgba(194,138,58,0.42);
+      color: #e0af60;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      padding: 0.32rem 0.9rem;
+      border-radius: 100px;
+      margin-bottom: 1.4rem;
+      font-weight: 400;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #e0af60;
+      flex-shrink: 0;
+    }
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.2rem, 6vw, 5.8rem);
+      font-weight: 300;
+      line-height: 1.02;
+      color: white;
+      margin-bottom: 1.25rem;
+    }
+    .hero-name em {
+      font-style: italic;
+      color: var(--blue-light);
+    }
+    .hero-sub {
+      color: rgba(255,255,255,0.58);
+      font-size: 0.95rem;
+      max-width: 420px;
+      margin-bottom: 2.2rem;
+      line-height: 1.7;
+    }
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+    }
+    .hero-pills a {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.18);
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 0.8rem;
+      padding: 0.42rem 1rem;
+      border-radius: 100px;
+      transition: all 0.2s;
+      letter-spacing: 0.02em;
+    }
+    .hero-pills a:hover {
+      background: rgba(255,255,255,0.18);
+      border-color: rgba(255,255,255,0.35);
+    }
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: color 0.3s;
-        }
+    /* Hero info card */
+    .hero-infocard {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: var(--radius-lg);
+      padding: 2.2rem;
+      backdrop-filter: blur(10px);
+    }
+    .hero-infocard-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--blue-light);
+      margin-bottom: 0.75rem;
+      font-weight: 400;
+    }
+    .hero-infocard p {
+      color: rgba(255,255,255,0.72);
+      font-size: 0.9rem;
+      line-height: 1.72;
+      margin-bottom: 1.4rem;
+    }
+    .hero-infocard-rq {
+      background: rgba(43,94,167,0.28);
+      border-left: 3px solid var(--blue-light);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 1rem 1.2rem;
+      font-style: italic;
+      color: rgba(255,255,255,0.88);
+      font-size: 0.88rem;
+      line-height: 1.68;
+    }
 
-        nav ul li a:hover {
-            color: #3498db;
-        }
+    /* ── SECTIONS ─────────────────────────────── */
+    section {
+      padding: 7rem 2.5rem;
+    }
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .section-eyebrow {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: 0.75rem;
+      font-weight: 400;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.4rem, 4vw, 3.6rem);
+      font-weight: 300;
+      line-height: 1.1;
+      color: var(--navy);
+      margin-bottom: 1.4rem;
+    }
+    .section-title span {
+      font-style: italic;
+      color: var(--blue);
+    }
+    .section-intro {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 3.5rem;
+      max-width: 780px;
+      line-height: 1.82;
+    }
+    .section-divider {
+      border: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border) 50%, transparent);
+      margin: 4rem 0;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+    /* ── REVEAL ANIMATION ──────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+    }
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-        .section {
-            display: none;
-            animation: fadeIn 0.5s;
-        }
+    /* ── TOOL CARDS (SESSION 1) ───────────────── */
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+    .tool-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
+      position: relative;
+      overflow: hidden;
+    }
+    .tool-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 4px;
+      background: linear-gradient(90deg, var(--blue), var(--blue-light));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+    }
+    .tool-card:hover::before {
+      transform: scaleX(1);
+    }
+    .tool-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+      border-color: var(--blue-light);
+    }
+    .tool-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: var(--blue-pale);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.4rem;
+    }
+    .tool-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.7rem;
+    }
+    .tool-desc {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+    }
+    .tool-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+    }
+    .tool-tag {
+      background: var(--blue-pale);
+      color: var(--blue);
+      font-size: 0.72rem;
+      padding: 0.28rem 0.7rem;
+      border-radius: 100px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
+    }
 
-        .section.active {
-            display: block;
-        }
+    /* ── CASE OVERVIEW CARDS ──────────────────── */
+    .case-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
+    }
+    .case-card {
+      background: linear-gradient(135deg, var(--surface) 0%, rgba(145,184,232,0.04) 100%);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      box-shadow: var(--shadow);
+    }
+    .case-card-num {
+      font-size: 2.8rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      color: var(--blue-light);
+      line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .case-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.65rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+    .case-card p {
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 0.94rem;
+    }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+    /* ── FUNCTIONAL BREAKDOWN ──────────────────── */
+    .functional-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+    .func-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      transition: all 0.3s;
+    }
+    .func-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
+    }
+    .func-card-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+    .func-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.2rem;
+    }
+    .func-tag {
+      background: var(--amber-pale);
+      color: var(--amber);
+      font-size: 0.7rem;
+      padding: 0.28rem 0.65rem;
+      border-radius: 100px;
+      font-weight: 400;
+    }
+    .func-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.72;
+    }
 
-        h1 {
-            color: #2c3e50;
-            margin-bottom: 1.5rem;
-            font-size: 2.5rem;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 0.5rem;
-        }
+    /* ── EXPERIMENT APPROACH ───────────────────── */
+    .experiment-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+    .experiment-row {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2rem;
+      align-items: start;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem;
+      transition: all 0.3s;
+    }
+    .experiment-row:hover {
+      box-shadow: var(--shadow);
+      transform: translateX(4px);
+    }
+    .experiment-num {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      font-weight: 300;
+      color: var(--blue-light);
+      line-height: 1;
+      width: 60px;
+      flex-shrink: 0;
+    }
+    .experiment-body h4 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.7rem;
+    }
+    .experiment-body p {
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 0.94rem;
+    }
 
-        h2 {
-            color: #34495e;
-            margin-top: 2rem;
-            margin-bottom: 1rem;
-            font-size: 1.8rem;
-        }
+    /* ── PITCH BANNER ─────────────────────────── */
+    .pitch-banner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2.5rem;
+      background: linear-gradient(135deg, var(--navy) 0%, #1f3a6e 100%);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      color: white;
+    }
+    .pitch-banner h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+    .pitch-banner p {
+      color: rgba(255,255,255,0.72);
+      line-height: 1.7;
+      max-width: 560px;
+    }
+    .btn-white {
+      background: white;
+      color: var(--navy);
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 500;
+      padding: 0.85rem 1.8rem;
+      border-radius: 100px;
+      white-space: nowrap;
+      transition: all 0.2s;
+      letter-spacing: 0.02em;
+    }
+    .btn-white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
 
-        h3 {
-            color: #34495e;
-            margin-top: 1.5rem;
-            margin-bottom: 0.8rem;
-            font-size: 1.3rem;
-        }
+    /* ── TEAM ─────────────────────────────────── */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 2rem;
+    }
+    .team-card {
+      text-align: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem;
+      transition: all 0.3s;
+    }
+    .team-card:hover {
+      box-shadow: var(--shadow);
+      transform: translateY(-4px);
+    }
+    .team-card.me {
+      border-color: var(--amber);
+      background: linear-gradient(135deg, var(--amber-pale) 0%, var(--surface) 100%);
+    }
+    .team-avatar {
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      background: var(--blue-pale);
+      color: var(--blue);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin: 0 auto 1.2rem;
+    }
+    .team-card.me .team-avatar {
+      background: var(--amber-pale);
+      color: var(--amber);
+    }
+    .team-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+    }
+    .team-id {
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
 
-        p {
-            margin-bottom: 1rem;
-        }
+    /* ── SESSION 2 SPECIFIC STYLES ────────────── */
+    .scenario-box {
+      background: linear-gradient(135deg, var(--blue-pale) 0%, rgba(232,240,251,0.5) 100%);
+      border-left: 4px solid var(--blue);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+    .scenario-box h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+    .scenario-box h4 {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-top: 1.5rem;
+      margin-bottom: 0.7rem;
+    }
+    .scenario-box p {
+      color: var(--text);
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+    .scenario-box ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .scenario-box li {
+      color: var(--text);
+      line-height: 1.75;
+      margin-bottom: 0.5rem;
+    }
+    .scenario-box strong {
+      color: var(--navy);
+      font-weight: 500;
+    }
+    .scenario-box em {
+      font-style: italic;
+      color: var(--muted);
+    }
 
-        .subsection {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
+    .tool-template {
+      background: var(--surface);
+      border: 2px solid var(--blue);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin: 2rem 0;
+      font-family: 'Courier New', monospace;
+      font-size: 0.88rem;
+      line-height: 1.8;
+    }
+    .tool-template .character {
+      font-weight: bold;
+      color: var(--navy);
+    }
+    .tool-template .stage-direction {
+      color: var(--muted);
+      font-style: italic;
+    }
+    .tool-template ul {
+      margin-left: 2rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .tool-template li {
+      margin-bottom: 0.4rem;
+    }
 
-        ul {
-            margin-left: 2rem;
-            margin-bottom: 1rem;
-        }
+    .insight-box {
+      background: var(--amber-pale);
+      border-left: 4px solid var(--amber);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .insight-box strong {
+      color: var(--amber);
+      font-weight: 500;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .insight-box p {
+      color: var(--text);
+      line-height: 1.72;
+      font-size: 0.92rem;
+    }
 
-        ul li {
-            margin-bottom: 0.5rem;
-        }
+    .citation {
+      font-size: 0.84rem;
+      color: var(--muted);
+      font-style: italic;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
 
-        .citation {
-            font-size: 0.9rem;
-            color: #666;
-            font-style: italic;
-            margin-top: 0.5rem;
-        }
+    .ref-list {
+      list-style: none;
+      margin-left: 0;
+    }
+    .ref-list li {
+      padding-left: 1.5rem;
+      text-indent: -1.5rem;
+      margin-bottom: 1rem;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.9rem;
+    }
+    .ref-list em {
+      font-style: italic;
+    }
 
-        .scenario-box {
-            background: #e8f4f8;
-            border-left: 4px solid #3498db;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 4px;
-        }
+    /* ── FOOTER ───────────────────────────────── */
+    footer {
+      background: var(--navy-deep);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 3.5rem 2.5rem;
+      font-size: 0.84rem;
+      line-height: 1.9;
+    }
+    footer a {
+      color: var(--blue-light);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    footer a:hover {
+      color: white;
+    }
 
-        .scenario-box h3 {
-            margin-top: 0;
-            color: #2980b9;
-        }
-
-        .tool-template {
-            background: #fff;
-            border: 2px solid #3498db;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 8px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.95rem;
-        }
-
-        .stage-direction {
-            color: #27ae60;
-            font-style: italic;
-        }
-
-        .character {
-            font-weight: bold;
-            color: #8e44ad;
-        }
-
-        code {
-            background: #f4f4f4;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-family: 'Courier New', monospace;
-        }
-
-        a {
-            color: #3498db;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    /* ── RESPONSIVE ───────────────────────────── */
+    @media (max-width: 860px) {
+      .nav-links {
+        display: none;
+      }
+      .nav-hamburger {
+        display: block;
+      }
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .hero {
+        padding: 5rem 1.5rem 3.5rem;
+      }
+      section {
+        padding: 4.5rem 1.5rem;
+      }
+      .case-grid,
+      .functional-grid,
+      .tool-grid {
+        grid-template-columns: 1fr;
+      }
+      .pitch-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2.5rem;
+      }
+      .experiment-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .experiment-num {
+        width: auto;
+      }
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#" onclick="showSection('about')">About Me</a></li>
-            <li><a href="#" onclick="showSection('srd')">Social Robot Design</a></li>
-        </ul>
-    </nav>
 
-    <div class="container">
-        <!-- About Me Section -->
-        <div id="about" class="section active">
-            <h1>About Me</h1>
-            <p>Welcome to my portfolio! This is a general overview of who I am and my work.</p>
-            <p>[Your general about me content here]</p>
+<!-- ╔══════════════════════════════════╗ -->
+<!-- ║            NAVIGATION            ║ -->
+<!-- ╚══════════════════════════════════╝ -->
+<nav>
+  <a href="#top" class="nav-brand">Liz <em>van Ginderen</em></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#session1">Session 1</a></li>
+    <li><a href="#session2">Session 2</a></li>
+    <li><a href="#team">Team</a></li>
+  </ul>
+  <div class="nav-hamburger" onclick="toggleMenu(this)">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
+
+<!-- ╔══════════════════════════════════╗ -->
+<!-- ║              HERO                ║ -->
+<!-- ╚══════════════════════════════════╝ -->
+<section class="hero" id="top">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow">Portfolio</div>
+      <h1 class="hero-name">Social Robot <em>Design</em></h1>
+      <p class="hero-sub">
+        Exploring human-centered design methodologies for social robotics through scenario-based tools, storytelling, and critical reflection.
+      </p>
+      <div class="hero-pills">
+        <a href="#session1">Session 1: Design Tools</a>
+        <a href="#session2">Session 2: Story Building</a>
+        <a href="#team">Collaborators</a>
+      </div>
+    </div>
+    <div class="hero-infocard">
+      <div class="hero-infocard-label">About This Portfolio</div>
+      <p>
+        This portfolio documents my journey through the Social Robot Design course at the University of Twente, where I explored tools and methodologies for designing meaningful human-robot interactions. Each session builds on foundational HRI principles while developing practical design skills.
+      </p>
+      <div class="hero-infocard-rq">
+        The goal is not to build perfect robots, but to develop critical thinking around social robotics through hands-on exploration of design tools and scenario-based approaches.
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════╗ -->
+<!-- ║          ABOUT / INTRO           ║ -->
+<!-- ╚══════════════════════════════════╝ -->
+<section id="about">
+  <div class="container">
+    <p class="section-eyebrow">Course Overview</p>
+    <h2 class="section-title">About <span>Me</span></h2>
+    <p class="section-intro reveal">
+      I'm a student exploring the intersection of design and robotics. This course challenged me to think critically about how we create, communicate, and evaluate social robot designs — moving beyond technical functionality to consider the social, ethical, and experiential dimensions of human-robot interaction.
+    </p>
+    <div class="case-grid reveal">
+      <div class="case-card">
+        <div class="case-card-num">01</div>
+        <h3>Design Tools</h3>
+        <p>Explored various design methodologies and tools for developing social robot concepts, focusing on the MiRo-E robot as a student wellbeing companion.</p>
+      </div>
+      <div class="case-card">
+        <div class="case-card-num">02</div>
+        <h3>Story Building</h3>
+        <p>Developed scenario-based design tools combining scriptwriting and documentary methods to explore both typical and edge-case robot interactions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+
+<!-- ╔══════════════════════════════════╗ -->
+<!-- ║          SESSION 1               ║ -->
+<!-- ╚══════════════════════════════════╝ -->
+<section id="session1">
+  <div class="container">
+    <p class="section-eyebrow">Session 1</p>
+    <h2 class="section-title">Design <span>Tools</span></h2>
+    <p class="section-intro reveal">
+      In Session 1, our team explored various design tools to develop a concept for MiRo-E as a student wellbeing companion. We examined how different methodologies can help us understand user needs, generate ideas, and evaluate design directions.
+    </p>
+
+    <!-- Design Tools -->
+    <div class="tool-grid reveal">
+      <div class="tool-card">
+        <div class="tool-icon">🎭</div>
+        <div class="tool-name">Personas</div>
+        <div class="tool-desc">Created fictional but realistic student profiles representing different wellbeing needs and technology comfort levels to guide design decisions.</div>
+        <div class="tool-tags">
+          <span class="tool-tag">User Research</span>
+          <span class="tool-tag">Empathy</span>
         </div>
+      </div>
 
-        <!-- Social Robot Design Section -->
-        <div id="srd" class="section">
-            <h1>Social Robot Design</h1>
-            
-            <!-- SRD-specific About Me -->
-            <div class="subsection">
-                <h2>About This Project</h2>
-                <p>This section documents my work in the Social Robot Design course, exploring tools and methodologies for designing meaningful human-robot interactions. The course focuses on developing critical thinking around social robotics through hands-on exploration of design tools and scenario-based approaches.</p>
-            </div>
-
-            <!-- Session Navigation -->
-            <div style="background: #34495e; padding: 1rem; border-radius: 8px; margin-bottom: 2rem;">
-                <nav>
-                    <ul style="margin: 0; justify-content: flex-start;">
-                        <li><a href="#" onclick="showSession('session1')" style="color: #ecf0f1;">Session 1: Design Tools</a></li>
-                        <li><a href="#" onclick="showSession('session2')" style="color: #ecf0f1;">Session 2: Story Building</a></li>
-                    </ul>
-                </nav>
-            </div>
-
-            <!-- Session 1 -->
-            <div id="session1" class="session-content">
-                <h2>Session 1: Design Tools</h2>
-                 <div class="subsection">
-                    <h3>Case Description</h3>
-                    <p>For this course, our group invented a design case around the question: <strong>how can we check on the wellbeing of students?</strong> After exploring multiple target groups — students aged 18–24, children aged 5–12, and the elderly — we chose to focus on <strong>university students (18–24)</strong> and their overall wellbeing.</p>
-                    <p>The platform we're designing for is the <strong>MiRo robot</strong>, a biomimetic animal-inspired robot developed by Consequential Robotics. MiRo can communicate verbally through a built-in speaker and express itself physically through an actuated head, ears, tail, eyes, and locomotion system.</p>
-                    <p>Our scenarios range from general wellbeing check-ins using a curated set of wellbeing questions, to guided breathing exercises, study session support, and nudging students to reconnect with friends or family. Each scenario is designed to feel natural, warm, and non-intrusive for a student context.</p>
-                    <p>The wellbeing questions we drew on cover dimensions like hydration, sleep, physical activity, social connection, emotional state, and sense of effectiveness — prompting small, actionable self-care steps rather than overwhelming the student.</p>
-                </div>
-
-                <div class="subsection">
-                    <h3>Research Question</h3>
-                    <p>"How can the MiRo robot be expanded upon to help students (ages 18–24) with their overall well-being?"</p>
-                </div>
-              
-              <div class="subsection">
-                    <h3></h3>
-                    <p></p>
-                </div>
-              
-              <div class="subsection">
-                    <h3>Target Group</h3>
-                    <p>University students aged 18–24. A group facing unique pressures — academic load, social adjustment, irregular routines — and limited access to consistent wellbeing support.</p>
-                </div>
-              
-              <div class="subsection">
-                    <h3>Design Tools</h3>
-                    <p></p>
-                </div>
-
-          
-
-            <!-- Session 2 -->
-            <div id="session2" class="session-content" style="display: none;">
-                <h2>Session 2: Story Building</h2>
-                
-                <div class="subsection">
-                    <h3>Overview</h3>
-                    <p>Session 2 explores the role of storytelling and narrative design in human-robot interaction (HRI). Through scenario-based design methods, we investigated how stories can help us understand, communicate, and critically evaluate robot behaviors and interactions in care settings.</p>
-                </div>
-
-                <div class="subsection">
-                    <h3>Why Storytelling Matters in HRI</h3>
-                    <p>As emphasized in the lecture, storytelling is fundamental to how humans understand and relate to technology. Stories serve multiple purposes in social robot design:</p>
-                    <ul>
-                        <li><strong>Exploration:</strong> Stories help us imagine and test possible futures before building expensive prototypes</li>
-                        <li><strong>Communication:</strong> Scenarios provide a shared language between designers, stakeholders, and users</li>
-                        <li><strong>Critical reflection:</strong> Narratives reveal assumptions and potential problems in our designs</li>
-                        <li><strong>Expectation management:</strong> The stories we tell shape how people perceive and interact with robots</li>
-                    </ul>
-                    <p class="citation">Paepcke & Takayama (2010) demonstrated that setting expectations through narratives significantly influences perceived robot competence—with higher expectations leading to harsher judgments when robots underperform.</p>
-                </div>
-
-                <div class="subsection">
-                    <h3>Our Design Tool: The HRI Office-Script Template</h3>
-                    <p>We developed a hybrid scenario-building tool that combines structured scriptwriting with improvisational documentary-style reflection. This approach was grounded in research on scripting for participatory design and design documentaries.</p>
-                    
-                    <h4>Design Rationale</h4>
-                    <p>Our tool draws inspiration from:</p>
-                    <ul>
-                        <li><strong>Scenario-based design:</strong> Provides structure for exploring robot interactions in context (van der Bijl-Brouwer & van der Voort, 2013)</li>
-                        <li><strong>Documentary film methods:</strong> Allows for capturing multiple perspectives and reflective commentary (Raijmakers et al., 2006)</li>
-                        <li><strong>Improvisational theatre:</strong> Enables exploration of unexpected interactions and emergent behaviors (Dertien et al., 2024)</li>
-                    </ul>
-
-                    <h4>The Template Structure</h4>
-                    <div class="tool-template">
-                        <p><span class="character">Setup:</span></p>
-                        <p class="stage-direction">[Describe the setup of the scenario, where is it, when is it, who is on screen, any important people for the scenario that are off-screen]</p>
-                        
-                        <p><span class="character">Robot [name]:</span></p>
-                        <ul>
-                            <li><strong>Action:</strong> <span class="stage-direction">[Describe the function of the robot. What is it doing?]</span></li>
-                            <li><strong>Intent:</strong> <span class="stage-direction">[Describe the purpose. Why is it doing that?]</span></li>
-                            <li><strong>Emotion:</strong> <span class="stage-direction">[Describe the feeling/emotion behind the action and intent.]</span></li>
-                        </ul>
-
-                        <p><span class="character">[Insert your usergroup]:</span></p>
-                        <ul>
-                            <li><strong>Action:</strong> <span class="stage-direction">[Describe the action of the user. What are they doing?]</span></li>
-                            <li><strong>Intent:</strong> <span class="stage-direction">[Describe the purpose. Why are they doing that?]</span></li>
-                            <li><strong>Emotion:</strong> <span class="stage-direction">[Describe the feeling/emotion behind the action and intent.]</span></li>
-                        </ul>
-
-                        <p><span class="character">OFFICE-Breakout:</span> <span class="stage-direction">[question asked]</span></p>
-                        <p class="stage-direction">[Include a general funny comment or reflection about the scene. It could be mocking the scenario or interaction. It is set up in an interview documentary style as if the character/robot is reflecting on what had just happened.]</p>
-
-                        <p class="stage-direction">[Repeat as necessary]</p>
-                    </div>
-
-                    <h4>Why This Structure Works</h4>
-                    <p>The template addresses specific challenges in HRI design:</p>
-                    <ul>
-                        <li><strong>Separates action, intent, and emotion:</strong> Forces designers to think beyond surface behaviors to underlying motivations</li>
-                        <li><strong>Documentary breakouts:</strong> Provides space for reflection and critical commentary, preventing "rosy stories" that over-promise robot capabilities</li>
-                        <li><strong>Flexibility:</strong> Allows improvisation within structure, capturing unexpected interactions while maintaining focus</li>
-                        <li><strong>Multiple perspectives:</strong> Explicitly includes both human and robot viewpoints</li>
-                    </ul>
-
-                    <p class="citation">References: Raijmakers et al. (2006) "Design documentaries: inspiring design research through documentary film"; Dertien et al. (2024) "Improvisation Theatre as HRI simulation tool"</p>
-                </div>
-
-                <div class="subsection">
-                    <h3>Scenarios: MIRO-E in Study Settings</h3>
-                    <p>We applied our tool to explore interactions with a MIRO-E robot designed to support student wellbeing during study sessions. Two scenarios were developed to explore different aspects of the interaction.</p>
-
-                    <div class="scenario-box">
-                        <h3>Scenario 1: Wellbeing Check-In (Frequent Use)</h3>
-                        <p><strong>Context:</strong> Active classroom with students working on homework. MIRO robot autonomously monitors study patterns and performs wellbeing interventions.</p>
-                        
-                        <p><strong>Setup:</strong> Student has been typing for 40 minutes without a break. MIRO approaches to suggest a breathing exercise.</p>
-
-                        <p><strong>Key Interaction:</strong></p>
-                        <ul>
-                            <li><strong>Robot behavior:</strong> Ears perk forward, light brightens, moves closer in 30-second cycles until acknowledged</li>
-                            <li><strong>Robot intent:</strong> Check in on student wellbeing, offer supportive intervention</li>
-                            <li><strong>Student state:</strong> Focused, stressed, wearing headphones—initially annoyed but ultimately accepting</li>
-                        </ul>
-
-                        <p><strong>Design Tension:</strong> This scenario explores the balance between supportive care and intrusive interruption. When does wellbeing monitoring feel helpful versus controlling?</p>
-
-                        <p><strong>Office-Style Reflection:</strong></p>
-                        <p><em>MIRO:</em> "Well I'm glad the student did a relaxing exercise. It seemed very necessary!"</p>
-                        <p><em>Student:</em> "I feel a lot better now. Wheeew"</p>
-
-                        <p><strong>Insights:</strong> The scenario reveals how robot persistence can be perceived differently depending on student state. The documentary format allowed us to capture the internal conflict—annoyance versus recognition of need—that wouldn't be visible in traditional scenario descriptions.</p>
-                    </div>
-
-                    <div class="scenario-box">
-                        <h3>Scenario 2: Deaf Student (Edge Case)</h3>
-                        <p><strong>Context:</strong> Same classroom setting, but MIRO encounters a deaf student who cannot hear verbal instructions.</p>
-                        
-                        <p><strong>Setup:</strong> MIRO approaches student and attempts verbal communication, which goes unheard. Robot escalates attempts to get attention.</p>
-
-                        <p><strong>Key Interaction:</strong></p>
-                        <ul>
-                            <li><strong>Robot behavior:</strong> Increases volume, adds movement (back and forth), lights, sounds—growing frustration evident in behavior</li>
-                            <li><strong>Robot emotion:</strong> Frustration, confusion at lack of response</li>
-                            <li><strong>Student response:</strong> Eventually looks up, confused by erratic robot behavior with no understanding of intent</li>
-                        </ul>
-
-                        <p><strong>Design Failure:</strong> This scenario exposes a critical accessibility gap—the robot lacks alternative communication modalities and has no way to recognize or adapt to deafness.</p>
-
-                        <p><strong>Office-Style Reflection:</strong></p>
-                        <p><em>Deaf student:</em> "This robot is acting really weird. I have no idea what to think of this."</p>
-
-                        <p><strong>Insights:</strong> Edge cases reveal design assumptions. The robot was designed assuming auditory communication, without fallback strategies. The escalating frustration behavior also raises questions about robot emotion displays—should robots show frustration with users? The scenario makes these issues visceral and memorable rather than abstract.</p>
-
-                        <p class="citation">This reflects warnings from the lecture about technology being "used only and exactly in the way it was intended"—designs must account for diverse users and unexpected contexts.</p>
-                    </div>
-                </div>
-
-                <div class="subsection">
-                    <h3>Evaluation of Our Tool</h3>
-                    
-                    <h4>Strengths</h4>
-                    <ul>
-                        <li><strong>Reveals hidden assumptions:</strong> The structured format forced us to articulate robot emotions and intents we hadn't consciously considered</li>
-                        <li><strong>Balances structure and flexibility:</strong> Template provides consistency while allowing improvisation</li>
-                        <li><strong>Multiple perspectives:</strong> Documentary breakouts capture what characters are thinking, not just what they do</li>
-                        <li><strong>Memorable:</strong> The Office-style format makes scenarios more engaging and easier to discuss with stakeholders</li>
-                        <li><strong>Exposes gaps:</strong> Edge case scenario immediately highlighted accessibility issues we hadn't considered</li>
-                    </ul>
-
-                    <h4>Limitations & Improvements</h4>
-                    <ul>
-                        <li><strong>Still requires interpretation:</strong> Script doesn't capture full physicality—would benefit from video prototyping or theatre simulation</li>
-                        <li><strong>Risk of anthropomorphization:</strong> Assigning emotions to robots might reinforce unrealistic expectations</li>
-                        <li><strong>Needs iteration:</strong> Documentary breakouts could be structured more systematically with specific prompts</li>
-                        <li><strong>Limited validation:</strong> Should be tested with actual students and care workers to validate scenarios</li>
-                    </ul>
-
-                    <h4>Grounding in Literature</h4>
-                    <p>Our tool aligns with established HRI design methods:</p>
-                    <ul>
-                        <li>Follows scenario-based design principles (van der Bijl-Brouwer & van der Voort, 2013) while adding the documentary layer for critical reflection</li>
-                        <li>Addresses the need for HRI-specific tools highlighted in lecture—incorporates robot emotional states and interaction patterns unique to social robotics</li>
-                        <li>Builds on research showing improvisation theatre's value for HRI simulation (Dertien et al., 2024)</li>
-                        <li>Incorporates lessons from science fiction prototyping (Johnson, 2011) about exploring both utopian and dystopian futures</li>
-                    </ul>
-                </div>
-
-                <div class="subsection">
-                    <h3>Key Takeaways</h3>
-                    <p>This session reinforced several critical lessons for social robot design:</p>
-                    
-                    <ol>
-                        <li><strong>Stories shape expectations:</strong> The narratives we create around robots directly influence how people interact with and judge them. We must be careful not to tell "rosy stories" that set up unrealistic expectations.</li>
-                        
-                        <li><strong>Edge cases matter:</strong> The deaf student scenario revealed more about our design assumptions than the typical use case. Critical and speculative scenarios are essential for robust design.</li>
-                        
-                        <li><strong>Tools need tailoring:</strong> Generic scenario methods don't capture HRI-specific concerns like robot emotional expression, expectation management, and the social dynamics of human-robot encounters. We need HRI-specific tools.</li>
-                        
-                        <li><strong>Multiple perspectives are essential:</strong> Understanding both human and robot "viewpoints" (even if the robot's is designed) helps identify interaction breakdowns and design opportunities.</li>
-                        
-                        <li><strong>Storytelling is a design tool, not just communication:</strong> Creating scenarios doesn't just help us explain designs—it actively shapes and improves them by forcing us to think through details we'd otherwise miss.</li>
-                    </ol>
-                </div>
-
-                <div class="subsection">
-                    <h3>References</h3>
-                    <ul style="list-style: none; margin-left: 0;">
-                        <li>Dertien, E., Van Delden, R., & Reidsma, D. (2024). Improvisation Theatre as HRI simulation tool. <em>Proceedings of the 9th International Conference on Movement and Computing</em>, 1-8.</li>
-                        
-                        <li>Johnson, B.D. (2011). <em>Science Fiction Prototyping: Designing the Future with SF</em>. Morgan & Claypool.</li>
-                        
-                        <li>Paepcke, S., & Takayama, L. (2010). Judging a bot by its cover: An experiment on expectation setting for personal robots. <em>Proceedings of the 5th ACM/IEEE International Conference on Human-Robot Interaction (HRI)</em>, 45-52.</li>
-                        
-                        <li>Raijmakers, B., Gaver, W.W., & Bishay, J. (2006). Design documentaries: Inspiring design research through documentary film. <em>Proceedings of the 6th Conference on Designing Interactive Systems</em>, 229-238.</li>
-                        
-                        <li>van der Bijl-Brouwer, M., & van der Voort, M.C. (2013). Exploring future use: scenario based design. In <em>Advanced Design Methods for Successful Innovation</em>.</li>
-                    </ul>
-                </div>
-
-                <div class="subsection">
-                    <h3>Collaborators</h3>
-                    <p>This work was completed as part of a group project. Special thanks to my team members for their contributions to developing and testing the HRI Office-Script template.</p>
-                </div>
-            </div>
+      <div class="tool-card">
+        <div class="tool-icon">🗺️</div>
+        <div class="tool-name">User Journey Map</div>
+        <div class="tool-desc">Mapped the student experience throughout a day, identifying stress points and opportunities for wellbeing interventions.</div>
+        <div class="tool-tags">
+          <span class="tool-tag">Experience Design</span>
+          <span class="tool-tag">Touchpoints</span>
         </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-icon">💭</div>
+        <div class="tool-name">Brainstorming</div>
+        <div class="tool-desc">Generated a wide range of possible robot behaviors and interaction modes without judgment to explore the design space.</div>
+        <div class="tool-tags">
+          <span class="tool-tag">Ideation</span>
+          <span class="tool-tag">Divergent Thinking</span>
+        </div>
+      </div>
+
+      <div class="tool-card">
+        <div class="tool-icon">🎪</div>
+        <div class="tool-name">Theatre Simulation</div>
+        <div class="tool-desc">Used human actors to embody robot behaviors, allowing rapid testing of interaction concepts before technical development.</div>
+        <div class="tool-tags">
+          <span class="tool-tag">Prototyping</span>
+          <span class="tool-tag">Evaluation</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASE OVERVIEW -->
+<section id="case">
+  <div class="container">
+    <p class="section-eyebrow">Our Case Study</p>
+    <h2 class="section-title">MiRo-E Student <span>Wellbeing</span></h2>
+    <p class="section-intro reveal">We developed a concept for MiRo-E as a student wellbeing companion — a robot that checks in on students during study sessions, detects signs of stress or burnout, and offers supportive interventions like breathing exercises or social nudges.</p>
+  </div>
+</section>
+
+<!-- FUNCTIONAL BREAKDOWN -->
+<section id="functional">
+  <div class="container">
+    <p class="section-eyebrow">System Structure</p>
+    <h2 class="section-title">Functional <span>Breakdown</span></h2>
+    <p class="section-intro reveal">MiRo's functions divide into two core channels — verbal and physical — both serving the overarching goal of detecting and responding to student wellbeing. These feed into a set of concrete scenarios.</p>
+    <div class="functional-grid reveal">
+
+      <div class="func-card">
+        <div class="func-card-title">🗣️ Verbal Communication</div>
+        <div class="func-tags">
+          <span class="func-tag">Asking questions</span>
+          <span class="func-tag">Replying to student</span>
+          <span class="func-tag">Guided exercises</span>
+        </div>
+        <p>MiRo uses its speaker to initiate check-ins, ask targeted wellbeing questions (covering hydration, sleep, activity, mood, and social connection), and guide students through structured scenarios like breathing exercises or study breaks. Dialogue can be Wizard-of-Oz'd or scripted.</p>
+      </div>
+
+      <div class="func-card">
+        <div class="func-card-title">🐾 Physical Expressions</div>
+        <div class="func-tags">
+          <span class="func-tag">Head nodding</span>
+          <span class="func-tag">Tail wagging</span>
+          <span class="func-tag">Ear turning</span>
+          <span class="func-tag">Eye blinking</span>
+          <span class="func-tag">Locomotion</span>
+        </div>
+        <p>MiRo's body language reinforces its verbal channel: nodding to acknowledge a student's response, wagging its tail to express warmth, turning its ears to signal attention, and moving towards the student to create physical presence and a sense of care.</p>
+      </div>
+
+      <div class="func-card">
+        <div class="func-card-title">🧩 Scenarios</div>
+        <div class="func-tags">
+          <span class="func-tag">Overall wellbeing</span>
+          <span class="func-tag">Breathing exercise</span>
+          <span class="func-tag">Study session</span>
+          <span class="func-tag">Call a friend</span>
+        </div>
+        <p>Each scenario defines a specific interaction mode: a general check-in using the wellbeing question list, a structured breathing exercise with timed guidance, a study session break reminder, or a social nudge encouraging the student to call a friend or family member.</p>
+      </div>
+
+      <div class="func-card">
+        <div class="func-card-title">🔍 Detecting Wellbeing</div>
+        <div class="func-tags">
+          <span class="func-tag">Self check-in</span>
+          <span class="func-tag">Health monitoring</span>
+          <span class="func-tag">Checking in on others</span>
+        </div>
+        <p>Wellbeing is detected primarily through conversation — the student self-reports. Optional physiological sensors (heart rate via touch) could add an objective layer. Over time, pattern tracking across check-ins would allow MiRo to surface trends rather than just respond to individual moments.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<!-- EXPERIMENTAL APPROACH -->
+<section id="experiment">
+  <div class="container">
+    <p class="section-eyebrow">Potential Experimental Approach</p>
+    <h2 class="section-title">Experiment<span>al Design</span></h2>
+    <p class="section-intro reveal">We propose using <strong>theatre exercises</strong> — low-tech, human-enacted simulations — to rapidly test how students respond to MiRo interactions before committing to hardware or software development. A human plays the role of MiRo; students respond naturally.</p>
+    <div class="experiment-stack reveal">
+
+      <div class="experiment-row">
+        <div class="experiment-num">01</div>
+        <div class="experiment-body">
+          <h4>Response to Check-In</h4>
+          <p>A human plays MiRo initiating a basic wellbeing check-in. We observe: do students engage? Feel comfortable? Dismiss it? This establishes a baseline for whether the interaction feels welcome in a student context.</p>
+        </div>
+      </div>
+
+      <div class="experiment-row">
+        <div class="experiment-num">02</div>
+        <div class="experiment-body">
+          <h4>Types of Check-In</h4>
+          <p>Comparing different interaction styles — proactive vs. reactive, gentle vs. direct, routine vs. spontaneous — each enacted and observed. The goal is to find what tone and timing feels most natural and trustworthy for students.</p>
+        </div>
+      </div>
+
+      <div class="experiment-row">
+        <div class="experiment-num">03</div>
+        <div class="experiment-body">
+          <h4>Question Themes</h4>
+          <p>Testing different wellbeing question categories (hydration, sleep, social connection, physical activity, mood) to find which resonate most with students, and which feel irrelevant or too intrusive for a robot to ask.</p>
+        </div>
+      </div>
+
+      <div class="experiment-row">
+        <div class="experiment-num">04</div>
+        <div class="experiment-body">
+          <h4>Prompt Responses &amp; Facial Expression</h4>
+          <p>Recording both verbal answers and facial expressions in response to specific prompts. This gives qualitative emotional data that supplements self-reported responses — capturing reactions students may not consciously articulate.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+
+<!-- ╔══════════════════════════════════╗ -->
+<!-- ║          SESSION 2               ║ -->
+<!-- ╚══════════════════════════════════╝ -->
+<section id="session2">
+  <div class="container">
+    <p class="section-eyebrow">Session 2</p>
+    <h2 class="section-title">Story <span>Building</span></h2>
+    <p class="section-intro reveal">
+      Session 2 explores the role of storytelling and narrative design in human-robot interaction. Through scenario-based design methods, we investigated how stories can help us understand, communicate, and critically evaluate robot behaviors and interactions in care settings.
+    </p>
+
+    <!-- WHY STORYTELLING MATTERS -->
+    <div class="subsection reveal">
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 600; color: var(--navy); margin-bottom: 1rem;">Why Storytelling Matters in HRI</h3>
+      <p style="color: var(--muted); line-height: 1.75; margin-bottom: 1rem;">As emphasized in the lecture, storytelling is fundamental to how humans understand and relate to technology. Stories serve multiple purposes in social robot design:</p>
+      <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--text); line-height: 1.75;">
+        <li style="margin-bottom: 0.5rem;"><strong>Exploration:</strong> Stories help us imagine and test possible futures before building expensive prototypes</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Communication:</strong> Scenarios provide a shared language between designers, stakeholders, and users</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Critical reflection:</strong> Narratives reveal assumptions and potential problems in our designs</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Expectation management:</strong> The stories we tell shape how people perceive and interact with robots</li>
+      </ul>
+      <p class="citation">Paepcke & Takayama (2010) demonstrated that setting expectations through narratives significantly influences perceived robot competence—with higher expectations leading to harsher judgments when robots underperform.</p>
     </div>
 
-    <script>
-        function showSection(sectionId) {
-            // Hide all main sections
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => section.classList.remove('active'));
-            
-            // Show selected section
-            document.getElementById(sectionId).classList.add('active');
-        }
+    <!-- OUR DESIGN TOOL -->
+    <div class="subsection reveal" style="margin-top: 4rem;">
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 600; color: var(--navy); margin-bottom: 1rem;">Our Design Tool: The HRI Office-Script Template</h3>
+      <p style="color: var(--muted); line-height: 1.75; margin-bottom: 1.5rem;">We developed a hybrid scenario-building tool that combines structured scriptwriting with improvisational documentary-style reflection. This approach was grounded in research on scripting for participatory design and design documentaries.</p>
+      
+      <h4 style="font-size: 1.1rem; font-weight: 500; color: var(--navy); margin-top: 2rem; margin-bottom: 0.8rem;">Design Rationale</h4>
+      <p style="color: var(--muted); line-height: 1.75; margin-bottom: 0.8rem;">Our tool draws inspiration from:</p>
+      <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--text); line-height: 1.75;">
+        <li style="margin-bottom: 0.5rem;"><strong>Scenario-based design:</strong> Provides structure for exploring robot interactions in context (van der Bijl-Brouwer & van der Voort, 2013)</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Documentary film methods:</strong> Allows for capturing multiple perspectives and reflective commentary (Raijmakers et al., 2006)</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Improvisational theatre:</strong> Enables exploration of unexpected interactions and emergent behaviors (Dertien et al., 2024)</li>
+      </ul>
 
-        function showSession(sessionId) {
-            // Hide all session contents
-            const sessions = document.querySelectorAll('.session-content');
-            sessions.forEach(session => session.style.display = 'none');
-            
-            // Show selected session
-            document.getElementById(sessionId).style.display = 'block';
-            
-            // Scroll to top of SRD section
-            document.getElementById('srd').scrollIntoView({ behavior: 'smooth' });
-        }
+      <h4 style="font-size: 1.1rem; font-weight: 500; color: var(--navy); margin-top: 2rem; margin-bottom: 0.8rem;">The Template Structure</h4>
+      <div class="tool-template">
+        <p><span class="character">Setup:</span></p>
+        <p class="stage-direction">[Describe the setup of the scenario, where is it, when is it, who is on screen, any important people for the scenario that are off-screen]</p>
+        
+        <p><span class="character">Robot [name]:</span></p>
+        <ul>
+          <li><strong>Action:</strong> <span class="stage-direction">[Describe the function of the robot. What is it doing?]</span></li>
+          <li><strong>Intent:</strong> <span class="stage-direction">[Describe the purpose. Why is it doing that?]</span></li>
+          <li><strong>Emotion:</strong> <span class="stage-direction">[Describe the feeling/emotion behind the action and intent.]</span></li>
+        </ul>
 
-        // Show Session 1 by default when SRD is opened
-        document.querySelector('a[onclick="showSection(\'srd\')"]').addEventListener('click', function() {
-            setTimeout(() => showSession('session1'), 100);
-        });
-    </script>
+        <p><span class="character">[Insert your usergroup]:</span></p>
+        <ul>
+          <li><strong>Action:</strong> <span class="stage-direction">[Describe the action of the user. What are they doing?]</span></li>
+          <li><strong>Intent:</strong> <span class="stage-direction">[Describe the purpose. Why are they doing that?]</span></li>
+          <li><strong>Emotion:</strong> <span class="stage-direction">[Describe the feeling/emotion behind the action and intent.]</span></li>
+        </ul>
+
+        <p><span class="character">OFFICE-Breakout:</span> <span class="stage-direction">[question asked]</span></p>
+        <p class="stage-direction">[Include a general funny comment or reflection about the scene. It could be mocking the scenario or interaction. It is set up in an interview documentary style as if the character/robot is reflecting on what had just happened.]</p>
+
+        <p class="stage-direction">[Repeat as necessary]</p>
+      </div>
+
+      <h4 style="font-size: 1.1rem; font-weight: 500; color: var(--navy); margin-top: 2rem; margin-bottom: 0.8rem;">Why This Structure Works</h4>
+      <p style="color: var(--muted); line-height: 1.75; margin-bottom: 0.8rem;">The template addresses specific challenges in HRI design:</p>
+      <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--text); line-height: 1.75;">
+        <li style="margin-bottom: 0.5rem;"><strong>Separates action, intent, and emotion:</strong> Forces designers to think beyond surface behaviors to underlying motivations</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Documentary breakouts:</strong> Provides space for reflection and critical commentary, preventing "rosy stories" that over-promise robot capabilities</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Flexibility:</strong> Allows improvisation within structure, capturing unexpected interactions while maintaining focus</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Multiple perspectives:</strong> Explicitly includes both human and robot viewpoints</li>
+      </ul>
+
+      <p class="citation">References: Raijmakers et al. (2006) "Design documentaries: inspiring design research through documentary film"; Dertien et al. (2024) "Improvisation Theatre as HRI simulation tool"</p>
+    </div>
+
+    <!-- SCENARIOS -->
+    <div class="subsection reveal" style="margin-top: 4rem;">
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 600; color: var(--navy); margin-bottom: 1rem;">Scenarios: MIRO-E in Study Settings</h3>
+      <p style="color: var(--muted); line-height: 1.75; margin-bottom: 2rem;">We applied our tool to explore interactions with a MIRO-E robot designed to support student wellbeing during study sessions. Two scenarios were developed to explore different aspects of the interaction.</p>
+
+      <div class="scenario-box">
+        <h3>Scenario 1: Wellbeing Check-In (Frequent Use)</h3>
+        <p><strong>Context:</strong> Active classroom with students working on homework. MIRO robot autonomously monitors study patterns and performs wellbeing interventions.</p>
+        
+        <p><strong>Setup:</strong> Student has been typing for 40 minutes without a break. MIRO approaches to suggest a breathing exercise.</p>
+
+        <h4>Key Interaction:</h4>
+        <ul>
+          <li><strong>Robot behavior:</strong> Ears perk forward, light brightens, moves closer in 30-second cycles until acknowledged</li>
+          <li><strong>Robot intent:</strong> Check in on student wellbeing, offer supportive intervention</li>
+          <li><strong>Student state:</strong> Focused, stressed, wearing headphones—initially annoyed but ultimately accepting</li>
+        </ul>
+
+        <p><strong>Design Tension:</strong> This scenario explores the balance between supportive care and intrusive interruption. When does wellbeing monitoring feel helpful versus controlling?</p>
+
+        <h4>Office-Style Reflection:</h4>
+        <p><em>MIRO:</em> "Well I'm glad the student did a relaxing exercise. It seemed very necessary!"</p>
+        <p><em>Student:</em> "I feel a lot better now. Wheeew"</p>
+
+        <div class="insight-box">
+          <strong>Insights</strong>
+          <p>The scenario reveals how robot persistence can be perceived differently depending on student state. The documentary format allowed us to capture the internal conflict—annoyance versus recognition of need—that wouldn't be visible in traditional scenario descriptions.</p>
+        </div>
+      </div>
+
+      <div class="scenario-box">
+        <h3>Scenario 2: Deaf Student (Edge Case)</h3>
+        <p><strong>Context:</strong> Same classroom setting, but MIRO encounters a deaf student who cannot hear verbal instructions.</p>
+        
+        <p><strong>Setup:</strong> MIRO approaches student and attempts verbal communication, which goes unheard. Robot escalates attempts to get attention.</p>
+
+        <h4>Key Interaction:</h4>
+        <ul>
+          <li><strong>Robot behavior:</strong> Increases volume, adds movement (back and forth), lights, sounds—growing frustration evident in behavior</li>
+          <li><strong>Robot emotion:</strong> Frustration, confusion at lack of response</li>
+          <li><strong>Student response:</strong> Eventually looks up, confused by erratic robot behavior with no understanding of intent</li>
+        </ul>
+
+        <p><strong>Design Failure:</strong> This scenario exposes a critical accessibility gap—the robot lacks alternative communication modalities and has no way to recognize or adapt to deafness.</p>
+
+        <h4>Office-Style Reflection:</h4>
+        <p><em>Deaf student:</em> "This robot is acting really weird. I have no idea what to think of this."</p>
+
+        <div class="insight-box">
+          <strong>Insights</strong>
+          <p>Edge cases reveal design assumptions. The robot was designed assuming auditory communication, without fallback strategies. The escalating frustration behavior also raises questions about robot emotion displays—should robots show frustration with users? The scenario makes these issues visceral and memorable rather than abstract.</p>
+        </div>
+
+        <p class="citation">This reflects warnings from the lecture about technology being "used only and exactly in the way it was intended"—designs must account for diverse users and unexpected contexts.</p>
+      </div>
+    </div>
+
+    <!-- EVALUATION -->
+    <div class="subsection reveal" style="margin-top: 4rem;">
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 600; color: var(--navy); margin-bottom: 1rem;">Evaluation of Our Tool</h3>
+      
+      <h4 style="font-size: 1.1rem; font-weight: 500; color: var(--navy); margin-top: 2rem; margin-bottom: 0.8rem;">Strengths</h4>
+      <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--text); line-height: 1.75;">
+        <li style="margin-bottom: 0.5rem;"><strong>Reveals hidden assumptions:</strong> The structured format forced us to articulate robot emotions and intents we hadn't consciously considered</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Balances structure and flexibility:</strong> Template provides consistency while allowing improvisation</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Multiple perspectives:</strong> Documentary breakouts capture what characters are thinking, not just what they do</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Memorable:</strong> The Office-style format makes scenarios more engaging and easier to discuss with stakeholders</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Exposes gaps:</strong> Edge case scenario immediately highlighted accessibility issues we hadn't considered</li>
+      </ul>
+
+      <h4 style="font-size: 1.1rem; font-weight: 500; color: var(--navy); margin-top: 2rem; margin-bottom: 0.8rem;">Limitations & Improvements</h4>
+      <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--text); line-height: 1.75;">
+        <li style="margin-bottom: 0.5rem;"><strong>Still requires interpretation:</strong> Script doesn't capture full physicality—would benefit from video prototyping or theatre simulation</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Risk of anthropomorphization:</strong> Assigning emotions to robots might reinforce unrealistic expectations</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Needs iteration:</strong> Documentary breakouts could be structured more systematically with specific prompts</li>
+        <li style="margin-bottom: 0.5rem;"><strong>Limited validation:</strong> Should be tested with actual students and care workers to validate scenarios</li>
+      </ul>
+
+      <h4 style="font-size: 1.1rem; font-weight: 500; color: var(--navy); margin-top: 2rem; margin-bottom: 0.8rem;">Grounding in Literature</h4>
+      <p style="color: var(--muted); line-height: 1.75; margin-bottom: 0.8rem;">Our tool aligns with established HRI design methods:</p>
+      <ul style="margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--text); line-height: 1.75;">
+        <li style="margin-bottom: 0.5rem;">Follows scenario-based design principles (van der Bijl-Brouwer & van der Voort, 2013) while adding the documentary layer for critical reflection</li>
+        <li style="margin-bottom: 0.5rem;">Addresses the need for HRI-specific tools highlighted in lecture—incorporates robot emotional states and interaction patterns unique to social robotics</li>
+        <li style="margin-bottom: 0.5rem;">Builds on research showing improvisation theatre's value for HRI simulation (Dertien et al., 2024)</li>
+        <li style="margin-bottom: 0.5rem;">Incorporates lessons from science fiction prototyping (Johnson, 2011) about exploring both utopian and dystopian futures</li>
+      </ul>
+    </div>
+
+    <!-- KEY TAKEAWAYS -->
+    <div class="subsection reveal" style="margin-top: 4rem;">
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 600; color: var(--navy); margin-bottom: 1rem;">Key Takeaways</h3>
+      <p style="color: var(--muted); line-height: 1.75; margin-bottom: 1rem;">This session reinforced several critical lessons for social robot design:</p>
+      
+      <ol style="margin-left: 1.5rem; margin-bottom: 1.5rem; color: var(--text); line-height: 1.75;">
+        <li style="margin-bottom: 1rem;"><strong>Stories shape expectations:</strong> The narratives we create around robots directly influence how people interact with and judge them. We must be careful not to tell "rosy stories" that set up unrealistic expectations.</li>
+        
+        <li style="margin-bottom: 1rem;"><strong>Edge cases matter:</strong> The deaf student scenario revealed more about our design assumptions than the typical use case. Critical and speculative scenarios are essential for robust design.</li>
+        
+        <li style="margin-bottom: 1rem;"><strong>Tools need tailoring:</strong> Generic scenario methods don't capture HRI-specific concerns like robot emotional expression, expectation management, and the social dynamics of human-robot encounters. We need HRI-specific tools.</li>
+        
+        <li style="margin-bottom: 1rem;"><strong>Multiple perspectives are essential:</strong> Understanding both human and robot "viewpoints" (even if the robot's is designed) helps identify interaction breakdowns and design opportunities.</li>
+        
+        <li style="margin-bottom: 1rem;"><strong>Storytelling is a design tool, not just communication:</strong> Creating scenarios doesn't just help us explain designs—it actively shapes and improves them by forcing us to think through details we'd otherwise miss.</li>
+      </ol>
+    </div>
+
+    <!-- REFERENCES -->
+    <div class="subsection reveal" style="margin-top: 4rem;">
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.8rem; font-weight: 600; color: var(--navy); margin-bottom: 1rem;">References</h3>
+      <ul class="ref-list">
+        <li>Dertien, E., Van Delden, R., & Reidsma, D. (2024). Improvisation Theatre as HRI simulation tool. <em>Proceedings of the 9th International Conference on Movement and Computing</em>, 1-8.</li>
+        
+        <li>Johnson, B.D. (2011). <em>Science Fiction Prototyping: Designing the Future with SF</em>. Morgan & Claypool.</li>
+        
+        <li>Paepcke, S., & Takayama, L. (2010). Judging a bot by its cover: An experiment on expectation setting for personal robots. <em>Proceedings of the 5th ACM/IEEE International Conference on Human-Robot Interaction (HRI)</em>, 45-52.</li>
+        
+        <li>Raijmakers, B., Gaver, W.W., & Bishay, J. (2006). Design documentaries: Inspiring design research through documentary film. <em>Proceedings of the 6th Conference on Designing Interactive Systems</em>, 229-238.</li>
+        
+        <li>van der Bijl-Brouwer, M., & van der Voort, M.C. (2013). Exploring future use: scenario based design. In <em>Advanced Design Methods for Successful Innovation</em>.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+
+<!-- ╔══════════════════════════════════╗ -->
+<!-- ║         PITCH / SLIDES           ║ -->
+<!-- ╚══════════════════════════════════╝ -->
+<section id="pitch">
+  <div class="container">
+    <p class="section-eyebrow">Presentation</p>
+    <h2 class="section-title">Pitch / <span>Slides</span></h2>
+    <div class="pitch-banner reveal">
+      <div>
+        <h3>Session 1 Pitch Deck</h3>
+        <p>Our group presentation covering the full case, selected design tools, and proposed experimental approach — delivered as part of Session 1 of Social Robot Design.</p>
+      </div>
+      <a href="#" class="btn-white">View Slides →</a>
+    </div>
+  </div>
+</section>
+
+<hr class="section-divider">
+
+
+<!-- ╔══════════════════════════════════╗ -->
+<!-- ║             TEAM                 ║ -->
+<!-- ╚══════════════════════════════════╝ -->
+<section id="team">
+  <div class="container">
+    <p class="section-eyebrow">Group Work · Collaborators</p>
+    <h2 class="section-title">The <span>Team</span></h2>
+    <div class="team-grid reveal">
+      <div class="team-card">
+        <div class="team-avatar">A</div>
+        <div class="team-name">Anna Hornman</div>
+        <div class="team-id">s3056600</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">F</div>
+        <div class="team-name">Flim de Jong</div>
+        <div class="team-id">s2829096</div>
+      </div>
+      <div class="team-card me">
+        <div class="team-avatar">L</div>
+        <div class="team-name">Liz van Ginderen</div>
+        <div class="team-id">s27349745</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">O</div>
+        <div class="team-name">Oyindrila Sen Gupta</div>
+        <div class="team-id">s3697762</div>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar">S</div>
+        <div class="team-name">Sarah Mans</div>
+        <div class="team-id">s2306379</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ╔══════════════════════════════════╗ -->
+<!-- ║            FOOTER                ║ -->
+<!-- ╚══════════════════════════════════╝ -->
+<footer>
+  <p>Liz van Ginderen &nbsp;·&nbsp; Social Robot Design &nbsp;·&nbsp; University of Twente &nbsp;·&nbsp; 2025</p>
+  <p>This portfolio was vibecoded with the help of Claude Sonnet 4.6. I take full responsibility for the final outcome.</p>
+  <p style="margin-top:0.4rem">
+    MiRo robot by <a href="https://www.miro-e.com/welcome" target="_blank" rel="noopener">Consequential Robotics</a>
+    &nbsp;·&nbsp;
+    Design tools from <a href="https://userinnovationtoolkit.ugent.be/#/toolkit" target="_blank" rel="noopener">User Innovation Toolkit (UGent)</a>
+  </p>
+</footer>
+
+
+<script>
+  // ── Scroll reveal ──────────────────────────────
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // ── Mobile nav toggle ──────────────────────────
+  function toggleMenu(btn) {
+    const links = document.querySelector('.nav-links');
+    const open = links.style.display === 'flex';
+    links.style.display = open ? 'none' : 'flex';
+    links.style.flexDirection = 'column';
+    links.style.position = 'absolute';
+    links.style.top = '58px';
+    links.style.right = '0';
+    links.style.background = '#111d36';
+    links.style.padding = '1rem 2rem';
+    links.style.gap = '1rem';
+    links.style.boxShadow = '0 8px 24px rgba(0,0,0,0.3)';
+    if (open) links.removeAttribute('style');
+  }
+
+  // Close mobile nav on link click
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      const links = document.querySelector('.nav-links');
+      if (window.innerWidth <= 860) links.removeAttribute('style');
+    });
+  });
+</script>
+
 </body>
 </html>

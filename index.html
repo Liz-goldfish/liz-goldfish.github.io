@@ -634,6 +634,166 @@
       .hero { padding: 4.5rem 1.5rem 3rem; }
       .team-card { flex-basis: 140px; }
     }
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+ 
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+ 
+        nav {
+            background: #2c3e50;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+ 
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+ 
+        nav ul li {
+            margin: 0 1.5rem;
+        }
+ 
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s;
+        }
+ 
+        nav ul li a:hover {
+            color: #3498db;
+        }
+ 
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+ 
+        .section {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+ 
+        .section.active {
+            display: block;
+        }
+ 
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+ 
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+ 
+        h2 {
+            color: #34495e;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+ 
+        h3 {
+            color: #34495e;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+ 
+        p {
+            margin-bottom: 1rem;
+        }
+ 
+        .subsection {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+ 
+        ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+ 
+        ul li {
+            margin-bottom: 0.5rem;
+        }
+ 
+        .citation {
+            font-size: 0.9rem;
+            color: #666;
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+ 
+        .scenario-box {
+            background: #e8f4f8;
+            border-left: 4px solid #3498db;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+ 
+        .scenario-box h3 {
+            margin-top: 0;
+            color: #2980b9;
+        }
+ 
+        .tool-template {
+            background: #fff;
+            border: 2px solid #3498db;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.95rem;
+        }
+ 
+        .stage-direction {
+            color: #27ae60;
+            font-style: italic;
+        }
+ 
+        .character {
+            font-weight: bold;
+            color: #8e44ad;
+        }
+ 
+        code {
+            background: #f4f4f4;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+ 
+        a {
+            color: #3498db;
+            text-decoration: none;
+        }
+ 
+        a:hover {
+            text-decoration: underline;
+        }
   </style>
 </head>
 <body>
@@ -776,12 +936,15 @@
     </div>
 
     <!-- SESSION NAV -->
-    <div style="display:flex; gap:1rem; margin-bottom:2rem; flex-wrap:wrap;">
-      <a href="#session1" class="btn-white">Session 1: Design Tools</a>
-      <a href="#session2" class="btn-white">Session 2: Story Building</a>
-      <!-- TODO: ADD NEW SESSIONS HERE -->
+    <div style="background: #34495e; padding: 1rem; border-radius: 8px; margin-bottom: 2rem;">
+        <nav>
+            <ul style="margin: 0; justify-content: flex-start;">
+                <li><a href="#" onclick="showSession('session1')" style="color: #ecf0f1;">Session 1: Design Tools</a></li>
+                <li><a href="#" onclick="showSession('session2')" style="color: #ecf0f1;">Session 2: Story Building</a></li>
+               <!-- TODO: ADD NEW SESSIONS HERE -->
+            </ul>
+        </nav>
     </div>
-
   </div>
 </section>
 
@@ -1058,105 +1221,195 @@
 <!--           SESSION 2               -->
 <!-- ═════════════════════════════════ -->
 
-<section id="session2">
-  <div class="container">
+        <!-- Session 2 -->
+        <div id="session2" class="session-content" style="display: none;">
+            <h2>Session 2: Story Building</h2>
+            
+            <div class="subsection">
+                <h3>Overview</h3>
+                <p>Session 2 explores the role of storytelling and narrative design in human-robot interaction (HRI). Through scenario-based design methods, we investigated how stories can help us understand, communicate, and critically evaluate robot behaviors and interactions in care settings.</p>
+            </div>
 
-    <p class="section-eyebrow">Session 2</p>
-    <h2 class="section-title">Story <span>Building</span></h2>
+            <div class="subsection">
+                <h3>Why Storytelling Matters in HRI</h3>
+                <p>As emphasized in the lecture, storytelling is fundamental to how humans understand and relate to technology. Stories serve multiple purposes in social robot design:</p>
+                <ul>
+                    <li><strong>Exploration:</strong> Stories help us imagine and test possible futures before building expensive prototypes</li>
+                    <li><strong>Communication:</strong> Scenarios provide a shared language between designers, stakeholders, and users</li>
+                    <li><strong>Critical reflection:</strong> Narratives reveal assumptions and potential problems in our designs</li>
+                    <li><strong>Expectation management:</strong> The stories we tell shape how people perceive and interact with robots</li>
+                </ul>
+                <p class="citation">Paepcke & Takayama (2010) demonstrated that setting expectations through narratives significantly influences perceived robot competence—with higher expectations leading to harsher judgments when robots underperform.</p>
+            </div>
 
-    <p class="section-intro">
-      This session explores how storytelling functions as a design tool in human-robot interaction,
-      helping us imagine, communicate, and critically evaluate interaction scenarios.
-    </p>
+            <div class="subsection">
+                <h3>Our Design Tool: The HRI Office-Script Template</h3>
+                <p>We developed a hybrid scenario-building tool that combines structured scriptwriting with improvisational documentary-style reflection. This approach was grounded in research on scripting for participatory design and design documentaries.</p>
+                
+                <h4>Design Rationale</h4>
+                <p>Our tool draws inspiration from:</p>
+                <ul>
+                    <li><strong>Scenario-based design:</strong> Provides structure for exploring robot interactions in context (van der Bijl-Brouwer & van der Voort, 2013)</li>
+                    <li><strong>Documentary film methods:</strong> Allows for capturing multiple perspectives and reflective commentary (Raijmakers et al., 2006)</li>
+                    <li><strong>Improvisational theatre:</strong> Enables exploration of unexpected interactions and emergent behaviors (Dertien et al., 2024)</li>
+                </ul>
 
+                <h4>The Template Structure</h4>
+                <div class="tool-template">
+                    <p><span class="character">Setup:</span></p>
+                    <p class="stage-direction">[Describe the setup of the scenario, where is it, when is it, who is on screen, any important people for the scenario that are off-screen]</p>
+                    
+                    <p><span class="character">Robot [name]:</span></p>
+                    <ul>
+                        <li><strong>Action:</strong> <span class="stage-direction">[Describe the function of the robot. What is it doing?]</span></li>
+                        <li><strong>Intent:</strong> <span class="stage-direction">[Describe the purpose. Why is it doing that?]</span></li>
+                        <li><strong>Emotion:</strong> <span class="stage-direction">[Describe the feeling/emotion behind the action and intent.]</span></li>
+                    </ul>
 
-    <!-- OVERVIEW -->
-    <div class="about-card">
-      <div class="about-card-label">Overview</div>
-      <p>
-        We explored narrative-based design approaches to better understand how robots
-        interact with humans in context, particularly in care and wellbeing settings.
-      </p>
-    </div>
+                    <p><span class="character">[Insert your usergroup]:</span></p>
+                    <ul>
+                        <li><strong>Action:</strong> <span class="stage-direction">[Describe the action of the user. What are they doing?]</span></li>
+                        <li><strong>Intent:</strong> <span class="stage-direction">[Describe the purpose. Why are they doing that?]</span></li>
+                        <li><strong>Emotion:</strong> <span class="stage-direction">[Describe the feeling/emotion behind the action and intent.]</span></li>
+                    </ul>
 
+                    <p><span class="character">OFFICE-Breakout:</span> <span class="stage-direction">[question asked]</span></p>
+                    <p class="stage-direction">[Include a general funny comment or reflection about the scene. It could be mocking the scenario or interaction. It is set up in an interview documentary style as if the character/robot is reflecting on what had just happened.]</p>
 
-    <!-- WHY STORYTELLING -->
-    <div class="about-card">
-      <div class="about-card-label">Why Storytelling Matters</div>
-      <p>
-        Stories help designers explore futures, communicate ideas, reflect critically,
-        and shape expectations around robot behavior.
-      </p>
-    </div>
+                    <p class="stage-direction">[Repeat as necessary]</p>
+                </div>
 
+                <h4>Why This Structure Works</h4>
+                <p>The template addresses specific challenges in HRI design:</p>
+                <ul>
+                    <li><strong>Separates action, intent, and emotion:</strong> Forces designers to think beyond surface behaviors to underlying motivations</li>
+                    <li><strong>Documentary breakouts:</strong> Provides space for reflection and critical commentary, preventing "rosy stories" that over-promise robot capabilities</li>
+                    <li><strong>Flexibility:</strong> Allows improvisation within structure, capturing unexpected interactions while maintaining focus</li>
+                    <li><strong>Multiple perspectives:</strong> Explicitly includes both human and robot viewpoints</li>
+                </ul>
 
-    <!-- TOOL -->
-    <div class="case-grid">
+                <p class="citation">References: Raijmakers et al. (2006) "Design documentaries: inspiring design research through documentary film"; Dertien et al. (2024) "Improvisation Theatre as HRI simulation tool"</p>
+            </div>
 
-      <div class="case-text">
-        <p>
-          We developed a structured storytelling tool combining scripting and documentary reflection.
-        </p>
+            <div class="subsection">
+                <h3>Scenarios: MIRO-E in Study Settings</h3>
+                <p>We applied our tool to explore interactions with a MIRO-E robot designed to support student wellbeing during study sessions. Two scenarios were developed to explore different aspects of the interaction.</p>
 
-        <p>
-          The tool separates <strong>action, intent, and emotion</strong>,
-          allowing deeper understanding of interactions.
-        </p>
-      </div>
+                <div class="scenario-box">
+                    <h3>Scenario 1: Wellbeing Check-In (Frequent Use)</h3>
+                    <p><strong>Context:</strong> Active classroom with students working on homework. MIRO robot autonomously monitors study patterns and performs wellbeing interventions.</p>
+                    
+                    <p><strong>Setup:</strong> Student has been typing for 40 minutes without a break. MIRO approaches to suggest a breathing exercise.</p>
 
-      <div class="case-rq-card">
-        <div class="lbl">Design Tool</div>
-        <p class="rq">HRI Office-Script Template</p>
-        <p>
-          A hybrid storytelling format combining structured scripting with reflective commentary.
-        </p>
-      </div>
+                    <p><strong>Key Interaction:</strong></p>
+                    <ul>
+                        <li><strong>Robot behavior:</strong> Ears perk forward, light brightens, moves closer in 30-second cycles until acknowledged</li>
+                        <li><strong>Robot intent:</strong> Check in on student wellbeing, offer supportive intervention</li>
+                        <li><strong>Student state:</strong> Focused, stressed, wearing headphones—initially annoyed but ultimately accepting</li>
+                    </ul>
 
-    </div>
+                    <p><strong>Design Tension:</strong> This scenario explores the balance between supportive care and intrusive interruption. When does wellbeing monitoring feel helpful versus controlling?</p>
 
+                    <p><strong>Office-Style Reflection:</strong></p>
+                    <p><em>MIRO:</em> "Well I'm glad the student did a relaxing exercise. It seemed very necessary!"</p>
+                    <p><em>Student:</em> "I feel a lot better now. Wheeew"</p>
 
-    <!-- SCENARIOS -->
-    <h3 class="section-title" style="font-size:2rem;">Scenarios</h3>
+                    <p><strong>Insights:</strong> The scenario reveals how robot persistence can be perceived differently depending on student state. The documentary format allowed us to capture the internal conflict—annoyance versus recognition of need—that wouldn't be visible in traditional scenario descriptions.</p>
+                </div>
 
-    <div class="experiment-stack">
+                <div class="scenario-box">
+                    <h3>Scenario 2: Deaf Student (Edge Case)</h3>
+                    <p><strong>Context:</strong> Same classroom setting, but MIRO encounters a deaf student who cannot hear verbal instructions.</p>
+                    
+                    <p><strong>Setup:</strong> MIRO approaches student and attempts verbal communication, which goes unheard. Robot escalates attempts to get attention.</p>
 
-      <div class="experiment-row">
-        <div class="experiment-num">01</div>
-        <div class="experiment-body">
-          <h4>Wellbeing Check-In</h4>
-          <p>
-            Explores how a robot intervenes during study sessions and the tension
-            between helpful support and unwanted interruption.
-          </p>
+                    <p><strong>Key Interaction:</strong></p>
+                    <ul>
+                        <li><strong>Robot behavior:</strong> Increases volume, adds movement (back and forth), lights, sounds—growing frustration evident in behavior</li>
+                        <li><strong>Robot emotion:</strong> Frustration, confusion at lack of response</li>
+                        <li><strong>Student response:</strong> Eventually looks up, confused by erratic robot behavior with no understanding of intent</li>
+                    </ul>
+
+                    <p><strong>Design Failure:</strong> This scenario exposes a critical accessibility gap—the robot lacks alternative communication modalities and has no way to recognize or adapt to deafness.</p>
+
+                    <p><strong>Office-Style Reflection:</strong></p>
+                    <p><em>Deaf student:</em> "This robot is acting really weird. I have no idea what to think of this."</p>
+
+                    <p><strong>Insights:</strong> Edge cases reveal design assumptions. The robot was designed assuming auditory communication, without fallback strategies. The escalating frustration behavior also raises questions about robot emotion displays—should robots show frustration with users? The scenario makes these issues visceral and memorable rather than abstract.</p>
+
+                    <p class="citation">This reflects warnings from the lecture about technology being "used only and exactly in the way it was intended"—designs must account for diverse users and unexpected contexts.</p>
+                </div>
+            </div>
+
+            <div class="subsection">
+                <h3>Evaluation of Our Tool</h3>
+                
+                <h4>Strengths</h4>
+                <ul>
+                    <li><strong>Reveals hidden assumptions:</strong> The structured format forced us to articulate robot emotions and intents we hadn't consciously considered</li>
+                    <li><strong>Balances structure and flexibility:</strong> Template provides consistency while allowing improvisation</li>
+                    <li><strong>Multiple perspectives:</strong> Documentary breakouts capture what characters are thinking, not just what they do</li>
+                    <li><strong>Memorable:</strong> The Office-style format makes scenarios more engaging and easier to discuss with stakeholders</li>
+                    <li><strong>Exposes gaps:</strong> Edge case scenario immediately highlighted accessibility issues we hadn't considered</li>
+                </ul>
+
+                <h4>Limitations & Improvements</h4>
+                <ul>
+                    <li><strong>Still requires interpretation:</strong> Script doesn't capture full physicality—would benefit from video prototyping or theatre simulation</li>
+                    <li><strong>Risk of anthropomorphization:</strong> Assigning emotions to robots might reinforce unrealistic expectations</li>
+                    <li><strong>Needs iteration:</strong> Documentary breakouts could be structured more systematically with specific prompts</li>
+                    <li><strong>Limited validation:</strong> Should be tested with actual students and care workers to validate scenarios</li>
+                </ul>
+
+                <h4>Grounding in Literature</h4>
+                <p>Our tool aligns with established HRI design methods:</p>
+                <ul>
+                    <li>Follows scenario-based design principles (van der Bijl-Brouwer & van der Voort, 2013) while adding the documentary layer for critical reflection</li>
+                    <li>Addresses the need for HRI-specific tools highlighted in lecture—incorporates robot emotional states and interaction patterns unique to social robotics</li>
+                    <li>Builds on research showing improvisation theatre's value for HRI simulation (Dertien et al., 2024)</li>
+                    <li>Incorporates lessons from science fiction prototyping (Johnson, 2011) about exploring both utopian and dystopian futures</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>Key Takeaways</h3>
+                <p>This session reinforced several critical lessons for social robot design:</p>
+                
+                <ol>
+                    <li><strong>Stories shape expectations:</strong> The narratives we create around robots directly influence how people interact with and judge them. We must be careful not to tell "rosy stories" that set up unrealistic expectations.</li>
+                    
+                    <li><strong>Edge cases matter:</strong> The deaf student scenario revealed more about our design assumptions than the typical use case. Critical and speculative scenarios are essential for robust design.</li>
+                    
+                    <li><strong>Tools need tailoring:</strong> Generic scenario methods don't capture HRI-specific concerns like robot emotional expression, expectation management, and the social dynamics of human-robot encounters. We need HRI-specific tools.</li>
+                    
+                    <li><strong>Multiple perspectives are essential:</strong> Understanding both human and robot "viewpoints" (even if the robot's is designed) helps identify interaction breakdowns and design opportunities.</li>
+                    
+                    <li><strong>Storytelling is a design tool, not just communication:</strong> Creating scenarios doesn't just help us explain designs—it actively shapes and improves them by forcing us to think through details we'd otherwise miss.</li>
+                </ol>
+            </div>
+
+            <div class="subsection">
+                <h3>References</h3>
+                <ul style="list-style: none; margin-left: 0;">
+                    <li>Dertien, E., Van Delden, R., & Reidsma, D. (2024). Improvisation Theatre as HRI simulation tool. <em>Proceedings of the 9th International Conference on Movement and Computing</em>, 1-8.</li>
+                    
+                    <li>Johnson, B.D. (2011). <em>Science Fiction Prototyping: Designing the Future with SF</em>. Morgan & Claypool.</li>
+                    
+                    <li>Paepcke, S., & Takayama, L. (2010). Judging a bot by its cover: An experiment on expectation setting for personal robots. <em>Proceedings of the 5th ACM/IEEE International Conference on Human-Robot Interaction (HRI)</em>, 45-52.</li>
+                    
+                    <li>Raijmakers, B., Gaver, W.W., & Bishay, J. (2006). Design documentaries: Inspiring design research through documentary film. <em>Proceedings of the 6th Conference on Designing Interactive Systems</em>, 229-238.</li>
+                    
+                    <li>van der Bijl-Brouwer, M., & van der Voort, M.C. (2013). Exploring future use: scenario based design. In <em>Advanced Design Methods for Successful Innovation</em>.</li>
+                </ul>
+            </div>
+
+            <div class="subsection">
+                <h3>Collaborators</h3>
+                <p>This work was completed as part of a group project. Special thanks to my team members for their contributions to developing and testing the HRI Office-Script template.</p>
+            </div>
         </div>
-      </div>
-
-      <div class="experiment-row">
-        <div class="experiment-num">02</div>
-        <div class="experiment-body">
-          <h4>Deaf Student (Edge Case)</h4>
-          <p>
-            Reveals accessibility issues and highlights assumptions in robot design,
-            especially around communication modalities.
-          </p>
-        </div>
-      </div>
-
     </div>
-
-
-    <!-- TAKEAWAYS -->
-    <div class="about-card" style="margin-top:2rem;">
-      <div class="about-card-label">Key Takeaways</div>
-      <p>
-        Storytelling is not just communication — it is a design tool that reveals assumptions,
-        exposes edge cases, and improves interaction design.
-      </p>
-    </div>
-
-
-  </div>
-</section>
+</div>
 
 
 
@@ -1175,6 +1428,32 @@
 
 
 <script>
+  function showSection(sectionId) {
+      // Hide all main sections
+      const sections = document.querySelectorAll('.section');
+      sections.forEach(section => section.classList.remove('active'));
+      
+      // Show selected section
+      document.getElementById(sectionId).classList.add('active');
+  }
+
+  function showSession(sessionId) {
+      // Hide all session contents
+      const sessions = document.querySelectorAll('.session-content');
+      sessions.forEach(session => session.style.display = 'none');
+      
+      // Show selected session
+      document.getElementById(sessionId).style.display = 'block';
+      
+      // Scroll to top of SRD section
+      document.getElementById('srd').scrollIntoView({ behavior: 'smooth' });
+  }
+
+  // Show Session 1 by default when SRD is opened
+  document.querySelector('a[onclick="showSection(\'srd\')"]').addEventListener('click', function() {
+      setTimeout(() => showSession('session1'), 100);
+  });
+  
   // ── Scroll reveal ──────────────────────────────
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });

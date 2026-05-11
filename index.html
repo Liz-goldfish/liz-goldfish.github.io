@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Liz van Ginderen</title>
+  <title>Liz van Ginderen - Portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,300;1,600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-
+ 
   <style>
     /* ── TOKENS ───────────────────────────────── */
     :root {
@@ -30,7 +30,7 @@
       --shadow:      0 2px 16px rgba(26,46,82,0.09);
       --shadow-lg:   0 8px 40px rgba(26,46,82,0.16);
     }
-
+ 
     /* ── RESET ────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -44,7 +44,7 @@
     }
     img { max-width: 100%; display: block; }
     a { color: inherit; }
-
+ 
     /* ── NAV ──────────────────────────────────── */
     nav {
       position: sticky;
@@ -87,7 +87,7 @@
       display: block; width: 22px; height: 2px;
       background: white; margin: 4px 0; transition: 0.2s;
     }
-
+ 
     /* ── HERO ─────────────────────────────────── */
     .hero {
       background: linear-gradient(140deg, var(--navy-deep) 0%, #1f3a6e 55%, #1a3060 100%);
@@ -184,7 +184,7 @@
       background: rgba(255,255,255,0.18);
       border-color: rgba(255,255,255,0.35);
     }
-
+ 
     /* Hero info card */
     .hero-infocard {
       background: rgba(255,255,255,0.06);
@@ -215,429 +215,580 @@
       font-style: italic;
       color: rgba(255,255,255,0.88);
       font-size: 0.88rem;
-      line-height: 1.65;
+      line-height: 1.68;
     }
-
-    /* ── WAVE ─────────────────────────────────── */
-    .wave {
-      display: block;
-      background: var(--navy-deep);
-      line-height: 0;
-      margin-top: -1px;
+ 
+    /* ── SECTIONS ─────────────────────────────── */
+    section {
+      padding: 7rem 2.5rem;
     }
-    .wave svg { display: block; }
-
-    /* ── LAYOUT HELPERS ──────────────────────── */
     .container {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 0 2.5rem;
     }
-    section { padding: 5.5rem 0; }
-    .section-divider { border: none; border-top: 1px solid var(--border); }
     .section-eyebrow {
       font-size: 0.7rem;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
-      color: var(--blue);
-      font-weight: 500;
-      margin-bottom: 0.5rem;
+      color: var(--amber);
+      margin-bottom: 0.75rem;
+      font-weight: 400;
     }
     .section-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2rem, 4vw, 3rem);
-      font-weight: 600;
-      line-height: 1.12;
+      font-size: clamp(2.4rem, 4vw, 3.6rem);
+      font-weight: 300;
+      line-height: 1.1;
       color: var(--navy);
-      margin-bottom: 2.5rem;
+      margin-bottom: 1.4rem;
     }
-    .section-title span { color: var(--blue); }
-    .section-intro {
-      color: var(--muted);
-      max-width: 580px;
-      margin-bottom: 2.5rem;
-      font-size: 0.96rem;
-    }
-
-    /* ── ABOUT ────────────────────────────────── */
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 3.5rem;
-      align-items: start;
-    }
-    .about-text p { color: var(--muted); margin-bottom: 1rem; font-size: 0.95rem; }
-    .about-text strong { color: var(--text); font-weight: 500; }
-    .about-stack { display: flex; flex-direction: column; gap: 1rem; }
-    .about-card {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      box-shadow: var(--shadow);
-    }
-    .about-card-label {
-      font-size: 0.7rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--blue);
-      font-weight: 500;
-      margin-bottom: 0.5rem;
-    }
-    .about-card p { color: var(--muted); font-size: 0.9rem; }
-
-    /* ── CASE ─────────────────────────────────── */
-    .case-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem;
-      align-items: start;
-    }
-    .case-text p { color: var(--muted); margin-bottom: 1rem; font-size: 0.95rem; }
-    .case-text strong { color: var(--text); font-weight: 500; }
-    .case-rq-card {
-      background: var(--navy);
-      border-radius: var(--radius-lg);
-      padding: 2.2rem;
-    }
-    .case-rq-card .lbl {
-      font-size: 0.7rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--blue-light);
-      font-weight: 400;
-      margin-bottom: 0.7rem;
-    }
-    .case-rq-card .rq {
+    .section-title span {
       font-style: italic;
-      color: rgba(255,255,255,0.88);
-      font-size: 1rem;
-      line-height: 1.68;
-      margin-bottom: 1.6rem;
+      color: var(--blue);
     }
-    .case-rq-card p { color: rgba(255,255,255,0.6); font-size: 0.88rem; }
-
-    /* ── TOOLS ────────────────────────────────── */
-    .tools-grid {
+    .section-intro {
+      font-size: 1.05rem;
+      color: var(--muted);
+      margin-bottom: 3.5rem;
+      max-width: 780px;
+      line-height: 1.82;
+    }
+    .section-divider {
+      border: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border) 50%, transparent);
+      margin: 4rem 0;
+    }
+ 
+    /* ── REVEAL ANIMATION ──────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+    }
+    .reveal.in {
+      opacity: 1;
+      transform: translateY(0);
+    }
+ 
+    /* ── TOOL CARDS (SESSION 1) ───────────────── */
+    .tool-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
     }
     .tool-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 2rem;
-      box-shadow: var(--shadow);
-      transition: transform 0.22s, box-shadow 0.22s;
+      transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
       position: relative;
       overflow: hidden;
     }
     .tool-card::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 4px;
-      border-radius: var(--radius) var(--radius) 0 0;
+      top: 0; left: 0;
+      width: 100%; height: 4px;
+      background: linear-gradient(90deg, var(--blue), var(--blue-light));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
     }
-    .tool-card:nth-child(1)::before { background: var(--blue); }
-    .tool-card:nth-child(2)::before { background: var(--amber); }
-    .tool-card:nth-child(3)::before { background: #3a8c6a; }
-    .tool-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
-    .tool-emoji { font-size: 2rem; margin-bottom: 0.9rem; }
-    .tool-badge {
-      display: inline-block;
+    .tool-card:hover::before {
+      transform: scaleX(1);
+    }
+    .tool-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+      border-color: var(--blue-light);
+    }
+    .tool-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
       background: var(--blue-pale);
-      color: var(--blue);
-      font-size: 0.7rem;
-      padding: 0.2rem 0.65rem;
-      border-radius: 100px;
-      letter-spacing: 0.06em;
-      font-weight: 500;
-      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1.4rem;
     }
-    .tool-card:nth-child(2) .tool-badge { background: var(--amber-pale); color: #7a5520; }
-    .tool-card:nth-child(3) .tool-badge { background: #eaf5ef; color: #2a6645; }
     .tool-name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.45rem;
+      font-size: 1.5rem;
       font-weight: 600;
       color: var(--navy);
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.7rem;
     }
-    .tool-def {
+    .tool-desc {
       color: var(--muted);
-      font-size: 0.86rem;
-      font-style: italic;
-      margin-bottom: 0.9rem;
-      padding-bottom: 0.9rem;
-      border-bottom: 1px solid var(--border);
-      line-height: 1.65;
+      font-size: 0.92rem;
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
     }
-    .tool-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.72; }
-
-    /* ── MINDMAP ──────────────────────────────── */
-    .mindmap-outer {
-      background: #0e1524;
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      box-shadow: var(--shadow-lg);
-    }
-    .mindmap-outer img { width: 100%; }
-    .mindmap-footer {
-      background: var(--navy-deep);
-      padding: 0.9rem 1.6rem;
+    .tool-tags {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
+      flex-wrap: wrap;
+      gap: 0.45rem;
     }
-    .mindmap-footer span { color: rgba(255,255,255,0.45); font-size: 0.8rem; }
-    .mindmap-footer a {
-      color: var(--blue-light);
-      text-decoration: none;
-      font-size: 0.8rem;
-      white-space: nowrap;
-      transition: color 0.2s;
+    .tool-tag {
+      background: var(--blue-pale);
+      color: var(--blue);
+      font-size: 0.72rem;
+      padding: 0.28rem 0.7rem;
+      border-radius: 100px;
+      font-weight: 400;
+      letter-spacing: 0.02em;
     }
-    .mindmap-footer a:hover { color: white; }
-
-    /* ── BUILDING BLOCKS ──────────────────────── */
-    .blocks-grid {
+ 
+    /* ── CASE OVERVIEW CARDS ──────────────────── */
+    .case-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2.5rem;
     }
-    .block-card {
-      background: var(--surface);
+    .case-card {
+      background: linear-gradient(135deg, var(--surface) 0%, rgba(145,184,232,0.04) 100%);
       border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 2rem;
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
       box-shadow: var(--shadow);
     }
-    .block-icon-wrap {
-      width: 46px; height: 46px;
-      border-radius: 12px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.3rem;
-      margin-bottom: 1.25rem;
+    .case-card-num {
+      font-size: 2.8rem;
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      color: var(--blue-light);
+      line-height: 1;
+      margin-bottom: 1rem;
     }
-    .block-icon-wrap.hw { background: var(--blue-pale); }
-    .block-icon-wrap.sw { background: var(--amber-pale); }
-    .block-icon-wrap.od { background: #eaf5ef; }
-    .block-title { font-weight: 500; font-size: 1rem; color: var(--navy); margin-bottom: 0.9rem; }
-    .block-card ul { list-style: none; }
-    .block-card ul li {
+    .case-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.65rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+    .case-card p {
       color: var(--muted);
-      font-size: 0.87rem;
-      padding: 0.38rem 0;
-      border-bottom: 1px solid var(--blue-pale);
-      display: flex; gap: 0.55rem; align-items: flex-start;
+      line-height: 1.75;
+      font-size: 0.94rem;
     }
-    .block-card ul li:last-child { border-bottom: none; }
-    .block-card ul li::before {
-      content: '→';
-      color: var(--blue);
-      font-size: 0.78rem;
-      margin-top: 0.15rem;
-      flex-shrink: 0;
-    }
-
-    /* ── FUNCTIONAL BREAKDOWN ─────────────────── */
+ 
+    /* ── FUNCTIONAL BREAKDOWN ──────────────────── */
     .functional-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
     }
     .func-card {
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
       padding: 2rem;
-      box-shadow: var(--shadow);
+      transition: all 0.3s;
+    }
+    .func-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-2px);
     }
     .func-card-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       font-weight: 600;
       color: var(--navy);
-      margin-bottom: 0.9rem;
-      display: flex; align-items: center; gap: 0.55rem;
-    }
-    .func-tags {
-      display: flex; flex-wrap: wrap; gap: 0.45rem;
       margin-bottom: 1rem;
     }
-    .func-tag {
-      background: var(--blue-pale);
-      color: var(--blue);
-      border: 1px solid var(--border);
-      font-size: 0.72rem;
-      padding: 0.2rem 0.65rem;
-      border-radius: 100px;
+    .func-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-bottom: 1.2rem;
     }
-    .func-card p { color: var(--muted); font-size: 0.9rem; line-height: 1.72; }
-
-    /* ── EXPERIMENT ───────────────────────────── */
-    .experiment-stack { display: flex; flex-direction: column; gap: 1.1rem; }
+    .func-tag {
+      background: var(--amber-pale);
+      color: var(--amber);
+      font-size: 0.7rem;
+      padding: 0.28rem 0.65rem;
+      border-radius: 100px;
+      font-weight: 400;
+    }
+    .func-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.72;
+    }
+ 
+    /* ── EXPERIMENT APPROACH ───────────────────── */
+    .experiment-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
     .experiment-row {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2rem;
+      align-items: start;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 1.6rem 2rem;
-      box-shadow: var(--shadow);
-      display: flex;
-      align-items: flex-start;
-      gap: 1.8rem;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      padding: 2rem;
+      transition: all 0.3s;
     }
     .experiment-row:hover {
-      border-color: var(--blue-light);
-      box-shadow: var(--shadow-lg);
+      box-shadow: var(--shadow);
+      transform: translateX(4px);
     }
     .experiment-num {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2.8rem;
-      font-weight: 600;
-      color: var(--border);
+      font-size: 3rem;
+      font-weight: 300;
+      color: var(--blue-light);
       line-height: 1;
-      min-width: 2.4rem;
-      user-select: none;
+      width: 60px;
+      flex-shrink: 0;
     }
     .experiment-body h4 {
-      font-weight: 500;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      font-weight: 600;
       color: var(--navy);
-      margin-bottom: 0.4rem;
-      font-size: 1rem;
+      margin-bottom: 0.7rem;
     }
-    .experiment-body p { color: var(--muted); font-size: 0.9rem; }
-
-    /* ── PITCH ────────────────────────────────── */
+    .experiment-body p {
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 0.94rem;
+    }
+ 
+    /* ── PITCH BANNER ─────────────────────────── */
     .pitch-banner {
-      background: linear-gradient(130deg, var(--navy-deep), #243d72);
-      border-radius: var(--radius-lg);
-      padding: 3rem 3.5rem;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 2rem;
-      box-shadow: var(--shadow-lg);
+      align-items: center;
+      gap: 2.5rem;
+      background: linear-gradient(135deg, var(--navy) 0%, #1f3a6e 100%);
+      border-radius: var(--radius-lg);
+      padding: 3rem;
+      color: white;
     }
     .pitch-banner h3 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 2.1rem;
-      font-weight: 300;
-      color: white;
-      margin-bottom: 0.4rem;
+      font-size: 2rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
     }
-    .pitch-banner p { color: rgba(255,255,255,0.5); font-size: 0.88rem; }
+    .pitch-banner p {
+      color: rgba(255,255,255,0.72);
+      line-height: 1.7;
+      max-width: 560px;
+    }
     .btn-white {
-      display: inline-block;
       background: white;
       color: var(--navy);
       text-decoration: none;
-      padding: 0.8rem 2rem;
-      border-radius: 100px;
-      font-weight: 500;
       font-size: 0.88rem;
+      font-weight: 500;
+      padding: 0.85rem 1.8rem;
+      border-radius: 100px;
       white-space: nowrap;
-      transition: all 0.22s;
-      flex-shrink: 0;
+      transition: all 0.2s;
+      letter-spacing: 0.02em;
     }
-    .btn-white:hover { background: var(--blue-light); color: var(--navy-deep); }
-
+    .btn-white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+ 
     /* ── TEAM ─────────────────────────────────── */
     .team-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.25rem;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 2rem;
     }
     .team-card {
+      text-align: center;
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 1.6rem 1.4rem;
-      text-align: center;
-      box-shadow: var(--shadow);
-      flex: 1 1 160px;
-      max-width: 200px;
-      transition: transform 0.2s, box-shadow 0.2s;
+      padding: 2rem 1.5rem;
+      transition: all 0.3s;
     }
-    .team-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .team-card:hover {
+      box-shadow: var(--shadow);
+      transform: translateY(-4px);
+    }
     .team-card.me {
-      border-color: var(--blue);
-      box-shadow: 0 0 0 3px var(--blue-pale);
+      border-color: var(--amber);
+      background: linear-gradient(135deg, var(--amber-pale) 0%, var(--surface) 100%);
     }
     .team-avatar {
-      width: 54px; height: 54px;
+      width: 68px;
+      height: 68px;
       border-radius: 50%;
       background: var(--blue-pale);
       color: var(--blue);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.8rem;
       font-weight: 600;
-      display: flex; align-items: center; justify-content: center;
-      margin: 0 auto 0.8rem;
+      margin: 0 auto 1.2rem;
     }
-    .team-card.me .team-avatar { background: var(--blue); color: white; }
-    .team-name { font-weight: 500; font-size: 0.9rem; color: var(--navy); margin-bottom: 0.2rem; }
-    .team-id { font-size: 0.74rem; color: var(--muted); letter-spacing: 0.03em; }
-
+    .team-card.me .team-avatar {
+      background: var(--amber-pale);
+      color: var(--amber);
+    }
+    .team-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+    }
+    .team-id {
+      font-size: 0.78rem;
+      color: var(--muted);
+      letter-spacing: 0.02em;
+    }
+ 
+    /* ── SESSION 2 SPECIFIC STYLES ────────────── */
+    .s2-section-spacing {
+      margin-top: 4rem;
+    }
+    
+    .s2-subsection h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+    
+    .s2-subsection h4 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--navy);
+      margin-top: 2rem;
+      margin-bottom: 0.8rem;
+    }
+    
+    .s2-subsection p {
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+    
+    .s2-subsection ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--text);
+      line-height: 1.75;
+    }
+    
+    .s2-subsection li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .s2-subsection strong {
+      color: var(--navy);
+      font-weight: 500;
+    }
+    
+    .s2-subsection ol {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+      color: var(--text);
+      line-height: 1.75;
+    }
+    
+    .s2-subsection ol li {
+      margin-bottom: 1rem;
+    }
+ 
+    .scenario-box {
+      background: linear-gradient(135deg, var(--blue-pale) 0%, rgba(232,240,251,0.5) 100%);
+      border-left: 4px solid var(--blue);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 2rem;
+      margin: 2rem 0;
+    }
+    .scenario-box h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 1rem;
+    }
+    .scenario-box h4 {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-top: 1.5rem;
+      margin-bottom: 0.7rem;
+    }
+    .scenario-box p {
+      color: var(--text);
+      line-height: 1.75;
+      margin-bottom: 1rem;
+    }
+    .scenario-box ul {
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .scenario-box li {
+      color: var(--text);
+      line-height: 1.75;
+      margin-bottom: 0.5rem;
+    }
+    .scenario-box strong {
+      color: var(--navy);
+      font-weight: 500;
+    }
+    .scenario-box em {
+      font-style: italic;
+      color: var(--muted);
+    }
+ 
+    .tool-template {
+      background: var(--surface);
+      border: 2px solid var(--blue);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin: 2rem 0;
+      font-family: 'Courier New', monospace;
+      font-size: 0.88rem;
+      line-height: 1.8;
+    }
+    .tool-template .character {
+      font-weight: bold;
+      color: var(--navy);
+    }
+    .tool-template .stage-direction {
+      color: var(--muted);
+      font-style: italic;
+    }
+    .tool-template ul {
+      margin-left: 2rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .tool-template li {
+      margin-bottom: 0.4rem;
+    }
+ 
+    .insight-box {
+      background: var(--amber-pale);
+      border-left: 4px solid var(--amber);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .insight-box strong {
+      color: var(--amber);
+      font-weight: 500;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    .insight-box p {
+      color: var(--text);
+      line-height: 1.72;
+      font-size: 0.92rem;
+    }
+ 
+    .citation {
+      font-size: 0.84rem;
+      color: var(--muted);
+      font-style: italic;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border);
+    }
+ 
+    .ref-list {
+      list-style: none;
+      margin-left: 0;
+    }
+    .ref-list li {
+      padding-left: 1.5rem;
+      text-indent: -1.5rem;
+      margin-bottom: 1rem;
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 0.9rem;
+    }
+    .ref-list em {
+      font-style: italic;
+    }
+ 
     /* ── FOOTER ───────────────────────────────── */
     footer {
       background: var(--navy-deep);
-      color: rgba(255,255,255,0.38);
+      color: rgba(255,255,255,0.5);
       text-align: center;
-      padding: 2.2rem;
-      font-size: 0.8rem;
-      letter-spacing: 0.05em;
+      padding: 3.5rem 2.5rem;
+      font-size: 0.84rem;
+      line-height: 1.9;
     }
-    footer a { color: rgba(255,255,255,0.55); text-decoration: none; }
-    footer a:hover { color: white; }
-
-    /* ── REVEAL ANIMATION ─────────────────────── */
-    .reveal {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.65s ease, transform 0.65s ease;
+    footer a {
+      color: var(--blue-light);
+      text-decoration: none;
+      transition: color 0.2s;
     }
-    .reveal.in { opacity: 1; transform: none; }
-    .reveal-delay-1 { transition-delay: 0.1s; }
-    .reveal-delay-2 { transition-delay: 0.2s; }
-    .reveal-delay-3 { transition-delay: 0.3s; }
-
+    footer a:hover {
+      color: white;
+    }
+ 
     /* ── RESPONSIVE ───────────────────────────── */
     @media (max-width: 860px) {
-      .nav-links { display: none; }
-      .nav-hamburger { display: block; }
-
-      .hero-inner { grid-template-columns: 1fr; gap: 2rem; }
-      .hero-infocard { display: none; }
-
-      .about-grid,
+      .nav-links {
+        display: none;
+      }
+      .nav-hamburger {
+        display: block;
+      }
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .hero {
+        padding: 5rem 1.5rem 3.5rem;
+      }
+      section {
+        padding: 4.5rem 1.5rem;
+      }
       .case-grid,
-      .functional-grid { grid-template-columns: 1fr; gap: 2rem; }
-
-      .tools-grid,
-      .blocks-grid { grid-template-columns: 1fr; }
-
-      .pitch-banner { flex-direction: column; padding: 2rem; }
-
-      nav { padding: 0 1.5rem; }
-      .container { padding: 0 1.5rem; }
-      section { padding: 3.5rem 0; }
-      .section-title { margin-bottom: 1.75rem; }
-    }
-
-    @media (max-width: 560px) {
-      .hero { padding: 4.5rem 1.5rem 3rem; }
-      .team-card { flex-basis: 140px; }
+      .functional-grid,
+      .tool-grid {
+        grid-template-columns: 1fr;
+      }
+      .pitch-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 2.5rem;
+      }
+      .experiment-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+      .experiment-num {
+        width: auto;
+      }
     }
   </style>
 </head>
 <body>
-
+ 
 <!-- ╔══════════════════════════════════╗ -->
 <!-- ║            NAVIGATION            ║ -->
 <!-- ╚══════════════════════════════════╝ -->
@@ -645,9 +796,9 @@
   <a href="#top" class="nav-brand">Liz <em>van Ginderen</em></a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
+    <li><a href="#team">The Team</a></li>
     <li><a href="#session1">Session 1</a></li>
     <li><a href="#session2">Session 2</a></li>
-    <li><a href="#team">Team</a></li>
   </ul>
   <div class="nav-hamburger" onclick="toggleMenu(this)">
     <span></span>
@@ -655,6 +806,7 @@
     <span></span>
   </div>
 </nav>
+ 
 
 
 <!-- ╔══════════════════════════════════╗ -->
@@ -664,7 +816,7 @@
   <div class="hero-inner">
     <div>
       <div class="hero-eyebrow">Portfolio</div>
-      <h1 class="hero-name">Social Robot <em>Design</em></h1>
+      <h1 class="hero-name">Liz van <em>Ginderen</em></h1>
       <p class="hero-sub">
         Welcome! I am Liz, a student at the University of Twente with a growing interest in designing and innovating for the intersection of technology and human experience.
       </p>
@@ -1019,7 +1171,6 @@
 <hr class="section-divider">
 
 
-
 <!-- ╔══════════════════════════════════╗ -->
 <!-- ║          SESSION 2               ║ -->
 <!-- ╚══════════════════════════════════╝ -->
@@ -1030,7 +1181,7 @@
     <p class="section-intro reveal">
       Session 2 explores the role of storytelling and narrative design in human-robot interaction. Through scenario-based design methods, we investigated how stories can help us understand, communicate, and critically evaluate robot behaviors and interactions in care settings.
     </p>
-
+ 
     <!-- WHY STORYTELLING MATTERS -->
     <div class="s2-subsection reveal">
       <h3>Why Storytelling Matters in HRI</h3>
@@ -1043,7 +1194,7 @@
       </ul>
       <p class="citation">Paepcke & Takayama (2010) demonstrated that setting expectations through narratives significantly influences perceived robot competence—with higher expectations leading to harsher judgments when robots underperform.</p>
     </div>
-
+ 
     <!-- OUR DESIGN TOOL -->
     <div class="s2-subsection reveal s2-section-spacing">
       <h3>Our Design Tool: The HRI Office-Script Template</h3>
@@ -1056,7 +1207,7 @@
         <li><strong>Documentary film methods:</strong> Allows for capturing multiple perspectives and reflective commentary (Raijmakers et al., 2006)</li>
         <li><strong>Improvisational theatre:</strong> Enables exploration of unexpected interactions and emergent behaviors (Dertien et al., 2024)</li>
       </ul>
-
+ 
       <h4>The Template Structure</h4>
       <div class="tool-template">
         <p><span class="character">Setup:</span></p>
@@ -1068,20 +1219,20 @@
           <li><strong>Intent:</strong> <span class="stage-direction">[Describe the purpose. Why is it doing that?]</span></li>
           <li><strong>Emotion:</strong> <span class="stage-direction">[Describe the feeling/emotion behind the action and intent.]</span></li>
         </ul>
-
+ 
         <p><span class="character">[Insert your usergroup]:</span></p>
         <ul>
           <li><strong>Action:</strong> <span class="stage-direction">[Describe the action of the user. What are they doing?]</span></li>
           <li><strong>Intent:</strong> <span class="stage-direction">[Describe the purpose. Why are they doing that?]</span></li>
           <li><strong>Emotion:</strong> <span class="stage-direction">[Describe the feeling/emotion behind the action and intent.]</span></li>
         </ul>
-
+ 
         <p><span class="character">OFFICE-Breakout:</span> <span class="stage-direction">[question asked]</span></p>
         <p class="stage-direction">[Include a general funny comment or reflection about the scene. It could be mocking the scenario or interaction. It is set up in an interview documentary style as if the character/robot is reflecting on what had just happened.]</p>
-
+ 
         <p class="stage-direction">[Repeat as necessary]</p>
       </div>
-
+ 
       <h4>Why This Structure Works</h4>
       <p>The template addresses specific challenges in HRI design:</p>
       <ul>
@@ -1090,67 +1241,67 @@
         <li><strong>Flexibility:</strong> Allows improvisation within structure, capturing unexpected interactions while maintaining focus</li>
         <li><strong>Multiple perspectives:</strong> Explicitly includes both human and robot viewpoints</li>
       </ul>
-
+ 
       <p class="citation">References: Raijmakers et al. (2006) "Design documentaries: inspiring design research through documentary film"; Dertien et al. (2024) "Improvisation Theatre as HRI simulation tool"</p>
     </div>
-
+ 
     <!-- SCENARIOS -->
     <div class="s2-subsection reveal s2-section-spacing">
       <h3>Scenarios: MIRO-E in Study Settings</h3>
       <p>We applied our tool to explore interactions with a MIRO-E robot designed to support student wellbeing during study sessions. Two scenarios were developed to explore different aspects of the interaction.</p>
-
+ 
       <div class="scenario-box">
         <h3>Scenario 1: Wellbeing Check-In (Frequent Use)</h3>
         <p><strong>Context:</strong> Active classroom with students working on homework. MIRO robot autonomously monitors study patterns and performs wellbeing interventions.</p>
         
         <p><strong>Setup:</strong> Student has been typing for 40 minutes without a break. MIRO approaches to suggest a breathing exercise.</p>
-
+ 
         <h4>Key Interaction:</h4>
         <ul>
           <li><strong>Robot behavior:</strong> Ears perk forward, light brightens, moves closer in 30-second cycles until acknowledged</li>
           <li><strong>Robot intent:</strong> Check in on student wellbeing, offer supportive intervention</li>
           <li><strong>Student state:</strong> Focused, stressed, wearing headphones—initially annoyed but ultimately accepting</li>
         </ul>
-
+ 
         <p><strong>Design Tension:</strong> This scenario explores the balance between supportive care and intrusive interruption. When does wellbeing monitoring feel helpful versus controlling?</p>
-
+ 
         <h4>Office-Style Reflection:</h4>
         <p><em>MIRO:</em> "Well I'm glad the student did a relaxing exercise. It seemed very necessary!"</p>
         <p><em>Student:</em> "I feel a lot better now. Wheeew"</p>
-
+ 
         <div class="insight-box">
           <strong>Insights</strong>
           <p>The scenario reveals how robot persistence can be perceived differently depending on student state. The documentary format allowed us to capture the internal conflict—annoyance versus recognition of need—that wouldn't be visible in traditional scenario descriptions.</p>
         </div>
       </div>
-
+ 
       <div class="scenario-box">
         <h3>Scenario 2: Deaf Student (Edge Case)</h3>
         <p><strong>Context:</strong> Same classroom setting, but MIRO encounters a deaf student who cannot hear verbal instructions.</p>
         
         <p><strong>Setup:</strong> MIRO approaches student and attempts verbal communication, which goes unheard. Robot escalates attempts to get attention.</p>
-
+ 
         <h4>Key Interaction:</h4>
         <ul>
           <li><strong>Robot behavior:</strong> Increases volume, adds movement (back and forth), lights, sounds—growing frustration evident in behavior</li>
           <li><strong>Robot emotion:</strong> Frustration, confusion at lack of response</li>
           <li><strong>Student response:</strong> Eventually looks up, confused by erratic robot behavior with no understanding of intent</li>
         </ul>
-
+ 
         <p><strong>Design Failure:</strong> This scenario exposes a critical accessibility gap—the robot lacks alternative communication modalities and has no way to recognize or adapt to deafness.</p>
-
+ 
         <h4>Office-Style Reflection:</h4>
         <p><em>Deaf student:</em> "This robot is acting really weird. I have no idea what to think of this."</p>
-
+ 
         <div class="insight-box">
           <strong>Insights</strong>
           <p>Edge cases reveal design assumptions. The robot was designed assuming auditory communication, without fallback strategies. The escalating frustration behavior also raises questions about robot emotion displays—should robots show frustration with users? The scenario makes these issues visceral and memorable rather than abstract.</p>
         </div>
-
+ 
         <p class="citation">This reflects warnings from the lecture about technology being "used only and exactly in the way it was intended"—designs must account for diverse users and unexpected contexts.</p>
       </div>
     </div>
-
+ 
     <!-- EVALUATION -->
     <div class="s2-subsection reveal s2-section-spacing">
       <h3>Evaluation of Our Tool</h3>
@@ -1163,7 +1314,7 @@
         <li><strong>Memorable:</strong> The Office-style format makes scenarios more engaging and easier to discuss with stakeholders</li>
         <li><strong>Exposes gaps:</strong> Edge case scenario immediately highlighted accessibility issues we hadn't considered</li>
       </ul>
-
+ 
       <h4>Limitations & Improvements</h4>
       <ul>
         <li><strong>Still requires interpretation:</strong> Script doesn't capture full physicality—would benefit from video prototyping or theatre simulation</li>
@@ -1171,7 +1322,7 @@
         <li><strong>Needs iteration:</strong> Documentary breakouts could be structured more systematically with specific prompts</li>
         <li><strong>Limited validation:</strong> Should be tested with actual students and care workers to validate scenarios</li>
       </ul>
-
+ 
       <h4>Grounding in Literature</h4>
       <p>Our tool aligns with established HRI design methods:</p>
       <ul>
@@ -1181,7 +1332,7 @@
         <li>Incorporates lessons from science fiction prototyping (Johnson, 2011) about exploring both utopian and dystopian futures</li>
       </ul>
     </div>
-
+ 
     <!-- KEY TAKEAWAYS -->
     <div class="s2-subsection reveal s2-section-spacing">
       <h3>Key Takeaways</h3>
@@ -1198,7 +1349,7 @@
         <li><strong>Storytelling is a design tool, not just communication:</strong> Creating scenarios doesn't just help us explain designs—it actively shapes and improves them by forcing us to think through details we'd otherwise miss.</li>
       </ol>
     </div>
-
+ 
     <!-- REFERENCES -->
     <div class="s2-subsection reveal s2-section-spacing">
       <h3>References</h3>
@@ -1216,9 +1367,8 @@
     </div>
   </div>
 </section>
-
+ 
 <hr class="section-divider">
-  
 
 <!-- ╔══════════════════════════════════╗ -->
 <!-- ║            FOOTER                ║ -->

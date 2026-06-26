@@ -15,7 +15,7 @@
     .insight-list li { padding: 0.5rem 0 0.5rem 1.5rem; position:relative; border-bottom:1px solid var(--cream-dark); font-size:0.95rem; }
     .insight-list li::before { content:'→'; position:absolute; left:0; color:var(--amber); }
     .ref-list { font-size:0.82rem; color:var(--text-light); line-height:1.8; }
-    .ref-list li { margin-bottom:0.3rem; }
+    .ref-list li { margin-bottom:0.4rem; }
     .srd-img { width:100%; border-radius:var(--radius); margin:1rem 0; box-shadow:var(--shadow); }
     .diagram-link { display:inline-flex; align-items:center; gap:0.5rem; color:var(--blue); font-size:0.88rem; margin-top:0.5rem; }
     .diagram-link:hover { color:var(--amber); }
@@ -40,9 +40,10 @@
       <span class="hero-eyebrow fade-up-1 fade-up">Master Course · University of Twente</span>
       <h1 class="fade-up-1 fade-up">Social Robot Design</h1>
       <p class="fade-up-2 fade-up" style="max-width:680px; margin-top:1rem; font-size:1.05rem; color:var(--blue-light); line-height:1.9;">
-        I'm fascinated by how technology can be designed to genuinely connect with people and support them in their daily life.
-        This course challenged me to think critically about how we design, communicate, and evaluate Human Robot Interaction.
-        It takes a creative, methodological, and sometimes near-theatrical approach to redesigning robots' interaction in context.
+        I'm fascinated by how technology can be designed to genuinely connect with people and support people in their daily life.
+        Specifically, the domains of healthcare and education spark my interest greatly, which fits perfectly with this project about
+        students and stress. This course challenged me to think critically about how to design, communicate, and evaluate Human Robot
+        Interaction. It takes a creative, methodological, and sometimes near-theatrical approach to redesigning robots' interaction in context.
       </p>
     </div>
   </section>
@@ -52,9 +53,15 @@
     <div class="container">
       <div class="pill-nav">
         <span class="pill"><a href="#collaborators">Collaborators</a></span>
-        <span class="pill"><a href="#session1">Session 1: Design Tools</a></span>
-        <span class="pill"><a href="#session2">Session 2: Story Building</a></span>
-        <span class="pill"><a href="#session3">Session 3: Expression</a></span>
+        <span class="pill"><a href="#session1">S1: Design Tools</a></span>
+        <span class="pill"><a href="#session2">S2: Story Building</a></span>
+        <span class="pill"><a href="#session3">S3: Expression</a></span>
+        <span class="pill"><a href="#session4">S4: Embodiment</a></span>
+        <span class="pill"><a href="#session5">S5: Ethics</a></span>
+        <span class="pill"><a href="#session6">S6: Behaviour</a></span>
+        <span class="pill"><a href="#session7">S7: Tools in Action</a></span>
+        <span class="pill"><a href="#session8">S8: Tools in Action #2</a></span>
+        <span class="pill"><a href="#session9">S9: Project Demo</a></span>
       </div>
     </div>
   </section>
@@ -73,50 +80,64 @@
       </div>
     </div>
 
-    <!-- SESSION 1 -->
+    <!-- ============ SESSION 1 ============ -->
     <div class="session-section" id="session1">
       <span style="font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber);">Session 1</span>
       <h2 style="margin-top:0.3rem;">Design Tools</h2>
+      <p class="session-toc-note">This session explores the MiRo-E robot's capabilities and applies existing design tools to a case study regarding student wellbeing.</p>
 
       <div class="sub-section">
-        <h3>Our Case Study · MiRo-E Student Wellbeing</h3>
-        <p>We aim to develop a concept for MiRo-E as a student wellbeing companion. MiRo-E is an animal-like advanced robot;
-           the "E" stands for Education, the variant specifically designed to help students learn about STEM subjects.</p>
+        <h3>Chosen Case Study · MiRo-E Student Wellbeing</h3>
+        <p>The aim is to develop a concept for MiRo-E as a student wellbeing companion. MiRo-E is an animal-like advanced robot.
+           The "E" stands for Education, the variant of MiRo specifically designed to help students learn about STEM subjects,
+           particularly computing and digital technologies (Hub, 2022).</p>
         <p>Some first ideas include a companion personality that checks in on students during study sessions, detects signs
-           of stress or burnout, and offers supportive interventions like breathing exercises or social nudges.</p>
+           of stress or burnout, and offers supportive interventions like breathing exercises or social nudges (Rice et al., 2024).</p>
+
+        <div style="text-align:center; max-width:280px; margin:1.5rem auto;">
+          <img src="../../images/design/s1-MiroE_intro.png" alt="MiRo-E robot next to laptop" class="srd-img" style="border-radius:50%; aspect-ratio:1/1; object-fit:cover;" onerror="this.style.display='none'">
+        </div>
+
         <div class="highlight-block">
           <h4>Research Question</h4>
           <p>"How can the MiRo robot be expanded upon to help students (ages 18–24) with their overall well-being?"</p>
-          <p style="margin-top:0.75rem;"><strong style="color:var(--amber-light);">Target Group:</strong> University students aged 18–24. This group faces lots of pressure from academic load, social adjustment, irregular routines, and limited access to consistent well-being support.</p>
+          <p style="margin-top:0.75rem;"><strong style="color:var(--amber-light);">Target Group:</strong> University students aged 18–24. This group faces lots of pressure from academic load, social adjustment, irregular routines, and limited access to consistent well-being support (Pande et al., 2025). The project focuses on both hard-working and slacking students.</p>
         </div>
       </div>
 
       <div class="sub-section">
         <h3>Design Tool Methodology · User Innovation Toolkit</h3>
-        <p>We selected three complementary methods from the User Innovation Toolkit (ugent.be) that together let us imagine, visualise, and evaluate how MiRo could interact with students.</p>
+        <p>Three complementary methods from the User Innovation Toolkit (ugent.be) were selected, that together let us imagine, visualise, and evaluate how MiRo could interact with students.</p>
 
         <div class="method-card reveal">
-          <span class="method-label">Scenario Analysis · Future-oriented</span>
+          <span class="method-label">Future-oriented</span>
           <h4>Scenario Analysis</h4>
-          <p>A process that enables you to envision a diversity of futures by distinguishing likely from less likely transitions and identifying the key determinants of each scenario. For our case, scenario analysis lets us walk through concrete futures — a student sits down at their desk, MiRo initiates a check-in.</p>
+          <p>Can be used to imagine future scenarios and reason through them to get a better understanding of the challenge.
+             For the chosen use case, one could imagine scenarios where students sit down and talk with the MiRo robot — the robot
+             asking questions, the student answering. The student's perspective can be used to reason through each moment, analysing
+             the situation before MiRo is introduced to make visible what problems actually exist in the student's daily routine.</p>
         </div>
 
         <div class="method-card reveal">
           <span class="method-label">Narrative & Visual</span>
           <h4>Storyboard</h4>
-          <p>A sequence of images that visualises how a persona uses a product or service. A storyboard brings MiRo to life: a panel showing MiRo's tail wagging as a student answers a question, or the robot guiding a breathing exercise with timed head movements.</p>
+          <p>Can be used to visualise how a user uses a product or service. It tends to be more detailed than scenario analysis,
+             to really visually understand what is happening — including images of MiRo talking and students listening, or capturing
+             a specific expression, for example a panel showing MiRo's tail wagging as a student answers a question.</p>
         </div>
 
         <div class="method-card reveal">
           <span class="method-label">User Experience</span>
           <h4>Experience Map</h4>
-          <p>A visualisation of how a user moves through a product or service over time, mapping emotional highs and lows across different touchpoints. Our most revealing application: creating two experience maps of the same scenario — one without MiRo, one with — and placing them side by side.</p>
+          <p>Can be used to visualise the experience the user goes through while using the product over time. Often used for
+             comparison of the same scenario — one without the product and one with — or to visualise the intended effect.
+             In this use case, most likely a comparison of a student studying and taking breaks with a MiRo robot versus without one.</p>
         </div>
       </div>
 
       <div class="sub-section">
         <h3>Problem Space · Mindmap</h3>
-        <p>A mindmap of the problem space exploring the dimensions of wellbeing, how it might be detected, the scenarios MiRo can support, and the physical and verbal tools available to the robot.</p>
+        <p>This guided exploration covers the dimensions of wellbeing, how it might be detected, the scenarios MiRo can support, and the physical and verbal tools available to the robot.</p>
         <div class="highlight-block" style="text-align:center;">
           <img src="../../images/design/s1-mindmap.png" alt="Problem space mindmap" class="srd-img" onerror="this.style.display='none'">
           <p style="font-size:0.82rem; margin-top:0.5rem; color:var(--blue-light);">Created collaboratively in draw.io</p>
@@ -129,165 +150,478 @@
 
       <div class="sub-section">
         <h3>System Structure · Functional Breakdown</h3>
-        <p>MiRo's functions divide into two core channels — verbal and physical — both serving the overarching goal of detecting and responding to student wellbeing.</p>
-        <div class="grid-2" style="gap:1rem; margin:1.5rem 0;">
-          <div class="method-card">
-            <span class="method-label">Channel 1</span>
-            <h4>Verbal Communication</h4>
-            <p>Asking questions, replying to student, guided exercises. MiRo uses its speaker to initiate check-ins, ask targeted wellbeing questions, and guide students through structured scenarios.</p>
-          </div>
-          <div class="method-card">
-            <span class="method-label">Channel 2</span>
-            <h4>Physical Expressions</h4>
-            <p>Head nodding, tail wagging, ear turning, eye blinking, locomotion. MiRo's body language reinforces its verbal channel to create physical presence and a sense of care.</p>
-          </div>
-        </div>
-        <div class="grid-2" style="gap:1rem;">
-          <div class="method-card">
-            <span class="method-label">Scenarios</span>
-            <h4>Interaction Modes</h4>
-            <p>Overall wellbeing check-in · Breathing exercise · Study session break · Call a friend nudge</p>
-          </div>
-          <div class="method-card">
-            <span class="method-label">Detection</span>
-            <h4>Detecting Wellbeing</h4>
-            <p>Self check-in, health monitoring, checking in on others. Primarily through conversation, with optional physiological sensors and pattern tracking over time.</p>
-          </div>
+        <p>MiRo's functions divide into two core channels — verbal and physical — which can be used for detecting and responding to student wellbeing: asking questions, replying to the student, overall wellbeing self check-ins, breathing exercises, helping in study sessions, suggesting a call to a friend. All conveyed through sound and body language like head nodding, tail wagging, ear turning, eye blinking, and locomotion.</p>
+
+        <div class="highlight-block" style="text-align:center;">
+          <img src="../../images/design/s1-MiroE_specs.png" alt="MiRo-E robot specifications diagram" class="srd-img" onerror="this.style.display='none'">
+          <p style="font-size:0.82rem; margin-top:0.5rem; color:var(--blue-light); text-align:left;">
+            The MiRo-E website suggests it has 6 senses for natural behaviour and interaction: moving, feeling, thinking, observing, speaking, hearing.
+            Other specifications and technical implementations will be addressed later in the project.
+          </p>
+          <a href="https://www.miro-e.com/robot" target="_blank" class="diagram-link" style="justify-content:center;">↗ View MiRo-E website</a>
         </div>
       </div>
 
       <div class="sub-section">
         <h3>Experimental Design & Approach</h3>
-        <p>We propose using theatre exercises — low-tech, human-enacted simulations — to rapidly test how students respond to MiRo interactions before committing to hardware or software development.</p>
-        <ul class="insight-list" style="margin-top:1rem;">
-          <li><strong>Response to Check-In:</strong> A human plays MiRo initiating a basic wellbeing check-in. Do students engage? Feel comfortable?</li>
-          <li><strong>Types of Check-In:</strong> Comparing different interaction styles — proactive vs. reactive, gentle vs. direct, routine vs. spontaneous.</li>
-          <li><strong>Question Themes:</strong> Testing different wellbeing question categories to find which resonate most with students.</li>
-          <li><strong>Prompt Responses & Facial Expression:</strong> Recording verbal answers and facial expressions in response to specific prompts.</li>
+        <p>Theatre exercises were proposed to rapidly test how students respond to MiRo interactions before committing to hardware or software development. A human plays the role of MiRo, according to Wizard-of-Oz methodology, and the student responds naturally.</p>
+        <p>A human plays MiRo initiating a basic wellbeing check-in. Do students engage? Do students feel comfortable? This makes it possible to compare different interaction styles ranging from proactive vs. reactive, gentle vs. direct, routine vs. spontaneous, by recording verbal answers and facial expressions in response to specific prompts. Results include testing different wellbeing question categories to find which resonate most with students.</p>
+      </div>
+
+      <div class="sub-section">
+        <h3>Research Through Design</h3>
+        <p>These plans are backed up by literature in our domain and for our robot (MIRO-E), as listed in the references below — although most findings from studying theatre exercises will lead to a final design implementation based on Research Through Design methodology.</p>
+        <h4 style="font-family:var(--font-display); margin:1.5rem 0 0.75rem;">References</h4>
+        <ul class="ref-list">
+          <li>Campbell, N. (2018). Using Multimodal Information to Support Spoken Dialogue Interaction between Humans and Robots without Intrusive Language Processing. <em>Proc. FAIM/ISCA Workshop on AI for Multimodal HRI</em>, 4–8. doi:10.21437/AI-MHRI.2018-2</li>
+          <li>Hub, K. (2022, February 10). Meet MIRO — A robot that cares. <em>The Knowledge Hub</em>. <a href="https://knowledge-hub.com/2022/02/09/meet-miro-a-robot-that-cares/" target="_blank">knowledge-hub.com</a></li>
+          <li>Pande, A., Rani, A., Nachenahalli Bhuthegowda, B., & Mishra, D. (2025). Human-Robot Interaction for Stress Mitigation: A Pilot Study with Social Robot. <em>HCII 2025, LNCS vol. 15769</em>. <a href="https://doi.org/10.1007/978-3-031-93861-0_18" target="_blank">doi.org/10.1007/978-3-031-93861-0_18</a></li>
+          <li>Prescott, T., Mitchinson, B., Conran, S., Power, T., & Bridges, G. (2018). MiRo: Social Interaction and Cognition in an Animal-like Companion Robot. doi:10.1145/3173386.3177844</li>
+          <li>Prescott, T., & Collins, E. (2015). MIRO: A Versatile Biomimetic Edutainment Robot. <em>Advances in Computer Entertainment</em>. <a href="https://doi.org/10.1145/2832932.2832978" target="_blank">doi.org/10.1145/2832932.2832978</a></li>
+          <li>Rice, A., Klęczek, K., & Alimardani, M. (2024). The Effectiveness of Social Robots in Stress Management Interventions for University Students. <em>ICSR 2023, LNCS vol. 14453</em>. <a href="https://doi.org/10.1007/978-981-99-8715-3_16" target="_blank">doi.org/10.1007/978-981-99-8715-3_16</a></li>
+          <li>Yang, Y., Yap, P.S., Wijeakumar, S., Magassouba, A., & Deshpande, N. (2026). A Multimodal Adaptive Framework for Social Interaction with the MiRo-E Robot. <em>Sensors, 26</em>(4), 1209. <a href="https://doi.org/10.3390/s26041209" target="_blank">doi.org/10.3390/s26041209</a></li>
         </ul>
       </div>
     </div>
 
-    <!-- SESSION 2 -->
+    <!-- ============ SESSION 2 ============ -->
     <div class="session-section" id="session2">
       <span style="font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber);">Session 2</span>
       <h2 style="margin-top:0.3rem;">Story Building</h2>
+      <p class="session-toc-note">This session explores the role of storytelling and narrative design in human-robot interaction, investigating how stories can help us understand, communicate, and critically evaluate robot behaviours in care settings.</p>
 
       <div class="sub-section">
-        <h3>Summary</h3>
-        <p>This session explores the role of storytelling and narrative design in human-robot interaction. Through scenario-based design methods, we investigated how stories can help us understand, communicate, and critically evaluate robot behaviors and interactions in care settings.</p>
-        <p>Paepcke & Takayama (2010) demonstrated that setting expectations through narratives significantly influences perceived robot competence, with higher expectations leading to harsher judgments when robots underperform.</p>
+        <h3>Why Storytelling Matters in HRI</h3>
+        <p>As emphasized in the lecture, storytelling is fundamental to how humans understand and relate to technology. Stories in HRI serve multiple purposes, including exploration, communication, critical reflection, and expectation management. Paepcke & Takayama (2010) demonstrated that setting expectations through narratives significantly influences perceived robot competence, with higher expectations leading to harsher judgments when robots underperform.</p>
       </div>
 
       <div class="sub-section">
         <h3>Design Tool Methodology · HRI Office-Script Template</h3>
-        <p>We developed a hybrid scenario-building tool that combines structured scriptwriting with improvisational documentary-style reflection. This approach was grounded in research on scripting for participatory design and design documentaries. Inspired by scenario-based design, documentary film methods, and improvisational theatre.</p>
+        <p>A hybrid scenario-building tool was developed, combining structured scriptwriting with improvisational documentary-style reflection. This approach was grounded in research on scripting for participatory design and design documentaries, drawing inspiration from scenario-based design (van der Bijl-Brouwer & van der Voort, 2013), documentary film methods (Raijmakers et al., 2006), and improvisational theatre (Dertien et al., 2024).</p>
 
         <h4 style="margin:1.5rem 0 0.75rem; font-family:var(--font-display);">The Template Structure</h4>
-        <div class="script-block">
-          <strong>Setup:</strong> [Describe the setup of the scenario, where is it, when is it, who is on screen]<br><br>
-          <strong>Robot [name]:</strong><br>
-          &nbsp;&nbsp;● Action: [Describe the function of the robot. What is it doing?]<br>
-          &nbsp;&nbsp;● Intent: [Describe the purpose. Why is it doing that?]<br>
-          &nbsp;&nbsp;● Emotion: [Describe the feeling/emotion behind the action and intent.]<br><br>
-          <strong>[User group]:</strong><br>
-          &nbsp;&nbsp;● Action: [Describe the action of the user. What are they doing?]<br>
-          &nbsp;&nbsp;● Intent: [Describe the purpose. Why are they doing that?]<br>
-          &nbsp;&nbsp;● Emotion: [Describe the feeling/emotion behind the action and intent.]<br>
-          &nbsp;&nbsp;● <strong>OFFICE-Breakout:</strong> [question asked / documentary reflection]
+        <div class="highlight-block" style="text-align:center;">
+          <img src="../../images/design/s2-Scripttemplate.png" alt="HRI Office-Script Template" class="srd-img" onerror="this.style.display='none'">
         </div>
+        <p style="font-size:0.9rem; color:var(--text-light);">The template is repeated as necessary to play out the full scenario.</p>
+      </div>
 
-        <p>This structure works because it directly addresses core challenges in HRI design by separating action, intent, and emotion. The documentary breakout sections create deliberate moments for reflection and critique, helping teams avoid "rosy stories" that exaggerate robot capabilities.</p>
+      <div class="sub-section">
+        <h3>Reasoning Behind the Template</h3>
+        <p>This structure works because it directly addresses several core challenges in HRI design by moving beyond surface-level descriptions of interaction. By separating action, intent, and emotion, the template encourages designers to examine not only what users and robots do, but also the motivations, expectations, and feelings underlying those behaviors.</p>
+        <p>The added documentary breakout sections create deliberate moments for reflection and critique, helping teams avoid overly optimistic robot capabilities or ignored practical limitations (Dertien et al., 2024). The framework supports improvisation and incorporates multiple perspectives, leading to a more nuanced, empathetic, and realistic HRI design outcome (Raijmakers et al., 2006).</p>
+        <div class="img-cell" style="max-width:600px; margin:1.5rem auto;">
+          <img src="../../images/design/s2-process.png" alt="Conceptualisation, Realisation, Tool-in-action process" onerror="this.style.display='none'">
+          <figcaption>Conceptualisation → Realisation → Tool-in-action</figcaption>
+        </div>
       </div>
 
       <div class="sub-section">
         <h3>Scenarios</h3>
-        <div class="grid-2" style="gap:1.5rem; margin-top:1rem;">
-          <div>
-            <div class="highlight-block">
-              <h4>Scenario 1: Wellbeing Check-In</h4>
-              <p><strong style="color:var(--cream);">Context:</strong> Active classroom. Student has been typing for 40 minutes without a break. MIRO approaches to suggest a breathing exercise.</p>
-            </div>
-            <div class="method-card" style="margin-top:1rem;">
-              <span class="method-label">Design Tension</span>
-              <p>When does wellbeing monitoring feel helpful versus controlling?</p>
-              <div class="script-block" style="margin-top:0.75rem; font-size:0.82rem;">
-                MIRO: "Well I'm glad the student did a relaxing exercise. It seemed very necessary!"<br>
-                Student: "I feel a lot better now. Wheeew"
-              </div>
-            </div>
+        <p>The template tool was applied to the student studybuddy case to further explore interactions with a MIRO-E robot. Two scenarios were developed: a Wellbeing Check-In (Frequent Use), and a Deaf Student (Edge Case).</p>
+
+        <div class="img-row">
+          <div class="img-cell">
+            <img src="../../images/design/s2-Script-checkin.png" alt="Script: robot check-in scenario" onerror="this.style.display='none'">
+            <figcaption>Scenario 1: Wellbeing Check-In</figcaption>
           </div>
-          <div>
-            <div class="highlight-block" style="background:var(--navy-mid);">
-              <h4>Scenario 2: Deaf Student (Edge Case)</h4>
-              <p><strong style="color:var(--cream);">Context:</strong> MIRO encounters a deaf student. Robot escalates verbal attempts — increases volume, adds movement, lights, sounds — growing frustration evident.</p>
-            </div>
-            <div class="method-card" style="margin-top:1rem;">
-              <span class="method-label">Design Failure</span>
-              <p>Critical accessibility gap — the robot lacks alternative communication modalities and has no way to recognise or adapt to deafness.</p>
-              <div class="script-block" style="margin-top:0.75rem; font-size:0.82rem;">
-                Deaf student: "This robot is acting really weird. I have no idea what to think of this."
-              </div>
-            </div>
+          <div class="img-cell">
+            <img src="../../images/design/s2-Script-blind.png" alt="Script: deaf student scenario" onerror="this.style.display='none'">
+            <figcaption>Scenario 2: Deaf Student (Edge Case)</figcaption>
           </div>
         </div>
+
+        <p>The edge case shows that the robot was designed assuming auditory communication, without fallback strategies. The escalating frustration behaviour also raises questions about robot emotion displays — should robots show frustration with users? The template helps explore such cases and make them explicit. Applying the tool to the case reemphasises that designs must account for diverse users and unexpected contexts.</p>
       </div>
 
       <div class="sub-section">
-        <h3>Evaluation of Our Tool</h3>
-        <div class="grid-2" style="gap:1.5rem;">
-          <div>
-            <h4 style="font-family:var(--font-display); margin-bottom:0.75rem; color:var(--navy);">Strengths</h4>
-            <ul class="insight-list">
-              <li>Reveals hidden assumptions in robot design</li>
-              <li>Balances structure and flexibility</li>
-              <li>Multiple perspectives via documentary breakouts</li>
-              <li>Memorable and stakeholder-friendly format</li>
-              <li>Exposes gaps through edge case scenarios</li>
-            </ul>
-          </div>
-          <div>
-            <h4 style="font-family:var(--font-display); margin-bottom:0.75rem; color:var(--navy);">Limitations</h4>
-            <ul class="insight-list">
-              <li>Still requires interpretation; doesn't capture full physicality</li>
-              <li>Risk of anthropomorphization</li>
-              <li>Documentary breakouts need more systematic prompts</li>
-              <li>Should be validated with actual students</li>
-            </ul>
-          </div>
-        </div>
+        <h3>Evaluation of the Scenario Tool</h3>
+        <p>Through designing the tool, scenarios were discussed more diversely and thoroughly than if explored through informal discussion alone. The structured format forced the group to make explicit assumptions about the robot's emotions, intentions, and behaviour. The edge-case scenario involving a deaf student exposed accessibility challenges and design assumptions that were overlooked in the primary use case — suggesting the tool helped achieve a more robust and inclusive design decision than would otherwise have been reached.</p>
       </div>
 
       <div class="sub-section">
-        <h3>Key Takeaways</h3>
-        <ul class="insight-list">
-          <li><strong>Stories shape expectations:</strong> The narratives we create around robots directly influence how people interact with and judge them.</li>
-          <li><strong>Edge cases matter:</strong> The deaf student scenario revealed more about our design assumptions than the typical use case.</li>
-          <li><strong>Tools need tailoring:</strong> Generic scenario methods don't capture HRI-specific concerns like robot emotional expression.</li>
-          <li><strong>Multiple perspectives are essential:</strong> Understanding both human and robot "viewpoints" helps identify interaction breakdowns.</li>
-          <li><strong>Storytelling is a design tool:</strong> Creating scenarios doesn't just help us explain designs — it actively shapes and improves them.</li>
-        </ul>
+        <h3>Reflection on the Scenario Tool</h3>
+        <p>The tool provides structure while still allowing flexibility and creative exploration, so a multitude of scenarios can emerge from the same template while remaining comparable in format. The documentary bits expand on what characters were thinking and feeling, rather than only describing their actions — making scenarios more engaging and in-depth, and encouraging consideration of multiple perspectives (human, robot, bystander) as well as exaggerated or humorous framings. This reflects ideas from science fiction prototyping (Johnson, 2011), which emphasizes exploring desirable and undesirable futures to identify risks and opportunities.</p>
+        <p>Despite these strengths, the tool has limitations: written scripts cannot fully capture the physical and social dynamics of HRI and would benefit from video prototyping or theatre-based simulation; assigning emotions and intentions to robots risks encouraging anthropomorphism and unrealistic expectations; documentary breakouts could be improved through more systematic prompting; and the scenarios have not yet been validated with actual students or care workers, making user testing an important next step.</p>
       </div>
 
       <div class="sub-section">
         <h4 style="font-family:var(--font-display); margin-bottom:1rem;">References</h4>
         <ul class="ref-list">
-          <li>Dertien, E., Van Delden, R., & Reidsma, D. (2024). Improvisation Theatre as HRI simulation tool. <em>Proceedings of the 9th International Conference on Movement and Computing</em>, 1–8.</li>
+          <li>Dertien, E., Van Delden, R., & Reidsma, D. (2024). Improvisation Theatre as HRI simulation tool. <em>Proceedings of the 9th International Conference on Movement and Computing</em>, 1–8. <a href="https://doi.org/10.1145/3658852.3659067" target="_blank">doi.org/10.1145/3658852.3659067</a></li>
           <li>Johnson, B.D. (2011). <em>Science Fiction Prototyping: Designing the Future with SF</em>. Morgan & Claypool.</li>
-          <li>Paepcke, S., & Takayama, L. (2010). Judging a bot by its cover. <em>Proceedings of HRI</em>, 45–52.</li>
-          <li>Raijmakers, B., Gaver, W.W., & Bishay, J. (2006). Design documentaries. <em>Proceedings of DIS</em>, 229–238.</li>
-          <li>van der Bijl-Brouwer, M., & van der Voort, M.C. (2013). Exploring future use: scenario based design. In <em>Advanced Design Methods for Successful Innovation</em>.</li>
+          <li>Paepcke, S., & Takayama, L. (2010). Judging a bot by its cover: An experiment on expectation setting for personal robots. <em>Proceedings of HRI</em>, 45–52. <a href="https://www.leilatakayama.org/downloads/Takayama.ExpectationSetting_HRI2010_prepress.pdf" target="_blank">leilatakayama.org</a></li>
+          <li>Raijmakers, B., Gaver, W.W., & Bishay, J. (2006). Design documentaries: Inspiring design research through documentary film. <em>Proceedings of DIS</em>, 229–238. <a href="https://dl.acm.org/doi/10.1145/1142405.1142441" target="_blank">dl.acm.org</a></li>
+          <li>van der Bijl-Brouwer, M., & van der Voort, M.C. (2013). Exploring future use: Scenario based design. In <em>Advanced Design Methods for Successful Innovation</em> (pp. 57–77). Design United. <a href="https://www.4tu.nl/du/about-us/downloads/ADM-2013-Book-screen-version.pdf" target="_blank">4tu.nl</a></li>
         </ul>
       </div>
     </div>
 
-    <!-- SESSION 3 placeholder -->
+    <!-- ============ SESSION 3 ============ -->
     <div class="session-section" id="session3">
       <span style="font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber);">Session 3</span>
-      <h2 style="margin-top:0.3rem;">Design for Expression</h2>
-      <div class="news-block">
-        <span class="news-label">✦ Coming Soon</span>
-        <p style="margin:0;">Session 3 content is being added — stay tuned!</p>
+      <h2 style="margin-top:0.3rem;">Expression</h2>
+      <p class="session-toc-note">This session used a course-provided tool, the Laban-based motion vocabulary workshop, to explore how a simple servo-based robot arm could still manage non-verbal expression.</p>
+
+      <div class="sub-section">
+        <h3>Workshop Goals & Structure</h3>
+        <p>This session focused on designing expressive robot motion using an SO-ARM101 robot arm controlled through TouchDesigner and a MIDI control panel. The goal was to explore how different motion mappings influence the perceived emotional and social qualities of robot behaviour. Through experiments based on Laban Movement Analysis (LMA), animation principles, and expressive robotics literature, it was investigated how a simple servo-driven robotic arm can communicate intentions, emotions, and interaction cues without speech or facial expressions. Rather than programming specific emotional states, movement parameters such as speed, amplitude, timing, and trajectory were manipulated to create expressive behaviours.</p>
+        <div class="highlight-block" style="text-align:center;">
+          <img src="../../images/design/s3-setup.png" alt="TouchDesigner laptop, SO-ARM101 robot arm, MIDI control panel" class="srd-img" onerror="this.style.display='none'">
+          <p style="font-size:0.82rem; color:var(--blue-light);">Laptop running TouchDesigner · SO-ARM101 open-source robot arm · MIDI control panel</p>
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <h3>Expression Experiments</h3>
+        <p>By correctly linking inputs and outputs in TouchDesigner, movements could be cloned: pressing 'record' on the MIDI panel remembered every servo movement so it could be replicated later, allowing rapid iteration of different scenarios, expressions, and emotions. Servo movement could be manipulated across joint position, movement speed, acceleration/deceleration, amplitude, frequency, motion coupling between joints, and global motion intensity ("master gain").</p>
+        <p>Exploration started with simple pulsing at different speeds and amplitudes. Already, this gave impressions of different emotions and personality factors: slow movement eluded to sadness or tiredness, higher speeds and amplitudes exuded excitement or clumsiness, and pauses with small oscillations before movement suggested hesitation or uncertainty.</p>
+        <div class="img-row">
+          <div class="img-cell"><img src="../../images/design/s3-pulsegif.gif" alt="Pulsing servo motion test" onerror="this.style.display='none'"><figcaption>Pulsing motion test</figcaption></div>
+          <div class="img-cell"><img src="../../images/design/s3-screamgif.gif" alt="Expressive scream motion test" onerror="this.style.display='none'"><figcaption>Expressive motion test</figcaption></div>
+        </div>
+        <p>Later, more complex scenarios were explored to ideate expression for thorough situations and emotions — for example, the robot sleeping, waking up, then seeing a piece of plastic: scared yet intrigued by it. Even with simple servos and a relatively simple tool setup, such complex scenarios could still be designed.</p>
+      </div>
+
+      <div class="sub-section">
+        <h3>Reflection on Robot Expressions</h3>
+        <p>The session was helpful for general exploration of non-verbal communication. It showed how diverse and thorough simple movements could be, and how effective they are for expressing goals, simple interactions, or emotions — for example, when the robot hung its "head," it immediately looked sad, while no physical attributes changed. Speed of movement also had a great impact, suggesting a link between motion dynamics and perceived emotion. Other than increased awareness of non-verbal communication and the importance of expression in design decisions, this session did not have specific relations to the student support use case.</p>
+        <h4 style="font-family:var(--font-display); margin:1.5rem 0 0.75rem;">References</h4>
+        <ul class="ref-list">
+          <li>Ju, W., & Hoffman, G. (2015). Designing Robots With Movement in Mind. <em>Journal of Human-Robot Interaction, 4</em>(1), 1–15.</li>
+          <li>Laban, R. (1966). <em>Choreutics</em>. London: Macdonald & Evans.</li>
+          <li>Thomas, F., & Johnston, O. (1981). <em>The Illusion of Life: Disney Animation</em>. New York: Disney Editions.</li>
+          <li>Johansson, G. (1973). Visual perception of biological motion and a model for its analysis.</li>
+          <li>Heider, F., & Simmel, M. (1944). An experimental study of apparent behavior.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ============ SESSION 4 ============ -->
+    <div class="session-section" id="session4">
+      <span style="font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber);">Session 4</span>
+      <h2 style="margin-top:0.3rem;">Embodiment</h2>
+      <p class="session-toc-note">This session explored robot embodiment and how a robot's physical appearance influences expectations, interaction, and suitability for different contexts.</p>
+
+      <div class="sub-section">
+        <h3>Embodiment Analysis</h3>
+        <p>Many social robot research projects still make use of existing platforms such as Nao and Pepper. While these robots are versatile and widely available, they are often used in contexts for which they were not specifically designed — research shows Pepper acting as a receptionist, educator, trainer, or healthcare assistant (Kushniruk, Kuang, & Borycki, 2025). Other domains use more specialised embodiments, such as seal-shaped robots in elderly care (PARO, 2024).</p>
+        <p>The session explored what would happen if designers had complete freedom over a robot's embodiment. A morphological overview was created using robots discussed during the course, comparing them on size, shape, materiality, colour, and whether they were human-shaped, animal-shaped, or abstract, alongside functionality requirements, context suitability, and expectation matching.</p>
+        <p>The overview showed that embodiment strongly influences perceived suitability. A large humanoid robot may be appropriate for navigation or reception tasks but less suitable as a tabletop companion. Animal-inspired robots such as MiRo or Paro appear approachable and comforting, while humanoid robots create stronger expectations regarding intelligence, communication, and capabilities. Embodiment is not only an aesthetic choice but shapes how users interpret and interact with the robot.</p>
+        <div class="highlight-block" style="text-align:center;">
+          <img src="../../images/design/s4-matrix.png" alt="Morphological overview matrix of robot embodiments" class="srd-img" onerror="this.style.display='none'">
+          <p style="font-size:0.82rem; color:var(--blue-light);">Morphological Overview Matrix · Comparison of existing robot embodiments based on shape, size, materiality, and contextual suitability.</p>
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <h3>Design Tool: Dreamworld & Embodiment Cards</h3>
+        <p>To support designers in exploring alternative embodiments, two design tools were proposed: <strong>Dreamworld</strong> and an <strong>Embodiment Card Game</strong>.</p>
+        <div class="method-card reveal">
+          <span class="method-label">AI-assisted concepting</span>
+          <h4>Dreamworld</h4>
+          <p>An AI-assisted embodiment design tool that allows designers to rapidly prototype robot concepts using generative AI. A designer begins with a simple sketch, silhouette, or description and uses prompts to generate alternative embodiments — colours, proportions, materials, and expressive features can be changed quickly for iterative exploration. The tool encourages designers to move beyond existing robots such as Pepper and Nao and consider embodiments tailored to specific use cases.</p>
+        </div>
+        <div class="method-card reveal">
+          <span class="method-label">Card-based design</span>
+          <h4>Embodiment Card Game</h4>
+          <p>Each card presents a question related to robot embodiment, expression, or interaction — e.g. "How does your robot show joy?", "How does its appearance communicate its purpose?", or "How does a user know where the robot's attention is directed?" Answering these questions guides designers to consider the relationship between embodiment and behaviour, operationalising decisions about form-function relationships, perceived capabilities, and social expectations.</p>
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <h3>Session Findings & Reflection</h3>
+        <p>An important insight was that embodiment creates expectations: a highly humanoid robot may lead users to assume advanced intelligence or social understanding, while an animal-inspired robot may be perceived as approachable and emotionally supportive — relating to anthropomorphism, expectation mismatch, and the Uncanny Valley. Physical robots also provide opportunities for proxemics, tangible interaction, and co-presence that purely virtual agents cannot offer (Wainer, Feil-Seifer, Shell, & Mataric, 2006); soft materials and animal-like features may encourage nurturing behaviour, while rigid humanoid forms can communicate competence or authority.</p>
+        <p>Applying these insights to the MiRo-E project encouraged more critical thinking about how the robot's appearance influences student expectations — embodiment should communicate the robot's role as a supportive wellbeing companion, and should align with actual capabilities to avoid misleading users or creating unrealistic expectations (Norman, 1999).</p>
+        <h4 style="font-family:var(--font-display); margin:1.5rem 0 0.75rem;">References</h4>
+        <ul class="ref-list">
+          <li>Hall, E.T. (1966). <em>The Hidden Dimension</em>. Doubleday.</li>
+          <li>Kushniruk, A.W., Kuang, W., & Borycki, E.M. (2025). The NAO Robot in Healthcare and Education: A Scoping Review. <em>Studies in Health Technology and Informatics, 323</em>, 374–378. <a href="https://doi.org/10.3233/SHTI250115" target="_blank">doi.org/10.3233/SHTI250115</a></li>
+          <li>Norman, D.A. (1999). Affordance, conventions, and design. <em>Interactions, 6</em>(3), 38–43. <a href="https://doi.org/10.1145/301153.301168" target="_blank">doi.org/10.1145/301153.301168</a></li>
+          <li>Wainer, J., Feil-Seifer, D.J., Shell, D.A., & Mataric, M.J. (2006). The role of physical embodiment in human-robot interaction. <em>ROMAN 2006</em>, 117–122. IEEE.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ============ SESSION 5 ============ -->
+    <div class="session-section" id="session5">
+      <span style="font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber);">Session 5</span>
+      <h2 style="margin-top:0.3rem;">Sustainability & Ethics</h2>
+      <p class="session-toc-note">This session explores the long-term impact of technology through Educational Live Action Role-Play (EduLARP).</p>
+
+      <div class="sub-section">
+        <h3>EduLARP Tool: The LifeTimer</h3>
+        <p>Researchers at Saxion Enschede developed the LifeTimer, which explores a scenario in which a technology publicly monitors and gives advice about health regulations. Through an app, the technology becomes widespread and people can opt in or out — the tool explores effects on individuals and society at large, asking participants to reflect on implications and regulation.</p>
+        <p>The LARP session included decoration, worldbuilding instruction videos, fictional news reports, and character description cards set in 2030. After role-playing a character and following how their life was affected by the technology over time, participants voted in a referendum on whether to support or restrict the LifeTimer, then reflected individually. The workshop was hosted by developer Verena Schulz, with Saxion co-teacher Afra Willems.</p>
+        <div class="img-row">
+          <div class="img-cell"><img src="../../images/design/s5-larpcharactercard.jpg" alt="LARP character card" onerror="this.style.display='none'"><figcaption>Character card</figcaption></div>
+          <div class="img-cell"><img src="../../images/design/s5-deco.jpg" alt="LARP scenario decoration" onerror="this.style.display='none'"><figcaption>Worldbuilding decoration</figcaption></div>
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <h3>LARP Session Observations</h3>
+        <p>Living out the character through LARP provided a personal perspective, forcing engagement with views unlike one's own — including life decisions the participant wouldn't make, or opposing views on the technology. Tension and argument between characters led to meaningful self-reflection.</p>
+        <p>Those who widely adopted the technology saw a drastic increase in life expectancy and were generally positive, but could feel conflicted due to loneliness or misunderstanding from less tech-positive loved ones. Those who didn't adopt it, or used only the free version, held varied opinions — some unconcerned, others struggling with its full societal integration, and some facing reduced access to insurance or loans as systems adapted around the technology. This felt unjust and unsettling.</p>
+        <p>This raised questions about who mandates such technologies, whether encouraging adoption for wellbeing limits autonomy, and who is responsible when predictions are treated as facts — touching on privacy, autonomy, and responsibility, aligned with key values affected by technology: privacy, trust, autonomy, accountability, and human welfare (Friedman & Kahn, 2003). The scenario showed parallels with the widespread adoption of AI in society and resembles the AI2027 speculative report. More intermittent reflection moments before the final referendum vote would have been valuable — reinforcing that ethical considerations should be intentionally designed into technology development before public release.</p>
+      </div>
+
+      <div class="sub-section">
+        <h3>LARP & MiRo-E</h3>
+        <p>The same EduLARP principle was later applied to the MiRo-E robot. Through self-made character cards and a group worksheet, adopting a character as an active stakeholder brought up concerns and tensions that needed addressing — for the MiRo-E and student wellbeing case, pets and parents should also be taken into account.</p>
+        <div class="img-row cols-3">
+          <div class="img-cell"><img src="../../images/design/s5-selfcharactercard.jpg" alt="Self-made character card" onerror="this.style.display='none'"><figcaption>Self-made character card</figcaption></div>
+          <div class="img-cell"><img src="../../images/design/s5-miroeparty.jpg" alt="MiRo-E wearing a party hat" onerror="this.style.display='none'"><figcaption>MiRo-E as stakeholder</figcaption></div>
+          <div class="img-cell"><img src="../../images/design/s5-groupworksheet.jpg" alt="Group worksheet" onerror="this.style.display='none'"><figcaption>Group worksheet</figcaption></div>
+        </div>
+        <p>The future scenarios were less futuristic than the LifeTimer but still considered developer responsibility. A key finding: concerns become more complex when technology actively replaces human care. This relates to Sharkey & Sharkey (2010), who critique using robots as caregivers for children — replacement of human care can lead to reduced human contact, emotional deception, attachment problems, and developmental risks. Value sensitivity is crucial in robotics within care contexts.</p>
+        <h4 style="font-family:var(--font-display); margin:1.5rem 0 0.75rem;">References</h4>
+        <ul class="ref-list">
+          <li>Friedman, B., & Kahn, P.H., Jr. (2003). Human values, ethics, and design. In <em>The Human-Computer Interaction Handbook</em> (pp. 1177–1201). Lawrence Erlbaum Associates.</li>
+          <li>Sharkey, A., & Sharkey, N. (2010). The crying shame of robot nannies: An ethical appraisal. <em>Interaction Studies, 11</em>(2), 161–190. <a href="https://doi.org/10.1075/is.11.2.01sha" target="_blank">doi.org/10.1075/is.11.2.01sha</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ============ SESSION 6 ============ -->
+    <div class="session-section" id="session6">
+      <span style="font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber);">Session 6</span>
+      <h2 style="margin-top:0.3rem;">Behaviour</h2>
+      <p class="session-toc-note">This session explored embodiment and robot behaviour design, aiming to develop and test a high-level design tool that could support conceptualising robot behaviour before implementation on a physical robot.</p>
+
+      <div class="sub-section">
+        <h3>Motivation</h3>
+        <p>Behaviour implementation in robotics can be time-consuming and technically expensive, especially when iterating on interaction design. The focus was placed on a high-level design and testing tool supporting quick iteration of behavioural ideas, allowing early exploration of interaction patterns before committing to implementation. Brooks (1986) suggests that complex interaction patterns can emerge from relatively simple reactive behaviours tightly coupled to the environment — so the tool should function as a bridge between early conceptual design and technical implementation.</p>
+      </div>
+
+      <div class="sub-section">
+        <h3>Technical Considerations</h3>
+        <p>The behavioural possibilities of puppeteering the MiRo-E were considered. Main control was imagined through an X-BOX controller — most feasible for one person to control wheel movement plus quick basic gestures in eyes, ears, tail, and head simultaneously. The MIRO app allows moving additional features in more detail but is more time-consuming to calibrate and manage in a live Wizard-of-Oz puppeteering session.</p>
+        <div class="highlight-block" style="text-align:center;">
+          <img src="../../images/design/s6-technical.jpg" alt="MIRO app controller, software, and calibration screens" class="srd-img" onerror="this.style.display='none'">
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <h3>Conceptualisation: Cards Against Robots</h3>
+        <p>Designing robot behaviour presents a unique challenge — unlike graphical interfaces, robots communicate through movement, posture, sounds, and physical presence. The assignment focused on creating a low-fidelity design tool to support discussion and prototyping of robot behaviour before software implementation.</p>
+        <p><strong>Cards Against Robots</strong>, inspired by improvisational card games, helps participants explore both robot capabilities and interaction scenarios through three card categories:</p>
+        <div class="grid-3" style="margin: 1.5rem 0;">
+          <div class="method-card"><span class="method-label">Blue</span><h4>Human Action Cards</h4><p>Situations or user behaviours.</p></div>
+          <div class="method-card"><span class="method-label">Red</span><h4>Robot Action Cards</h4><p>Available robot actions and expressions.</p></div>
+          <div class="method-card"><span class="method-label">Yellow</span><h4>Wildcard Cards</h4><p>Unexpected events, tensions, or contextual changes.</p></div>
+        </div>
+        <div class="highlight-block" style="text-align:center;">
+          <img src="../../images/design/s6-cards.jpg" alt="Example Cards Against Robots cards" class="srd-img" onerror="this.style.display='none'">
+        </div>
+        <p>Players combine cards from each category to generate an interaction scenario, then act it out while discussing and testing possible robot responses. The goal was not detailed software logic, but rapidly exploring how embodiment and behaviour might influence an interaction. The tool was designed to support discussion around <em>reactive</em> robot behaviour — the robot responds directly to events in its environment, rather than first reasoning about goals and future states (a deliberative approach). By connecting human actions to immediate robot responses, the cards encouraged thinking about how behaviour emerges through interaction.</p>
+        <h4 style="font-family:var(--font-display); margin:1.5rem 0 0.75rem;">References</h4>
+        <ul class="ref-list">
+          <li>Brooks, R.A. (1986). A robust layered control system for a mobile robot. <em>IEEE Journal of Robotics and Automation, 2</em>(1), 14–23.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ============ SESSION 7 ============ -->
+    <div class="session-section" id="session7">
+      <span style="font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber);">Session 7</span>
+      <h2 style="margin-top:0.3rem;">Tools in Action</h2>
+      <p class="session-toc-note">This session iterated and validated the Cards Against Robots design tool by introducing structured scenario generation, embodied puppeteering, and evaluation criteria.</p>
+
+      <div class="sub-section">
+        <h3>Refining the Tool</h3>
+        <p>The original "Cards Against Robots" worked well as a generative ideation game but lacked structure and validation. Based on feedback from project facilitator Edwin Dertien, the tool was redeveloped by refining logistics, clarifying card content, and expanding its use beyond simple scenario generation. The most important improvement was reconsidering how randomness and choice were balanced in the design process.</p>
+
+        <div class="game-card">
+          <h4>Option 1 — Pick Random Cards</h4>
+          <p style="font-size:0.88rem; color:var(--text-light); margin-bottom:0.75rem;">Expression/behaviour: puppeteering the robot. There was a notable threshold to start acting — it helped to begin by acting with the MiRo itself (moving its parts).</p>
+          <ol class="step-list">
+            <li>Pick a robot card and act it out with the MiRo</li>
+            <li>Pick a human card and act out the scenario</li>
+            <li>(Optional, repeatable) Pick a wildcard to add a "saus" to the scene</li>
+          </ol>
+        </div>
+
+        <div class="game-card">
+          <h4>Option 2 — Pick a Student Action, Let Players Choose a Robot Reaction</h4>
+          <p style="font-size:0.88rem; color:var(--text-light); margin-bottom:0.75rem;">Scenario-based; acting possible with the MiRo-E robot, but can also be explored through group discussion.</p>
+          <ol class="step-list">
+            <li>Pick one random human card</li>
+            <li>Pick five random robot cards, lay them open for everyone to read</li>
+            <li>Discuss how the human will react to each robot card; rank best to worst, and discuss how the worst could be improved</li>
+            <li>Decide which card or combination gives the best outcome (minimum 1 card)</li>
+            <li>Try to reach the desired outcome with the minimum number of cards</li>
+            <li>(Optional, repeatable) Pick a wildcard, see if it changes the ranking, repeat step 5</li>
+          </ol>
+        </div>
+
+        <div class="outcome-box">
+          <strong>Rejected option:</strong> Picking one robot card with five human cards was tried, but didn't work as nicely — the human action always comes first in the timeline of a scene, so it was more logical to choose how the robot reacts to the human's action.
+        </div>
+
+        <div class="img-row cols-4">
+          <div class="img-cell"><img src="../../images/design/s7-option1.JPEG" alt="Option 1 cards laid out" onerror="this.style.display='none'"><figcaption>Option 1</figcaption></div>
+          <div class="img-cell"><img src="../../images/design/s7-option2.JPEG" alt="Option 2 cards laid out" onerror="this.style.display='none'"><figcaption>Option 2</figcaption></div>
+          <div class="img-cell"><img src="../../images/design/s7-rejected.JPEG" alt="Rejected option cards" onerror="this.style.display='none'"><figcaption>Rejected option</figcaption></div>
+          <div class="img-cell"><img src="../../images/design/s7-option2setup.JPEG" alt="Option 2 setup" onerror="this.style.display='none'"><figcaption>Option 2 setup</figcaption></div>
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <h3>Validation & Embodied Testing</h3>
+        <p>While the tool generated interesting scenarios, they weren't yet validated against real-world behaviour — the system still functioned too much as a generative design tool rather than a validated interaction design method. A validation layer was introduced: after designing a scenario, participants physically acted it out using the MIRO-E robot, ensuring each scenario was tested against the robot's actual expressive capabilities and physical constraints.</p>
+        <p>A structured evaluation form assessed each scenario from an observer's perspective using behavioural criteria on a 1–5 scale:</p>
+        <ul class="scale-list">
+          <li><span>Ineffective</span><span>Effective</span></li>
+          <li><span>Demotivating</span><span>Motivational</span></li>
+          <li><span>Confusing</span><span>Clear</span></li>
+          <li><span>Unkind</span><span>Kind</span></li>
+          <li><span>Awkward</span><span>Natural</span></li>
+          <li><span>Oblivious</span><span>Empathic</span></li>
+          <li><span>Unpredictable</span><span>Predictable</span></li>
+          <li><span>Unreliable</span><span>Trustworthy</span></li>
+        </ul>
+      </div>
+
+      <div class="sub-section">
+        <h3>Reflection & Conclusions</h3>
+        <p>This session made clear that generating interesting interaction scenarios is not enough if they aren't grounded in how the robot actually behaves in practice. The original card tool worked well for ideation but tended to produce abstract or overly optimistic ideas that didn't always translate to real embodied behaviour. Introducing structured ranking and evaluation shifted the focus from "what could happen" to "what actually works when enacted" — testing through puppeteering with the MIRO-E robot revealed a consistent gap between imagined and perceived behaviour, where timing, motion quality, and physical constraints strongly shaped interpretation.</p>
+        <p>It also became apparent that small embodiment improvements — clearer expressive movements, more consistent signalling — could significantly improve interaction quality without major technical changes. The main learning: robot behaviour design needs a tight loop between ideation, embodiment, and validation, or scenarios risk remaining conceptually appealing but practically unreliable.</p>
+      </div>
+    </div>
+
+    <!-- ============ SESSION 8 ============ -->
+    <div class="session-section" id="session8">
+      <span style="font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber);">Session 8</span>
+      <h2 style="margin-top:0.3rem;">Tools in Action #2</h2>
+      <p class="session-toc-note">This session focused on finalising and structuring the Cards Against Robots toolbox, developing gameplay guidelines, evaluation procedures, and methods for translating outcomes into usable design insights.</p>
+
+      <div class="sub-section">
+        <h3>Consolidating the Toolkit</h3>
+        <p>While earlier iterations focused mainly on designing and testing the card-based interaction concept, this phase shifted toward consolidating the toolkit into a complete, usable design system — improving the visual design of the cards, defining structured gameplay rules, formalising evaluation criteria, and specifying how results should be interpreted and used by designers or researchers.</p>
+        <div class="highlight-block" style="text-align:center;">
+          <img src="../../images/design/s8-deckofcards.PNG" alt="Final deck of Cards Against Robots" class="srd-img" onerror="this.style.display='none'">
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <h3>Tool Structuring: From Concept to System</h3>
+        <p>Two fully defined gameplay modes were developed to explore robot behaviour from different angles — one focused on improvisation and embodiment, the other on structured comparison and evaluation — ensuring the tool supports both creative exploration and systematic analysis.</p>
+
+        <div class="game-card">
+          <h4>Game 1 — Random Scenario Card Improv</h4>
+          <p style="font-size:0.85rem; color:var(--text-light); margin-bottom:0.75rem;">Needs: the cards, MiRo-E robot, controller, 4–8 people, a "Yes, and" mindset.</p>
+          <ol class="step-list">
+            <li>Have one person leave the room</li>
+            <li>Pick a random robot action card from the pile</li>
+            <li>Act out the robot action with the MiRo-E robot using the controller</li>
+            <li>Pick a random human action card from the pile</li>
+            <li>Have the person who left come back, act out the human action, with another person controlling the MiRo-e for the robot action</li>
+            <li>Continue improvising until reaching a desired end to the scenario</li>
+            <li>(Optional, repeatable) Pick a wildcard to see how it changes the scenario</li>
+          </ol>
+        </div>
+
+        <div class="game-card">
+          <h4>Game 2 — Mix and Match</h4>
+          <ol class="step-list">
+            <li>Pick one random human action card</li>
+            <li>Pick five random robot action cards, lay them open for everyone to see</li>
+            <li>Discuss how the human will react to each robot action</li>
+            <li>Rank the robot actions from best to worst fitting reaction</li>
+            <li>Discuss how the worst fitting action could be improved or reframed for a better outcome</li>
+            <li>Discuss which card or combination gives the best outcome (minimum 1 card)</li>
+            <li>Try to reach the best outcome with as few cards as possible</li>
+            <li>(Optional, repeatable) Pick a wildcard, discuss if it changes the ranking, repeat steps 5–7</li>
+            <li>(Optional) Act out the scenarios with the MiRo-E robot, one person per role</li>
+          </ol>
+        </div>
+
+        <div class="img-row">
+          <div class="img-cell"><img src="../../images/design/s8-instructions.PNG" alt="How to play the games instructions" onerror="this.style.display='none'"><figcaption>Instructions overview</figcaption></div>
+          <div class="img-cell"><img src="../../images/design/s8-game1.PNG" alt="Game 1 instructions card" onerror="this.style.display='none'"><figcaption>Game 1 card</figcaption></div>
+        </div>
+        <div class="img-cell" style="max-width:500px; margin:0 auto;">
+          <img src="../../images/design/s8-game2.PNG" alt="Game 2 instructions card" onerror="this.style.display='none'">
+          <figcaption>Game 2 card</figcaption>
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <h3>Evaluation Framework & Design Integration</h3>
+        <p>A structured evaluation framework ensured scenario outcomes could be assessed consistently rather than relying on subjective interpretation. The criteria were informed by Behavioural Observation Scale methodologies, prioritising measurable, external behaviours over internal assumptions (AIHR, n.d.). The framework also draws on participatory design principles from LEADOR, emphasising iterative, in-context evaluation through active user involvement (Mubin et al., 2021), and aligns with HRI CUES, which assesses interaction quality through observable engagement dimensions like clarity, predictability, and user experience (Sarrica et al., 2024).</p>
+        <p>Together, these sources support a shift from purely generative scenario design toward a grounded evaluation process — ensuring behavioural outcomes are not only designed but critically examined through structured observation, enabling more reliable iteration of robot behaviour concepts.</p>
+        <h4 style="font-family:var(--font-display); margin:1.5rem 0 0.75rem;">References</h4>
+        <ul class="ref-list">
+          <li>AIHR. (n.d.). Behavioral Observation Scale for performance evaluation: What, when and how. <a href="https://www.aihr.com/blog/behavioral-observation-scale/" target="_blank">aihr.com</a></li>
+          <li>Mubin, O., et al. (2021). LEADOR: A method for end-to-end participatory design of autonomous social robots. <a href="https://arxiv.org/pdf/2105.01910" target="_blank">arxiv.org/pdf/2105.01910</a></li>
+          <li>Sarrica, M., et al. (2024). HRI Conversational User Enjoyment Scale (HRI CUES). <a href="https://arxiv.org/pdf/2405.01354" target="_blank">arxiv.org/pdf/2405.01354</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ============ SESSION 9 ============ -->
+    <div class="session-section" id="session9">
+      <span style="font-size:0.75rem; letter-spacing:0.15em; text-transform:uppercase; color:var(--amber);">Session 9</span>
+      <h2 style="margin-top:0.3rem;">Project Demo</h2>
+      <p class="session-toc-note">This session focused on finalising and preparing the Cards Against Robots toolbox for presentation — refining gameplay guidelines, the evaluation framework, poster design, and video demonstration structure.</p>
+
+      <div class="sub-section">
+        <h3>Consolidation Phase</h3>
+        <p>Session 9 acted as a consolidation phase, defining and structuring final deliverables into a coherent system. The main focus was making the tool understandable, reusable, and demonstrable for external audiences, ensuring both gameplay mechanics and evaluation process were clearly documented — packaging the tool not only as a card game, but as a complete behaviour design and evaluation toolkit for exploring robot interaction in embodied scenarios.</p>
+        <div class="img-row">
+          <div class="img-cell"><img src="../../images/design/s9-cardsinaction1.JPEG" alt="Cards Against Robots in action" onerror="this.src='../../images/design/s9-cardsinaction.JPEG'; this.onerror=function(){this.parentElement.style.display='none'}"><figcaption>Cards in action</figcaption></div>
+          <div class="img-cell"><img src="../../images/design/s9-cardsinaction2.JPEG" alt="Folded card deck and instructions" onerror="this.src='../../images/design/s9-cardsinaction.JPEG'; this.onerror=function(){this.parentElement.style.display='none'}"><figcaption>Final card deck</figcaption></div>
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <h3>Tool Finalisation & Structure</h3>
+        <p>The Cards Against Robots system was refined into a complete instructional framework consisting of two main components: game guidelines, and an evaluation guideline with form.</p>
+        <div class="img-row">
+          <div class="img-cell"><img src="../../images/design/s9-instructionmanual.JPEG" alt="Final instruction manual" onerror="this.style.display='none'"><figcaption>Instruction manual</figcaption></div>
+          <div class="img-cell"><img src="../../images/design/s9-evaluationform.JPEG" alt="Final evaluation form" onerror="this.style.display='none'"><figcaption>Evaluation form</figcaption></div>
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <h3>System Integration: Gameplay, Evaluation, Puppeteering & Communication</h3>
+        <p>The final toolkit was consolidated into an integrated system combining structured gameplay, embodied puppeteering, evaluation, and communication outputs. Game 1 supports improvisational exploration of reactive, embodied behaviour using the MIRO-E robot; Game 2 focuses on structured comparison and refinement, ranking multiple robot actions against a single human scenario before optional enactment. Both modes feed into a shared evaluation framework assessing empathy, clarity, effectiveness, predictability, and trustworthiness.</p>
+
+        <div class="highlight-block">
+          <h4>Puppeteering Guidelines</h4>
+          <p style="margin-bottom:0.75rem;"><strong style="color:var(--amber-light);">Movement</strong> — Left stick: drive forward/backward, turn. Right stick: head yaw (left/right), head pitch (up/down).</p>
+          <p style="margin-bottom:0.75rem;"><strong style="color:var(--amber-light);">Shoulder buttons (hold + stick)</strong> — L2 + left stick up/down: tail droop. L2 + left stick left/right: tail wag. R2 + right stick left/right: both ears together.</p>
+          <p style="margin-bottom:0.75rem;"><strong style="color:var(--amber-light);">Face buttons</strong> — Cross: toggle eyelids open/closed. Square: beep (440 Hz tone).</p>
+          <p style="margin:0;"><strong style="color:var(--amber-light);">General tips</strong> — Move smoothly, avoid erratic stick input; roleplay realistically and stick to expected behaviour; improvise where it fits; stay open to different interpretations.</p>
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <h3>Technical & Practical Limitations</h3>
+        <p>The MIRO-E platform currently relies on a tethered connection to a laptop, limiting mobility and slightly restricting the naturalness of interaction. The presence of exposed internal components (when the cap isn't attached) can also distract users during interaction. While these limitations don't prevent use of the system, they influence perception of embodiment and immersion — though giving participants time to familiarise themselves with the robot beforehand helps shift focus from mechanical limitations toward behavioural interpretation.</p>
+      </div>
+
+      <div class="sub-section">
+        <h3>Evaluation of Outcomes</h3>
+        <p>Initial testing showed how different gameplay modes lead to different types of behavioural insights.</p>
+        <div class="outcome-box">
+          <strong>Game 1 (Improvisation):</strong> A scenario involving an overwhelmed student showed how the robot's slow approach and gentle movements led to curiosity and physical engagement. It remained unclear whether the interaction fully achieved its intended emotional support goal — highlighting the difficulty of evaluating emotional impact through short interactions.
+        </div>
+        <div class="outcome-box">
+          <strong>Game 2 (Structured Ranking):</strong> Evaluating multiple robot responses to "switching tasks often" revealed softer, conversational responses (e.g. "Done with homework?") were perceived as more effective than directive ones. Introducing a wildcard ("human doesn't like the robot") shifted preference toward more assertive responses — showing how context dramatically changes perceived appropriateness of robot behaviour.
+        </div>
+        <p>These outcomes demonstrate that robot behaviour effectiveness is highly context-dependent and cannot be fully captured without iterative evaluation and scenario variation.</p>
+        <div class="img-row">
+          <div class="img-cell"><img src="../../images/design/s9-liveevaluation.JPEG" alt="Participant filling in live evaluation form" onerror="this.style.display='none'"><figcaption>Live evaluation</figcaption></div>
+          <div class="img-cell"><img src="../../images/design/s9-livepuppeteer.JPEG" alt="Participant puppeteering MiRo-E live" onerror="this.style.display='none'"><figcaption>Live puppeteering</figcaption></div>
+        </div>
+      </div>
+
+      <div class="sub-section">
+        <h3>Final Reflection</h3>
+        <p>This session marked the transition from tool development to full system presentation — shifting focus from refining individual components toward ensuring the Cards Against Robots toolkit functioned as a coherent, communicable system. A key insight: the value of the tool lies not only in generating robot behaviours, but in making the design process visible and discussable. By combining gameplay, embodiment, and structured evaluation, the system supports both creative exploration and critical reflection on robot behaviour design.</p>
+        <p>Testing also revealed that evaluation outcomes are highly sensitive to context and interpretation — reinforcing that robot behaviour design should be treated as an iterative, situated process rather than a fixed set of rules. This final iteration positions the tool as both a design artifact and an analytical framework for exploring human-robot interaction in practice.</p>
       </div>
     </div>
 

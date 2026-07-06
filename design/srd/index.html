@@ -20,13 +20,14 @@
     .diagram-link:hover { color:var(--amber); }
     .fig-cap { font-size:0.8rem; color:var(--text-light); margin-top:0.5rem; text-align:center; line-height:1.5; }
     .fig-cap b { color:var(--amber); font-weight:600; }
+    .img-w-320 { max-width:320px; margin:0 auto; display:block; }
     .img-w-420 { max-width:420px; margin:0 auto; display:block; }
     .img-w-600 { max-width:600px; margin:0 auto; display:block; }
     .img-w-700 { max-width:700px; margin:0 auto; display:block; }
     .img-cell .fig-cap { text-align:left; }
 
     /* sticky sub-nav */
-    .pill-nav-sticky { position: sticky; top: 0; z-index: 60; background: var(--cream); padding: 1rem 0; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+    .pill-nav-sticky { position: sticky; top: 50px; z-index: 60; background: var(--cream); padding: 1rem 0; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
     .pill-nav-sticky .pill-nav { display:flex; gap:0.5rem; overflow-x:auto; -ms-overflow-style:none; scrollbar-width:none; padding-bottom:2px; }
     .pill-nav-sticky .pill-nav::-webkit-scrollbar { display:none; }
     .pill-nav-sticky .pill { flex:0 0 auto; }
@@ -185,7 +186,7 @@
         <p>These plans are backed up by literature in our domain and for our robot (MIRO-E), as listed in the references below, although most findings from studying theatre exercises will lead to a final design implementation based on Research Through Design methodology.</p>
         <h4 style="font-family:var(--font-display); margin:1.5rem 0 0.75rem;">References</h4>
         <ul class="ref-list">
-          <li>Campbell, N. (2018). Using Multimodal Information to Support Spoken Dialogue Interaction between Humans and Robots without Intrusive Language Processing. <em>Proc. FAIM/ISCA Workshop on AI for Multimodal HRI</em>, 4-8. doi:10.21437/AI-MHRI.2018-2</li>
+          <li>Campbell, N. (2018). Using Multimodal Information to Support Spoken Dialogue Interaction between Humans and Robots without Intrusive Language processing. <em>Proc. FAIM/ISCA Workshop on AI for Multimodal HRI</em>, 4-8. doi:10.21437/AI-MHRI.2018-2</li>
           <li>Hub, K. (2022, February 10). Meet MIRO, a robot that cares. <em>The Knowledge Hub</em>. <a href="https://knowledge-hub.com/2022/02/09/meet-miro-a-robot-that-cares/" target="_blank">knowledge-hub.com</a></li>
           <li>Pande, A., Rani, A., Nachenahalli Bhuthegowda, B., & Mishra, D. (2025). Human-Robot Interaction for Stress Mitigation: A Pilot Study with Social Robot. <em>HCII 2025, LNCS vol. 15769</em>. <a href="https://doi.org/10.1007/978-3-031-93861-0_18" target="_blank">doi.org/10.1007/978-3-031-93861-0_18</a></li>
           <li>Prescott, T., Mitchinson, B., Conran, S., Power, T., & Bridges, G. (2018). MiRo: Social Interaction and Cognition in an Animal-like Companion Robot. doi:10.1145/3173386.3177844</li>
@@ -223,8 +224,8 @@
         <h3>Reasoning Behind the Template</h3>
         <p>This structure works because it directly addresses several core challenges in HRI design by moving beyond surface-level descriptions of interaction. By separating action, intent, and emotion, the template encourages designers to examine not only what users and robots do, but also the motivations, expectations, and feelings underlying those behaviors.</p>
         <p>The added documentary breakout sections create deliberate moments for reflection and critique, helping teams avoid overly optimistic robot capabilities or ignored practical limitations (<a href="https://doi.org/10.1145/3658852.3659067" target="_blank">Dertien et al., 2024</a>). The framework supports improvisation and incorporates multiple perspectives, leading to a more nuanced, empathetic, and realistic HRI design outcome (<a href="https://dl.acm.org/doi/10.1145/1142405.1142441" target="_blank">Raijmakers et al., 2006</a>).</p>
-        <div class="img-cell" style="max-width:600px; margin:1.5rem auto;">
-          <img src="../../images/design/s2-process.png" alt="Conceptualisation, Realisation, Tool-in-action process" onerror="this.style.display='none'">
+        <div class="img-cell" style="max-width:600px; margin:1.5rem auto; width: 30%;">
+          <img src="../../images/design/s2-process.png" alt="Conceptualisation, Realisation, Tool-in-action process" style="width: 100%;" onerror="this.style.display='none'">
           <p class="fig-cap"><b>Fig 2.2</b> Tool development stages: Conceptualisation, Realisation, and Tool-in-action.</p>
         </div>
       </div>
@@ -233,18 +234,18 @@
         <h3>Scenarios</h3>
         <p>The template tool was applied to the student studybuddy case to further explore interactions with a MIRO-E robot. Two scenarios were developed: a Wellbeing Check-In (Frequent Use), and a Deaf Student (Edge Case).</p>
 
-        <div class="img-row">
-          <div class="img-cell">
-            <img src="../../images/design/s2-Script-checkin.png" alt="Script: robot check-in scenario" onerror="this.style.display='none'">
+        <div class="img-row" style="display: flex; gap: 1rem; justify-content: center; align-items: flex-start;">
+          <div class="img-cell" style="flex: 1; max-width: 320px;">
+            <img src="../../images/design/s2-Script-checkin.png" alt="Script: robot check-in scenario" style="width: 100%;" onerror="this.style.display='none'">
             <p class="fig-cap"><b>Fig 2.3</b> Scenario 1: Wellbeing Check-In (frequent use).</p>
           </div>
-          <div class="img-cell">
-            <img src="../../images/design/s2-Script-blind.png" alt="Script: deaf student scenario" onerror="this.style.display='none'">
+          <div class="img-cell" style="flex: 1; max-width: 320px;">
+            <img src="../../images/design/s2-Script-blind.png" alt="Script: deaf student scenario" style="width: 100%;" onerror="this.style.display='none'">
             <p class="fig-cap"><b>Fig 2.4</b> Scenario 2: Deaf Student (edge case).</p>
           </div>
         </div>
 
-        <p>The edge case shows that the robot was designed assuming auditory communication, without fallback strategies. The escalating frustration behaviour also raises questions about robot emotion displays: should robots show frustration with users? The template helps explore such cases and make them explicit. Applying the tool to the case reemphasises that designs must account for diverse users and unexpected contexts.</p>
+        <p style="margin-top: 1rem;">The edge case shows that the robot was designed assuming auditory communication, without fallback strategies. The escalating frustration behaviour also raises questions about robot emotion displays: should robots show frustration with users? The template helps explore such cases and make them explicit. Applying the tool to the case reemphasises that designs must account for diverse users and unexpected contexts.</p>
       </div>
 
       <div class="sub-section">
@@ -289,11 +290,11 @@
         <h3>Expression Experiments</h3>
         <p>By correctly linking inputs and outputs in TouchDesigner, movements could be cloned: pressing 'record' on the MIDI panel remembered every servo movement so it could be replicated later, allowing rapid iteration of different scenarios, expressions, and emotions. Servo movement could be manipulated across joint position, movement speed, acceleration/deceleration, amplitude, frequency, motion coupling between joints, and global motion intensity ("master gain").</p>
         <p>Exploration started with simple pulsing at different speeds and amplitudes. Already, this gave impressions of different emotions and personality factors: slow movement eluded to sadness or tiredness, higher speeds and amplitudes exuded excitement or clumsiness, and pauses with small oscillations before movement suggested hesitation or uncertainty.</p>
-        <div class="img-row">
-          <div class="img-cell"><img src="../../images/design/s3-pulsegif.gif" alt="Pulsing servo motion test" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 3.2</b> Pulsing motion test at varied speed and amplitude.</p></div>
-          <div class="img-cell"><img src="../../images/design/s3-screamgif.gif" alt="Expressive scream motion test" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 3.3</b> Expressive motion test: a startled, retreating reaction.</p></div>
+        <div class="img-row" style="display: flex; gap: 1rem; justify-content: center; align-items: center;">
+          <div class="img-cell" style="flex: 1; text-align: center;"><img src="../../images/design/s3-pulsegif.gif" alt="Pulsing servo motion test" style="height: 400px; object-fit: contain; max-width: 100%;" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 3.2</b> Pulsing motion test at varied speed and amplitude.</p></div>
+          <div class="img-cell" style="flex: 1; text-align: center;"><img src="../../images/design/s3-screamgif.gif" alt="Expressive scream motion test" style="height: 400px; object-fit: contain; max-width: 100%;" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 3.3</b> Expressive motion test: a startled, retreating reaction.</p></div>
         </div>
-        <p>Later, more complex scenarios were explored to ideate expression for thorough situations and emotions, for example the robot sleeping, waking up, then seeing a piece of plastic: scared yet intrigued by it. Even with simple servos and a relatively simple tool setup, such complex scenarios could still be designed.</p>
+        <p style="margin-top: 1rem;">Later, more complex scenarios were explored to ideate expression for thorough situations and emotions, for example the robot sleeping, waking up, then seeing a piece of plastic: scared yet intrigued by it. Even with simple servos and a relatively simple tool setup, such complex scenarios could still be designed.</p>
       </div>
 
       <div class="sub-section">
@@ -305,7 +306,7 @@
           <li>Laban, R. (1966). <em>Choreutics</em>. London: Macdonald & Evans.</li>
           <li>Thomas, F., & Johnston, O. (1981). <em>The Illusion of Life: Disney Animation</em>. New York: Disney Editions.</li>
           <li>Johansson, G. (1973). Visual perception of biological motion and a model for its analysis.</li>
-          <li>Heider, F., & Simmel, M. (1944). An experimental study of apparent behavior.</li>
+          <li>Heider, F., & Simmel, M. (144). An experimental study of apparent behavior.</li>
         </ul>
       </div>
     </div>
@@ -322,7 +323,7 @@
         <p>The session explored what would happen if designers had complete freedom over a robot's embodiment. A morphological overview was created using robots discussed during the course, comparing them on size, shape, materiality, colour, and whether they were human-shaped, animal-shaped, or abstract, alongside functionality requirements, context suitability, and expectation matching.</p>
         <p>The overview showed that embodiment strongly influences perceived suitability. A large humanoid robot may be appropriate for navigation or reception tasks but less suitable as a tabletop companion. Animal-inspired robots such as MiRo or Paro appear approachable and comforting, while humanoid robots create stronger expectations regarding intelligence, communication, and capabilities. Embodiment is not only an aesthetic choice but shapes how users interpret and interact with the robot.</p>
         <div class="highlight-block" style="text-align:center;">
-          <img src="../../images/design/s4-matrix.png" alt="Morphological overview matrix of robot embodiments" class="srd-img img-w-700" onerror="this.style.display='none'">
+          <img src="../../images/design/s4-matrix.png" alt="Morphological overview matrix of robot embodiments" class="srd-img img-w-600" onerror="this.style.display='none'">
           <p class="fig-cap"><b>Fig 4.1</b> Morphological overview matrix comparing existing robot embodiments by shape, size, materiality, and contextual suitability.</p>
         </div>
       </div>
@@ -366,9 +367,10 @@
         <h3>EduLARP Tool: The LifeTimer</h3>
         <p>Researchers at Saxion Enschede developed the LifeTimer, which explores a scenario in which a technology publicly monitors and gives advice about health regulations. Through an app, the technology becomes widespread and people can opt in or out: the tool explores effects on individuals and society at large, asking participants to reflect on implications and regulation.</p>
         <p>The LARP session included decoration, worldbuilding instruction videos, fictional news reports, and character description cards set in 2030. After role-playing a character and following how their life was affected by the technology over time, participants voted in a referendum on whether to support or restrict the LifeTimer, then reflected individually. The workshop was hosted by developer <a href="https://www.linkedin.com/in/verena-schulze-greiving-15b3551/" target="_blank">Verena Schulz</a>, with Saxion co-teacher <a href="https://www.linkedin.com/in/afra-willems-024b6a215/" target="_blank">Afra Willems</a>.</p>
-        <div class="img-row">
-          <div class="img-cell"><img src="../../images/design/s5-larpcharactercard.jpg" alt="LARP character card" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 5.1</b> LifeTimer character card assigned for the roleplay.</p></div>
-          <div class="img-cell"><img src="../../images/design/s5-deco.jpg" alt="LARP scenario decoration" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 5.2</b> Worldbuilding decoration setting the 2030 scenario.</p></div>
+        
+        <div class="img-row" style="display: flex; gap: 1rem; justify-content: center; align-items: flex-start;">
+          <div class="img-cell" style="flex: 1; text-align: center;"><img src="../../images/design/s5-larpcharactercard.jpg" alt="LARP character card" style="max-height: 500px; max-width: 100%; width: auto;" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 5.1</b> LifeTimer character card assigned for the roleplay.</p></div>
+          <div class="img-cell" style="flex: 1; text-align: center;"><img src="../../images/design/s5-deco.jpg" alt="LARP scenario decoration" style="max-height: 500px; max-width: 100%; width: auto;" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 5.2</b> Worldbuilding decoration setting the 2030 scenario.</p></div>
         </div>
       </div>
 
@@ -382,12 +384,20 @@
       <div class="sub-section">
         <h3>LARP & MiRo-E</h3>
         <p>The same EduLARP principle was later applied to the MiRo-E robot. Through self-made character cards and a group worksheet, adopting a character as an active stakeholder brought up concerns and tensions that needed addressing: for the MiRo-E and student wellbeing case, pets and parents should also be taken into account.</p>
-        <div class="img-row cols-3">
-          <div class="img-cell"><img src="../../images/design/s5-selfcharactercard.jpg" alt="Self-made character card" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 5.3</b> Self-made character card for the MiRo-E scenario.</p></div>
-          <div class="img-cell"><img src="../../images/design/s5-miroeparty.jpg" alt="MiRo-E wearing a party hat" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 5.4</b> MiRo-E adopted as an active stakeholder.</p></div>
-          <div class="img-cell"><img src="../../images/design/s5-groupworksheet.jpg" alt="Group worksheet" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 5.5</b> Group worksheet mapping future effects and dilemmas.</p></div>
+        
+        <div class="img-row cols-3" style="display: flex; gap: 1rem; justify-content: center; align-items: flex-start; flex-wrap: wrap;">
+          <div class="img-cell" style="flex: 1; min-width: 200px; text-align: center;"><img src="../../images/design/s5-selfcharactercard.jpg" alt="Self-made character card" style="max-height: 500px; max-width: 100%; width: auto;" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 5.3</b> Self-made character card for the MiRo-E scenario.</p></div>
+          <div class="img-cell" style="flex: 1; min-width: 200px; text-align: center;"><img src="../../images/design/s5-miroeparty.jpg" alt="MiRo-E wearing a party hat" style="max-height: 500px; max-width: 100%; width: auto;" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 5.4</b> MiRo-E adopted as an active stakeholder.</p></div>
         </div>
-        <p>The future scenarios were less futuristic than the LifeTimer but still considered developer responsibility. A key finding: concerns become more complex when technology actively replaces human care. This relates to <a href="https://doi.org/10.1075/is.11.2.01sha" target="_blank">Sharkey & Sharkey (2010)</a>, who critique using robots as caregivers for children: replacement of human care can lead to reduced human contact, emotional deception, attachment problems, and developmental risks. Value sensitivity is crucial in robotics within care contexts.</p>
+        
+        <div class="img-cell" style="text-align: center; margin: 2rem auto; max-width: 100%; width: auto;">
+          <div style="display: inline-block; padding: 2rem 0;">
+            <img src="../../images/design/s5-groupworksheet.jpg" alt="Group worksheet" style="max-height: 500px; transform: rotate(-90deg); display: block; margin: 0 auto;" onerror="this.style.display='none'">
+          </div>
+          <p class="fig-cap" style="margin-top: 1rem;"><b>Fig 5.5</b> Group worksheet mapping future effects and dilemmas.</p>
+        </div>
+
+        <p style="margin-top: 1rem;">The future scenarios were less futuristic than the LifeTimer but still considered developer responsibility. A key finding: concerns become more complex when technology actively replaces human care. This relates to <a href="https://doi.org/10.1075/is.11.2.01sha" target="_blank">Sharkey & Sharkey (2010)</a>, who critique using robots as caregivers for children: replacement of human care can lead to reduced human contact, emotional deception, attachment problems, and developmental risks. Value sensitivity is crucial in robotics within care contexts.</p>
         <h4 style="font-family:var(--font-display); margin:1.5rem 0 0.75rem;">References</h4>
         <ul class="ref-list">
           <li>Friedman, B., & Kahn, P.H., Jr. (2003). Human values, ethics, and design. In <em>The Human-Computer Interaction Handbook</em> (pp. 1177-1201). Lawrence Erlbaum Associates. <a href="https://old.vsdesign.org/publications/pdf/friedman03humanvalues.pdf" target="_blank">old.vsdesign.org</a></li>
@@ -474,11 +484,11 @@
           <strong>Rejected option:</strong> Picking one robot card with five human cards was tried, but didn't work as nicely, since the human action always comes first in the timeline of a scene, so it was more logical to choose how the robot reacts to the human's action.
         </div>
 
-        <div class="img-row cols-4">
-          <div class="img-cell"><img src="../../images/design/s7-option1.JPEG" alt="Option 1 cards laid out" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 7.1</b> Option 1 cards in use.</p></div>
-          <div class="img-cell"><img src="../../images/design/s7-option2.JPEG" alt="Option 2 cards laid out" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 7.2</b> Option 2 cards in use.</p></div>
-          <div class="img-cell"><img src="../../images/design/s7-rejected.JPEG" alt="Rejected option cards" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 7.3</b> Rejected option layout.</p></div>
-          <div class="img-cell"><img src="../../images/design/s7-option2setup.JPEG" alt="Option 2 setup" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 7.4</b> Option 2 setup during a session.</p></div>
+        <div class="img-row cols-4" style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
+          <div class="img-cell" style="flex: 1; min-width: 150px; text-align: center;"><img src="../../images/design/s7-option1.jpeg" alt="Option 1 cards laid out" style="width: 100%; max-width: 200px; border-radius: var(--radius); box-shadow: var(--shadow);" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 7.1</b> Option 1 cards in use.</p></div>
+          <div class="img-cell" style="flex: 1; min-width: 150px; text-align: center;"><img src="../../images/design/s7-option2.jpeg" alt="Option 2 cards laid out" style="width: 100%; max-width: 200px; border-radius: var(--radius); box-shadow: var(--shadow);" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 7.2</b> Option 2 cards in use.</p></div>
+          <div class="img-cell" style="flex: 1; min-width: 150px; text-align: center;"><img src="../../images/design/s7-rejected.jpeg" alt="Rejected option cards" style="width: 100%; max-width: 200px; border-radius: var(--radius); box-shadow: var(--shadow);" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 7.3</b> Rejected option layout.</p></div>
+          <div class="img-cell" style="flex: 1; min-width: 150px; text-align: center;"><img src="../../images/design/s7-option2setup.jpeg" alt="Option 2 setup" style="width: 100%; max-width: 200px; border-radius: var(--radius); box-shadow: var(--shadow);" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 7.4</b> Option 2 setup during a session.</p></div>
         </div>
       </div>
 
@@ -515,7 +525,7 @@
         <h3>Consolidating the Toolkit</h3>
         <p>While earlier iterations focused mainly on designing and testing the card-based interaction concept, this phase shifted toward consolidating the toolkit into a complete, usable design system: improving the visual design of the cards, defining structured gameplay rules, formalising evaluation criteria, and specifying how results should be interpreted and used by designers or researchers.</p>
         <div class="highlight-block" style="text-align:center;">
-          <img src="../../images/design/s8-deckofcards.PNG" alt="Final deck of Cards Against Robots" class="srd-img img-w-600" onerror="this.style.display='none'">
+          <img src="../../images/design/s8-deckofcards.png" alt="Final deck of Cards Against Robots" class="srd-img img-w-600" onerror="this.style.display='none'">
           <p class="fig-cap"><b>Fig 8.1</b> Final Cards Against Robots deck, with Human Action, Robot Action, and Wildcard categories.</p>
         </div>
       </div>
@@ -553,12 +563,12 @@
           </ol>
         </div>
 
-        <div class="img-row">
-          <div class="img-cell"><img src="../../images/design/s8-instructions.PNG" alt="How to play the games instructions" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 8.2</b> Instructions overview shared with players.</p></div>
-          <div class="img-cell"><img src="../../images/design/s8-game1.PNG" alt="Game 1 instructions card" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 8.3</b> Game 1 instruction card.</p></div>
+        <div class="img-row" style="display: flex; gap: 1rem; justify-content: center; align-items: flex-start; flex-wrap: wrap;">
+          <div class="img-cell" style="flex: 1; min-width: 200px; text-align: center;"><img src="../../images/design/s8-instructions.png" alt="How to play the games instructions" style="width: 100%; max-width: 300px; border-radius: var(--radius); box-shadow: var(--shadow);" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 8.2</b> Instructions overview shared with players.</p></div>
+          <div class="img-cell" style="flex: 1; min-width: 200px; text-align: center;"><img src="../../images/design/s8-game1.png" alt="Game 1 instructions card" style="width: 100%; max-width: 300px; border-radius: var(--radius); box-shadow: var(--shadow);" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 8.3</b> Game 1 instruction card.</p></div>
         </div>
-        <div class="img-cell" style="max-width:420px; margin:0 auto;">
-          <img src="../../images/design/s8-game2.PNG" alt="Game 2 instructions card" onerror="this.style.display='none'">
+        <div class="img-cell" style="max-width:420px; margin:1.5rem auto; text-align: center;">
+          <img src="../../images/design/s8-game2.png" alt="Game 2 instructions card" style="width: 100%; border-radius: var(--radius); box-shadow: var(--shadow);" onerror="this.style.display='none'">
           <p class="fig-cap"><b>Fig 8.4</b> Game 2 instruction card.</p>
         </div>
       </div>
@@ -585,18 +595,18 @@
       <div class="sub-section">
         <h3>Consolidation Phase</h3>
         <p>Session 9 acted as a consolidation phase, defining and structuring final deliverables into a coherent system. The main focus was making the tool understandable, reusable, and demonstrable for external audiences, ensuring both gameplay mechanics and evaluation process were clearly documented: packaging the tool not only as a card game, but as a complete behaviour design and evaluation toolkit for exploring robot interaction in embodied scenarios.</p>
-        <div class="img-row">
-          <div class="img-cell"><img src="../../images/design/s9-cardsinaction1.JPEG" alt="Cards Against Robots in action" onerror="this.src='../../images/design/s9-cardsinaction.JPEG'; this.onerror=function(){this.parentElement.style.display='none'}"><p class="fig-cap"><b>Fig 9.1</b> Cards Against Robots in action during a session.</p></div>
-          <div class="img-cell"><img src="../../images/design/s9-cardsinaction2.JPEG" alt="Folded card deck and instructions" onerror="this.src='../../images/design/s9-cardsinaction.JPEG'; this.onerror=function(){this.parentElement.style.display='none'}"><p class="fig-cap"><b>Fig 9.2</b> Final folded card deck and instructions.</p></div>
+        <div class="img-row" style="display: flex; gap: 1rem; justify-content: center; align-items: flex-start; flex-wrap: wrap;">
+          <div class="img-cell" style="flex: 1; min-width: 200px; text-align: center;"><img src="../../images/design/s9-cardsinaction1.jpeg" alt="Cards Against Robots in action" style="width: 100%; max-width: 300px; border-radius: var(--radius); box-shadow: var(--shadow);" onerror="this.src='../../images/design/s9-cardsinaction.jpeg'; this.onerror=function(){this.parentElement.style.display='none'}"><p class="fig-cap"><b>Fig 9.1</b> Cards Against Robots in action during a session.</p></div>
+          <div class="img-cell" style="flex: 1; min-width: 200px; text-align: center;"><img src="../../images/design/s9-cardsinaction2.jpeg" alt="Folded card deck and instructions" style="width: 100%; max-width: 300px; border-radius: var(--radius); box-shadow: var(--shadow);" onerror="this.src='../../images/design/s9-cardsinaction.jpeg'; this.onerror=function(){this.parentElement.style.display='none'}"><p class="fig-cap"><b>Fig 9.2</b> Final folded card deck and instructions.</p></div>
         </div>
       </div>
 
       <div class="sub-section">
         <h3>Tool Finalisation & Structure</h3>
         <p>The Cards Against Robots system was refined into a complete instructional framework consisting of two main components: game guidelines, and an evaluation guideline with form.</p>
-        <div class="img-row">
-          <div class="img-cell"><img src="../../images/design/s9-instructionmanual.JPEG" alt="Final instruction manual" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 9.3</b> Final instruction manual cover and gameplay steps.</p></div>
-          <div class="img-cell"><img src="../../images/design/s9-evaluationform.JPEG" alt="Final evaluation form" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 9.4</b> Final evaluation form used by observers.</p></div>
+        <div class="img-row" style="display: flex; gap: 1rem; justify-content: center; align-items: flex-start; flex-wrap: wrap;">
+          <div class="img-cell" style="flex: 1; min-width: 200px; text-align: center;"><img src="../../images/design/s9-instructionmanual.jpeg" alt="Final instruction manual" style="width: 100%; max-width: 300px; border-radius: var(--radius); box-shadow: var(--shadow);" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 9.3</b> Final instruction manual cover and gameplay steps.</p></div>
+          <div class="img-cell" style="flex: 1; min-width: 200px; text-align: center;"><img src="../../images/design/s9-evaluationform.jpeg" alt="Final evaluation form" style="width: 100%; max-width: 300px; border-radius: var(--radius); box-shadow: var(--shadow);" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 9.4</b> Final evaluation form used by observers.</p></div>
         </div>
       </div>
 
@@ -620,17 +630,17 @@
 
       <div class="sub-section">
         <h3>Evaluation of Outcomes</h3>
-        <p>Initial testing showed how different gameplay modes lead to different types of behavioural insights.</p>
+        <p style="margin-bottom: 1.5rem;">Initial testing showed how different gameplay modes lead to different types of behavioural insights.</p>
         <div class="outcome-box">
           <strong>Game 1 (Improvisation):</strong> A scenario involving an overwhelmed student showed how the robot's slow approach and gentle movements led to curiosity and physical engagement. It remained unclear whether the interaction fully achieved its intended emotional support goal, highlighting the difficulty of evaluating emotional impact through short interactions.
         </div>
         <div class="outcome-box">
           <strong>Game 2 (Structured Ranking):</strong> Evaluating multiple robot responses to "switching tasks often" revealed softer, conversational responses (e.g. "Done with homework?") were perceived as more effective than directive ones. Introducing a wildcard ("human doesn't like the robot") shifted preference toward more assertive responses, showing how context dramatically changes perceived appropriateness of robot behaviour.
         </div>
-        <p>These outcomes demonstrate that robot behaviour effectiveness is highly context-dependent and cannot be fully captured without iterative evaluation and scenario variation.</p>
-        <div class="img-row">
-          <div class="img-cell"><img src="../../images/design/s9-liveevaluation.JPEG" alt="Participant filling in live evaluation form" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 9.5</b> Live evaluation, an observer scoring a scenario.</p></div>
-          <div class="img-cell"><img src="../../images/design/s9-livepuppeteer.JPEG" alt="Participant puppeteering MiRo-E live" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 9.6</b> Live puppeteering of MiRo-E during testing.</p></div>
+        <p style="margin-top: 1.5rem;">These outcomes demonstrate that robot behaviour effectiveness is highly context-dependent and cannot be fully captured without iterative evaluation and scenario variation.</p>
+        <div class="img-row" style="display: flex; gap: 1rem; justify-content: center; align-items: flex-start; flex-wrap: wrap; margin-top: 1.5rem;">
+          <div class="img-cell" style="flex: 1; min-width: 200px; text-align: center;"><img src="../../images/design/s9-liveevaluation.jpeg" alt="Participant filling in live evaluation form" style="width: 100%; max-width: 300px; border-radius: var(--radius); box-shadow: var(--shadow);" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 9.5</b> Live evaluation, an observer scoring a scenario.</p></div>
+          <div class="img-cell" style="flex: 1; min-width: 200px; text-align: center;"><img src="../../images/design/s9-livepuppeteer.jpeg" alt="Participant puppeteering MiRo-E live" style="width: 100%; max-width: 300px; border-radius: var(--radius); box-shadow: var(--shadow);" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 9.6</b> Live puppeteering of MiRo-E during testing.</p></div>
         </div>
       </div>
 

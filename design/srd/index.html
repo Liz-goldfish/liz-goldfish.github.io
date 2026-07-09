@@ -20,6 +20,7 @@
     .diagram-link:hover { color:var(--amber); }
     .fig-cap { font-size:0.8rem; color:var(--text-light); margin-top:0.5rem; text-align:center; line-height:1.5; }
     .fig-cap b { color:var(--amber); font-weight:600; }
+    .img-w-300 { max-width:300px; margin:0 auto; display:block; }
     .img-w-320 { max-width:320px; margin:0 auto; display:block; }
     .img-w-420 { max-width:420px; margin:0 auto; display:block; }
     .img-w-600 { max-width:600px; margin:0 auto; display:block; }
@@ -224,7 +225,7 @@
         <h3>Reasoning Behind the Template</h3>
         <p>This structure works because it directly addresses several core challenges in HRI design by moving beyond surface-level descriptions of interaction. By separating action, intent, and emotion, the template encourages designers to examine not only what users and robots do, but also the motivations, expectations, and feelings underlying those behaviors.</p>
         <p>The added documentary breakout sections create deliberate moments for reflection and critique, helping teams avoid overly optimistic robot capabilities or ignored practical limitations (<a href="https://doi.org/10.1145/3658852.3659067" target="_blank">Dertien et al., 2024</a>). The framework supports improvisation and incorporates multiple perspectives, leading to a more nuanced, empathetic, and realistic HRI design outcome (<a href="https://dl.acm.org/doi/10.1145/1142405.1142441" target="_blank">Raijmakers et al., 2006</a>).</p>
-        <div class="img-cell" style="max-width:600px; margin:1.5rem auto; width: 36%;">
+        <div class="img-cell" style="max-width:600px; margin:1.5rem auto; width: 43%;">
           <img src="../../images/design/s2-process.png" alt="Conceptualisation, Realisation, Tool-in-action process" style="width: 100%;" onerror="this.style.display='none'">
           <p class="fig-cap"><b>Fig 2.2</b> Tool development stages: Conceptualisation, Realisation, and Tool-in-action.</p>
         </div>
@@ -240,7 +241,7 @@
             <p class="fig-cap"><b>Fig 2.3</b> Scenario 1: Wellbeing Check-In (frequent use).</p>
           </div>
           <div class="img-cell" style="flex: 1; text-align: center;">
-            <img src="../../images/design/s2-Script-blind.png" alt="Script: deaf student scenario" style="height: 900px; max-height: 900px; width: auto; max-width: 100%; object-fit: contain;" onerror="this.style.display='none'">
+            <img src="../../images/design/s2-Script-blind.png" alt="Script: deaf student scenario" style="height: 810px; max-height: 810px; width: auto; max-width: 100%; object-fit: contain;" onerror="this.style.display='none'">
             <p class="fig-cap"><b>Fig 2.4</b> Scenario 2: Deaf Student (edge case).</p>
           </div>
         </div>
@@ -370,7 +371,7 @@
         
         <div class="img-row" style="display: flex; gap: 1rem; justify-content: center; align-items: flex-end;">
           <div class="img-cell" style="flex: 1; text-align: center;"><img src="../../images/design/s5-larpcharactercard.jpg" alt="LARP character card" style="max-height: 500px; max-width: 100%; width: auto;" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 5.1</b> LifeTimer character card assigned for the roleplay.</p></div>
-          <div class="img-cell" style="flex: 1; text-align: center;"><img src="../../images/design/s5-deco.jpg" alt="LARP scenario decoration" style="max-height: 500px; max-width: 100%; width: auto;" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 5.2</b> Worldbuilding decoration setting the 2030 scenario.</p></div>
+          <div class="img-cell" style="flex: 1; text-align: center;"><img src="../../images/design/s5-deco.jpg" alt="LARP scenario decoration" style="max-height: 250px; max-width: 100%; width: auto;" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 5.2</b> Worldbuilding decoration setting the 2030 scenario.</p></div>
         </div>
       </div>
 
@@ -392,7 +393,7 @@
         
         <div class="img-cell" style="text-align: center; margin: 2rem auto; max-width: 100%; width: auto;">
           <div style="display: inline-block; padding: 2rem 0;">
-            <img src="../../images/design/s5-groupworksheet.jpg" alt="Group worksheet" style="max-height: 500px; transform: rotate(-90deg); display: block; margin: 0 auto;" onerror="this.style.display='none'">
+            <img src="../../images/design/s5-groupworksheet.jpg" alt="Group worksheet" style="max-height: 500px; display: block; margin: 0 auto;" onerror="this.style.display='none'">
           </div>
           <p class="fig-cap" style="margin-top: 1rem;"><b>Fig 5.5</b> Group worksheet mapping future effects and dilemmas.</p>
         </div>
@@ -435,7 +436,7 @@
           <div class="method-card"><span class="method-label">Red</span><h4>Robot Action Cards</h4><p>Available robot actions and expressions.</p></div>
           <div class="method-card"><span class="method-label">Yellow</span><h4>Wildcard Cards</h4><p>Unexpected events, tensions, or contextual changes.</p></div>
         </div>
-        <div class="highlight-block" style="text-align:center;">
+        <div style="text-align:center;">
           <img src="../../images/design/s6-cards.png" alt="Example Cards Against Robots cards" class="srd-img img-w-600" onerror="this.style.display='none'">
           <p class="fig-cap"><b>Fig 6.2</b> Example Human Action, Robot Action, and Wildcard cards.</p>
         </div>
@@ -467,8 +468,8 @@
         <h3>Validation & Embodied Testing</h3>
         <p>While the tool generated interesting scenarios, they weren't yet validated against real-world behaviour, as the system still functioned too much as a generative design tool rather than a validated interaction design method. A validation layer was introduced: after designing a scenario, participants physically acted it out using the MIRO-E robot, ensuring each scenario was tested against the robot's actual expressive capabilities and physical constraints.</p>
         <p>A structured evaluation form assessed each scenario from an observer's perspective using behavioural criteria on a 1-5 scale:</p>
-        <div class="highlight-block" style="text-align:center;">
-          <img src="../../images/design/s7-eval.png" alt="Evaluation criteria" class="srd-img img-w-600" onerror="this.style.display='none'">
+        <div style="text-align:center;">
+          <img src="../../images/design/s7-eval.png" alt="Evaluation criteria" class="srd-img img-w-300" onerror="this.style.display='none'">
           <p class="fig-cap"><b>Fig 7.2</b> Evaluation criteria.</p>
         </div>
       </div>
@@ -489,7 +490,7 @@
       <div class="sub-section">
         <h3>Consolidating the Toolkit</h3>
         <p>While earlier iterations focused mainly on designing and testing the card-based interaction concept, this phase shifted toward consolidating the toolkit into a complete, usable design system: improving the visual design of the cards, defining structured gameplay rules, formalising evaluation criteria, and specifying how results should be interpreted and used by designers or researchers.</p>
-        <div class="highlight-block" style="text-align:center;">
+        <div style="text-align:center;">
           <img src="../../images/design/s8-deckofcards.png" alt="Final deck of Cards Against Robots" class="srd-img img-w-600" onerror="this.style.display='none'">
           <p class="fig-cap"><b>Fig 8.1</b> Final Cards Against Robots deck, with Human Action, Robot Action, and Wildcard categories.</p>
         </div>
@@ -500,7 +501,7 @@
         <p>Two fully defined gameplay modes were developed to explore robot behaviour from different angles, one focused on improvisation and embodiment, the other on structured comparison and evaluation, ensuring the tool supports both creative exploration and systematic analysis.</p>
 
         <div class="img-row" style="display: flex; gap: 1rem; justify-content: center; align-items: flex-end; flex-wrap: wrap;">
-          <div class="img-cell" style="flex: 1; min-width: 200px; text-align: center;"><img src="../../images/design/s8-instructions.png" alt="How to play the games instructions" style="width: 100%; max-width: 300px; border-radius: var(--radius); box-shadow: var(--shadow);" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 8.2</b> Instructions overview shared with players.</p></div>
+          <div class="img-cell" style="flex: 1; min-width: 200px; text-align: center;"><img src="../../images/design/s8-instructions.png" alt="How to play the games instructions" style="width: 100%; max-width: 330px; border-radius: var(--radius); box-shadow: var(--shadow);" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 8.2</b> Instructions overview shared with players.</p></div>
           <div class="img-cell" style="flex: 1; min-width: 200px; text-align: center;"><img src="../../images/design/s8-game1.png" alt="Game 1 instructions card" style="width: 100%; max-width: 300px; border-radius: var(--radius); box-shadow: var(--shadow);" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 8.3</b> Game 1 instruction card.</p></div>
         </div>
         <div class="img-cell" style="max-width:500px; margin:1.5rem auto; text-align: center;">
@@ -535,8 +536,8 @@
         <h3>Consolidation Phase</h3>
         <p>Session 9 acted as a consolidation phase, defining and structuring final deliverables into a coherent system. The main focus was making the tool understandable, reusable, and demonstrable for external audiences, ensuring both gameplay mechanics and evaluation process were clearly documented: packaging the tool not only as a card game, but as a complete behaviour design and evaluation toolkit for exploring robot interaction in embodied scenarios.</p>
         <div class="img-row" style="display: flex; gap: 1rem; justify-content: center; align-items: flex-end; flex-wrap: wrap;">
-          <div class="img-cell" style="flex: 1; min-width: 200px; text-align: center;"><img src="../../images/design/s9-finalgame.jpg" alt="Cards Against Robots in action" style="width: 100%; max-width: 300px; border-radius: var(--radius); box-shadow: var(--shadow);" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 9.1</b> Cards Against Robots in action during a session.</p></div>
-          <div class="img-cell" style="flex: 1; min-width: 200px; text-align: center;"><img src="../../images/design/s9-cardsinaction2.jpeg" alt="Folded card deck and instructions" style="width: 100%; max-width: 300px; border-radius: var(--radius); box-shadow: var(--shadow);" onerror="this.src='../../images/design/s9-cardsinaction.jpeg'; this.onerror=function(){this.parentElement.style.display='none'}"><p class="fig-cap"><b>Fig 9.2</b> Final folded card deck and instructions.</p></div>
+          <div class="img-cell" style="flex: 1; min-width: 200px; text-align: center;"><img src="../../images/design/s9-cardsinaction2.jpeg" alt="Folded card deck and instructions" style="width: 100%; max-width: 300px; border-radius: var(--radius); box-shadow: var(--shadow);" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 9.1</b> Cards Against Robots in action during a session.</p></div>
+          <div class="img-cell" style="flex: 1; min-width: 200px; text-align: center;"><img src="../../images/design/s9-finalgame.jpg" alt="Cards Against Robots in action" style="width: 100%; max-width: 300px; border-radius: var(--radius); box-shadow: var(--shadow);" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 9.2</b> Final folded card deck and instructions.</p></div>
         </div>
       </div>
 
@@ -544,7 +545,12 @@
         <h3>Tool Finalisation & Structure</h3>
         <p>The Cards Against Robots system was refined into a complete instructional framework consisting of two main components: game guidelines, and an evaluation guideline with form.</p>
         <div class="img-row" style="display: flex; gap: 1rem; justify-content: center; align-items: flex-end; flex-wrap: wrap;">
-          <div class="img-cell" style="flex: 1; min-width: 200px; text-align: center;"><img src="../../images/design/s9-instructionmanual.png" alt="Final instruction manual" style="width: 100%; max-width: 300px; border-radius: var(--radius); box-shadow: var(--shadow);" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 9.3</b> Final instruction manual cover and gameplay steps.</p></div>
+          <div class="img-cell" style="flex: 1; min-width: 200px; text-align: center;">
+            <div style="display: inline-block; padding: 1rem 0;">
+              <img src="../../images/design/s9-instructionmanual.png" alt="Final instruction manual" style="max-height: 360px; transform: rotate(90deg); display: block; margin: 0 auto; border-radius: var(--radius); box-shadow: var(--shadow);" onerror="this.style.display='none'">
+            </div>
+            <p class="fig-cap"><b>Fig 9.3</b> Final instruction manual cover and gameplay steps.</p>
+          </div>
           <div class="img-cell" style="flex: 1; min-width: 200px; text-align: center;"><img src="../../images/design/s9-evaluationform.png" alt="Final evaluation form" style="width: 100%; max-width: 300px; border-radius: var(--radius); box-shadow: var(--shadow);" onerror="this.style.display='none'"><p class="fig-cap"><b>Fig 9.4</b> Final evaluation form used by observers.</p></div>
         </div>
       </div>
@@ -584,12 +590,30 @@
       </div>
 
       <div class="sub-section">
+        <h3>Final Results</h3>
+        <h4 style="font-family:var(--font-display); margin:0 0 0.75rem;">Poster</h4>
+        <p>The final outcome of the tool and project use case is presented in a poster.</p>
+        <div style="text-align:center;">
+          <img src="../../images/design/s9-poster.jpg" alt="Final project poster of Cards Against Robots" class="srd-img" style="max-width:720px; margin:1rem auto;" onerror="this.style.display='none'">
+          <p class="fig-cap"><b>Figure 9.7</b> Final project poster of Cards Against Robots.</p>
+        </div>
+        <h4 style="font-family:var(--font-display); margin:1.5rem 0 0.75rem;">Video</h4>
+        <p>To complement the poster, a short demonstration video was produced showing the toolkit in use. The video introduces the motivation behind the project, explains the gameplay, demonstrates example interaction scenarios with the MiRo-E robot, and highlights how the tool supports the design and evaluation of robot behaviour.</p>
+        <div style="text-align:center;">
+          <a href="https://youtu.be/5C--r6833Ao" target="_blank">
+            <img src="../../images/design/s9-videotn.png" alt="Cards Against Robots video thumbnail" class="srd-img" style="max-width:720px; margin:1rem auto;" onerror="this.style.display='none'">
+          </a>
+          <p class="fig-cap"><b>Figure 9.8</b> Video of Cards Against Robots (click the thumbnail to watch on YouTube).</p>
+        </div>
+      </div>
+
+      <div class="sub-section">
         <h3>Final Reflection</h3>
         <p>This session marked the transition from tool development to full system presentation, shifting focus from refining individual components toward ensuring the Cards Against Robots toolkit functioned as a coherent, communicable system. A key insight: the value of the tool lies not only in generating robot behaviours, but in making the design process visible and discussable. By combining gameplay, embodiment, and structured evaluation, the system supports both creative exploration and critical reflection on robot behaviour design.</p>
         <p>Testing also revealed that evaluation outcomes are highly sensitive to context and interpretation, reinforcing that robot behaviour design should be treated as an iterative, situated process rather than a fixed set of rules. This final iteration positions the tool as both a design artifact and an analytical framework for exploring human-robot interaction in practice.</p>
-        <div class="highlight-block" style="text-align:center;">
+        <div style="text-align:center;">
           <img src="../../images/design/s9-theteam.jpg" alt="The team" class="srd-img img-w-600" onerror="this.style.display='none'">
-          <p class="fig-cap"><b>Fig 9.7</b> The team.</p>
+          <p class="fig-cap"><b>Fig 9.9</b> The team.</p>
         </div>
       </div>
     </div>
